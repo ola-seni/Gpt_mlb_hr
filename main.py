@@ -28,8 +28,8 @@ def main():
 
     # Save CSV
     today = date.today().isoformat()
-    predictions.to_csv(f"hr_predictions_{today}.csv", index=False)
-    print(f"✅ Saved predictions to hr_predictions_{today}.csv")
+    predictions.to_csv(f"results/hr_predictions_{today}.csv", index=False)
+    print(f"✅ Saved predictions to results/hr_predictions_{today}.csv")
 
     # Send Telegram alerts
     send_telegram_alerts(predictions)

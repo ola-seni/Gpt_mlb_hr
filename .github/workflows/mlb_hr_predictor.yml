@@ -31,3 +31,16 @@ jobs:
           CHAT_ID: ${{ secrets.CHAT_ID }}
         run: |
           python main.py
+<<<<<<< HEAD
+=======
+
+      - name: Commit Results to GitHub
+        run: |
+          git config user.name "gpt-mlb-bot"
+          git config user.email "gpt-mlb-bot@example.com"
+          git add results/*.csv || true
+          git diff --cached --quiet && echo "✅ No new results to commit." || (
+            git commit -m "📊 Daily prediction for $(date +'%Y-%m-%d')"
+            git push
+          )
+>>>>>>> 9de4c23 (🚀 Clean re-init: Telegram fix + auto-commit enabled)
