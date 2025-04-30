@@ -31,8 +31,6 @@ jobs:
           CHAT_ID: ${{ secrets.CHAT_ID }}
         run: |
           python main.py
-<<<<<<< HEAD
-=======
 
       - name: Commit Results to GitHub
         run: |
@@ -43,4 +41,3 @@ jobs:
             git commit -m "📊 Daily prediction for $(date +'%Y-%m-%d')"
             git push
           )
->>>>>>> 9de4c23 (🚀 Clean re-init: Telegram fix + auto-commit enabled)
