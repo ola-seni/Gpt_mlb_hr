@@ -27,3 +27,14 @@ def fetch_batter_metrics(lineups_df):
         except Exception as e:
             print(f"❌ Error fetching data for {row['batter_name']}: {e}")
     return pd.concat(metrics, ignore_index=True) if metrics else pd.DataFrame()
+
+def fetch_pitcher_metrics(lineups_df):
+    print("📊 Fetching pitcher metrics...")
+    return pd.DataFrame([
+        {
+            "game_id": row["game_id"],
+            "pitcher_name": row["opposing_pitcher"],
+            "hr_per_9": 1.2  # Placeholder stat
+        }
+        for _, row in lineups_df.iterrows()
+    ])
