@@ -25,6 +25,7 @@ def main():
     merged = pd.merge(batters, pitchers, on='game_id', how='inner')
     predictions = generate_hr_predictions(merged)
 
+
     # Apply weather boosts
     predictions = apply_weather_boosts(predictions)
 

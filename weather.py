@@ -1,9 +1,7 @@
-import pandas as pd
-import random
+import numpy as np
 
 def apply_weather_boosts(df):
-    print("🌤️ Applying weather boosts...")
-    df['weather_boost'] = [random.uniform(-1, 1) for _ in range(len(df))]
-    df['HR_Score'] += df['weather_boost']
-    df['HR_Score'] = df['HR_Score'].clip(0, 1)
+    print("🌤️ Applying weather and park effects...")
+    df['wind_boost'] = np.random.normal(0, 0.05, size=len(df))  # Simulated for now
+    df['park_factor'] = np.random.uniform(0.95, 1.10, size=len(df))  # Simulated for now
     return df
