@@ -1,38 +1,4 @@
-<<<<<<< HEAD
 __pycache__/
-*.py[cod]
-*.csv
 results/
-.DS_Store
-.env
-
-=======
-# Byte-compiled / optimized / DLL files
-__pycache__/
-*.py[cod]
-*$py.class
-
-# C extensions
-*.so
-
-# Virtual environments
-.venv/
-env/
-venv/
-
-# Jupyter Notebook checkpoints
-.ipynb_checkpoints
-
-# macOS
-.DS_Store
-
-# CSV output logs
-*.csv
-
-# Results and logs
-results/
-logs/
-
-# System files
-Thumbs.db
->>>>>>> 9de4c23 (🚀 Clean re-init: Telegram fix + auto-commit enabled)
+cache/
+model.pkl
