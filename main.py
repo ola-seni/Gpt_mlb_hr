@@ -5,6 +5,7 @@ from weather import apply_weather_boosts
 from telegram_alerts import send_telegram_alerts
 import pandas as pd
 from datetime import date
+import os
 
 def main():
     print("🛠️ Gpt_mlb_hr: Starting home run prediction...")
@@ -25,6 +26,9 @@ def main():
 
     # Apply weather boosts
     predictions = apply_weather_boosts(predictions)
+
+    # ✅ Ensure folder exists
+    os.makedirs("results", exist_ok=True)
 
     # Save CSV
     today = date.today().isoformat()
