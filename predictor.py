@@ -4,21 +4,19 @@ import numpy as np
 def generate_hr_predictions(df):
     print("🧠 Generating HR predictions...")
 
-    # Remove exact duplicate rows (optional)
     df = df.drop_duplicates(subset=['batter_name', 'pitcher_name'])
 
-    # Calculate HR_Score (placeholder logic)
-    df['HR_Score'] = 1.0  # Replace with actual logic
+    # Simulate a scoring formula based on some mock logic
+    # In production, you'd replace this with actual metrics
+    df['HR_Score'] = np.clip(np.random.normal(0.45, 0.2, len(df)), 0, 1)
 
-    # Add label
     def label(score):
-        if score > 0.6:
+        if score >= 0.7:
             return "Lock 🔒"
-        elif score > 0.3:
+        elif score >= 0.4:
             return "Sleeper 🌙"
         else:
             return "Risky ⚠️"
 
     df['Label'] = df['HR_Score'].apply(label)
     return df[['batter_name', 'pitcher_name', 'HR_Score', 'Label']]
-
