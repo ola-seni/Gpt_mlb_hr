@@ -1,0 +1,24 @@
+2025-05-02 13:21:33,376 - INFO - 🔍 Starting MLB API Tests
+2025-05-02 13:21:33,376 - INFO - Testing endpoint: Schedule (Basic)
+2025-05-02 13:21:33,658 - INFO - Result: ✅ Success - None
+2025-05-02 13:21:33,659 - INFO - Testing endpoint: Schedule (Hydrated)
+2025-05-02 13:21:33,774 - INFO - Result: ✅ Success - None
+2025-05-02 13:21:33,774 - INFO - Testing endpoint: Teams
+2025-05-02 13:21:33,847 - INFO - Result: ✅ Success - None
+2025-05-02 13:21:33,848 - INFO - Test results saved to test_results/api_test_20250502_132133.json
+2025-05-02 13:21:33,879 - INFO - Testing weather API for location: New York,US
+2025-05-02 13:21:34,071 - INFO - ✅ Weather API success: New York,US - Temp: 26.16°C
+2025-05-02 13:21:34,071 - INFO - Testing weather API for location: Los Angeles,US
+2025-05-02 13:21:34,142 - INFO - ✅ Weather API success: Los Angeles,US - Temp: 16.09°C
+2025-05-02 13:21:34,142 - INFO - Testing weather API for location: Chicago,US
+2025-05-02 13:21:34,209 - INFO - ✅ Weather API success: Chicago,US - Temp: 9.58°C
+2025-05-02 13:21:34,290 - INFO - Found 15 games scheduled for today
+2025-05-02 13:21:34,291 - INFO - Lineup analysis saved to test_results/lineup_analysis_20250502_132134.json
+2025-05-02 13:21:34,292 - INFO - 
+🔍 Test Summary:
+2025-05-02 13:21:34,292 - INFO - MLB API Endpoints: 3/3 succeeded
+2025-05-02 13:21:34,292 - INFO - Weather API: ✅ Success
+2025-05-02 13:21:34,292 - INFO - 
+📋 Recommendations:
+2025-05-02 13:21:34,292 - INFO - - Check test_results directory for detailed reports
+2025-05-02 13:21:34,293 - INFO - - Update lineup_parser.py to handle the lineup structures found in the analysis

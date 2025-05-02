@@ -21,6 +21,17 @@ import numpy as np
 
 load_dotenv()
 FORCE_TEST_MODE = "--test" in sys.argv
+# Maximum number of API retries
+MAX_RETRIES = 3
+
+def log_step(message):
+    """Log a step with timestamp for better workflow debugging"""
+    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    print(f"[{timestamp}] {message}")
+
+def is_test_mode():
+    """Check if we're running in test mode"""
+    return FORCE_TEST_MODE or os.getenv("TEST_MODE") == "1"
 
 def safe_execution(func, default_return=None, error_msg="Function failed"):
     """Safely execute a function with error handling."""
@@ -56,13 +67,26 @@ def enhance_batter_data(batters_df):
     return batters_df
 
 def main():
-    print("🛠️ Gpt_mlb_hr ENHANCED: Starting home run prediction...")
+    log_step("🛠️ Gpt_mlb_hr ENHANCED: Starting home run prediction...")
+    
+    # Print environment configuration
+    test_mode = is_test_mode()
+    log_step(f"🧪 Test mode: {'ENABLED' if test_mode else 'DISABLED'}")
+    log_step(f"📅 Current date: {date.today().isoformat()}")
+    
+    # Create required directories
+    os.makedirs("results", exist_ok=True)
+    os.makedirs("cache", exist_ok=True)
 
-    lineups = get_confirmed_lineups(force_test=FORCE_TEST_MODE)
+    lineups = get_confirmed_lineups(force_test=test_mode)
     if lineups.empty:
-        print("📋 Confirmed lineups not available — using projected lineups instead.")
-        lineups = get_projected_lineups()
-
+        log_step("📋 Confirmed lineups not available — using projected lineups instead.")
+        lineups = safe_execution(get_projected_lineups, pd.DataFrame(), "Failed to get projected lineups")
+    
+    if lineups.empty:
+        log_step("❌ No lineups available. Exiting.")
+        return
+        
     print("📋 Confirmed lineups sample:")
     print(lineups.head(3))
 
@@ -70,125 +94,191 @@ def main():
     batters = fetch_batter_metrics(lineups)
     pitchers = fetch_pitcher_metrics(lineups)
     if pitchers.empty or batters.empty:
-        print("⚠️ No valid player data found — skipping predictions.")
+        log_step("❌ No valid player data found — exiting.")
         return
 
-    merged = pd.merge(batters, pitchers, on="game_id", how="inner")
-
-    print("🧩 Sample merged matchups:")
-    if not merged.empty:
-        print("✅ Columns in merged:", merged.columns.tolist())
-        print(merged.head(3))
-    else:
-        print("⚠️ No matchups merged — check game_id alignment.")
+    try:
+        log_step("🔄 Merging batter and pitcher data...")
+        merged = pd.merge(batters, pitchers, on="game_id", how="inner")
+        
+        log_step("🧩 Sample merged matchups:")
+        if not merged.empty:
+            print("✅ Columns in merged:", merged.columns.tolist())
+            print(merged.head(3))
+        else:
+            log_step("❌ No matchups merged — check game_id alignment.")
+            return
+    except Exception as e:
+        log_step(f"❌ Error merging data: {str(e)}")
         return
 
     # Add enhanced batter metrics 
     merged = enhance_batter_data(merged)
 
+    log_step("🗃️ Loading cache data...")
     batter_cache_path = "cache/batter_pitch_iso.json"
     pitcher_cache_path = "cache/pitcher_pitch_mix.json"
     os.makedirs("cache", exist_ok=True)
     batter_cache = load_json_cache(batter_cache_path, max_age_days=30)
     pitcher_cache = load_json_cache(pitcher_cache_path, max_age_days=30)
 
-    print("⚙️ Enriching features...")
+    log_step("⚙️ Enriching features...")
     merged["pitch_matchup_score"] = 0.15
     merged["bullpen_boost"] = 0.0
     merged["pitcher_hr_suppression"] = 0.0
     merged["suppression_tag"] = False
 
-    for idx, row in merged.iterrows():
-        batter_id = str(row.get("batter_id"))
-        pitcher_id = str(row.get("pitcher_id"))
-        game_date = row.get("game_date_x", row.get("game_date"))
+    try:
+        for idx, row in merged.iterrows():
+            try:
+                batter_id = str(row.get("batter_id"))
+                pitcher_id = str(row.get("pitcher_id"))
+                game_date = row.get("game_date_x", row.get("game_date"))
 
-        if not all([batter_id, pitcher_id, game_date]):
-            continue
+                if not all([batter_id, pitcher_id, game_date]):
+                    log_step(f"⚠️ Missing required data for row {idx}")
+                    continue
 
-        start_date = end_date = game_date
+                start_date = end_date = game_date
 
-        if batter_id in batter_cache:
-            batter_iso = batter_cache[batter_id]["data"]
-        else:
-            batter_iso = get_batter_iso_vs_pitch_types(batter_id, start_date, end_date)
-            batter_cache[batter_id] = {"data": batter_iso, "timestamp": datetime.utcnow().isoformat()}
+                if batter_id in batter_cache:
+                    batter_iso = batter_cache[batter_id]["data"]
+                else:
+                    batter_iso = get_batter_iso_vs_pitch_types(batter_id, start_date, end_date)
+                    batter_cache[batter_id] = {"data": batter_iso, "timestamp": datetime.utcnow().isoformat()}
 
-        if pitcher_id in pitcher_cache:
-            pitch_mix = pitcher_cache[pitcher_id]["data"]
-        else:
-            pitch_mix = get_pitch_mix(pitcher_id, start_date, end_date)
-            pitcher_cache[pitcher_id] = {"data": pitch_mix, "timestamp": datetime.utcnow().isoformat()}
+                if pitcher_id in pitcher_cache:
+                    pitch_mix = pitcher_cache[pitcher_id]["data"]
+                else:
+                    pitch_mix = get_pitch_mix(pitcher_id, start_date, end_date)
+                    pitcher_cache[pitcher_id] = {"data": pitch_mix, "timestamp": datetime.utcnow().isoformat()}
 
-        pitch_score = calculate_pitch_matchup_score(pitch_mix, batter_iso)
-        merged.at[idx, "pitch_matchup_score"] = pitch_score
+                pitch_score = calculate_pitch_matchup_score(pitch_mix, batter_iso)
+                merged.at[idx, "pitch_matchup_score"] = pitch_score
 
-        pitcher_name = row.get("pitcher_name_x")
-        team_name = row.get("pitcher_team", "Unknown")
-        avg_ip = get_starter_avg_ip(pitcher_name)
-        bullpen_hr9 = get_bullpen_quality(team_name)
-        merged.at[idx, "bullpen_boost"] = adjust_for_bullpen(avg_ip, bullpen_hr9)
+                pitcher_name = row.get("pitcher_name_x", row.get("opposing_pitcher"))
+                team_name = row.get("pitcher_team", "Unknown")
+                avg_ip = get_starter_avg_ip(pitcher_name)
+                bullpen_hr9 = get_bullpen_quality(team_name)
+                merged.at[idx, "bullpen_boost"] = adjust_for_bullpen(avg_ip, bullpen_hr9)
 
-        suppression_score = calculate_pitcher_suppression_score(row)
-        merged.at[idx, "pitcher_hr_suppression"] = suppression_score
+                suppression_score = calculate_pitcher_suppression_score(row)
+                merged.at[idx, "pitcher_hr_suppression"] = suppression_score
+            except Exception as e:
+                log_step(f"⚠️ Error processing row {idx}: {str(e)}")
+                # Continue with next row instead of breaking completely
+                continue
 
-    save_json_cache(batter_cache, batter_cache_path)
-    save_json_cache(pitcher_cache, pitcher_cache_path)
+        log_step("💾 Saving cache data...")
+        save_json_cache(batter_cache, batter_cache_path)
+        save_json_cache(pitcher_cache, pitcher_cache_path)
 
-    cutoff = merged["pitcher_hr_suppression"].quantile(0.90)
-    merged["suppression_tag"] = merged["pitcher_hr_suppression"] >= cutoff
+        # Calculate suppression tag cutoff
+        if "pitcher_hr_suppression" in merged.columns and not merged.empty:
+            cutoff = merged["pitcher_hr_suppression"].quantile(0.90)
+            merged["suppression_tag"] = merged["pitcher_hr_suppression"] >= cutoff
+    except Exception as e:
+        log_step(f"❌ Error enriching features: {str(e)}")
+        # Continue with what we have
 
     filtered = merged.copy()
 
+    log_step("🔮 Generating predictions...")
     # Use enhanced prediction function instead of original
-    predictions = generate_enhanced_hr_predictions(filtered)
+    predictions = safe_execution(
+        lambda: generate_enhanced_hr_predictions(filtered),
+        pd.DataFrame(),
+        "Failed to generate predictions"
+    )
+    
     if predictions.empty:
-        print("⚠️ No predictions after filtering — skipping save, update, and alert.")
+        log_step("❌ No predictions generated — exiting.")
         return
 
     # Use enhanced weather function instead of original
-    predictions = apply_enhanced_weather_boosts(predictions)
-
-    # Enhanced scoring formula with more factors
-    predictions["matchup_score"] = (
-        predictions["HR_Score"] * 0.4 +
-        predictions.get("pitch_matchup_score", 0) * 0.2 +
-        predictions.get("park_factor", 0) * 0.15 +
-        predictions.get("wind_boost", 0) * 0.15 +
-        predictions.get("bullpen_boost", 0) * 0.1
+    log_step("🌤️ Applying weather boosts...")
+    predictions = safe_execution(
+        lambda: apply_enhanced_weather_boosts(predictions),
+        predictions,
+        "Failed to apply weather boosts"
     )
 
-    print("🔮 Prediction sample:")
-    print(predictions[["batter_name", "HR_Score", "matchup_score", "pitch_matchup_score", "bullpen_boost", "park_factor", "wind_boost"]].head(5))
+    try:
+        # Enhanced scoring formula with more factors
+        log_step("📊 Calculating final matchup scores...")
+        predictions["matchup_score"] = (
+            predictions["HR_Score"] * 0.4 +
+            predictions.get("pitch_matchup_score", 0) * 0.2 +
+            predictions.get("park_factor", 1.0) * 0.15 +
+            predictions.get("wind_boost", 0) * 0.15 +
+            predictions.get("bullpen_boost", 0) * 0.1
+        )
+
+        log_step("🔮 Prediction sample:")
+        print(predictions[["batter_name", "HR_Score", "matchup_score", "pitch_matchup_score", "bullpen_boost", "park_factor", "wind_boost"]].head(5))
+    except Exception as e:
+        log_step(f"⚠️ Error calculating matchup scores: {str(e)}")
+        # Continue with basic HR_Score if matchup_score calculation fails
+        predictions["matchup_score"] = predictions["HR_Score"]
 
     os.makedirs("results", exist_ok=True)
     today = date.today().isoformat()
     out_path = f"results/hr_predictions_{today}.csv"
-    predictions.to_csv(out_path, index=False)
-    print(f"✅ Saved predictions to {out_path}")
-
-    update_local_csv(out_path)
     
-    # ✅ Assign HR prediction tiers for Telegram alerts
-    def assign_tag(score):
-        if score >= 0.25:
-            return "Lock 🔒"
-        elif score >= 0.15:
-            return "Sleeper 🌙"
+    try:
+        predictions.to_csv(out_path, index=False)
+        log_step(f"✅ Saved predictions to {out_path}")
+    except Exception as e:
+        log_step(f"❌ Error saving predictions: {str(e)}")
+        
+    # Only update results in non-test mode
+    if not is_test_mode():
+        log_step("📊 Updating local CSV...")
+        safe_execution(
+            lambda: update_local_csv(out_path),
+            None,
+            "Failed to update local CSV"
+        )
+    else:
+        log_step("🧪 Skipping update_local_csv in test mode")
+    
+    try:
+        # ✅ Assign HR prediction tiers for Telegram alerts
+        log_step("🏷️ Assigning prediction tiers...")
+        def assign_tag(score):
+            if score >= 0.25:
+                return "Lock 🔒"
+            elif score >= 0.15:
+                return "Sleeper 🌙"
+            else:
+                return "Risky ⚠️"
+
+        # Use matchup_score instead of HR_Score for tagging
+        predictions["tag"] = predictions["matchup_score"].apply(assign_tag)
+        
+        # Only send alerts in non-test mode
+        if not is_test_mode():
+            log_step("📱 Sending Telegram alerts...")
+            safe_execution(
+                lambda: send_telegram_alerts(predictions),
+                None,
+                "Failed to send Telegram alerts"
+            )
         else:
-            return "Risky ⚠️"
-
-    # Use matchup_score instead of HR_Score for tagging
-    predictions["tag"] = predictions["matchup_score"].apply(assign_tag)
-
-    send_telegram_alerts(predictions)
+            log_step("🧪 Skipping Telegram alerts in test mode")
+            
+    except Exception as e:
+        log_step(f"❌ Error in final processing steps: {str(e)}")
+        
+    log_step("✅ Process completed successfully")
+    return predictions
 
 if __name__ == "__main__":
     try:
         main()
-        print("✅ Program completed successfully")
+        log_step("✅ Program completed successfully")
     except Exception as e:
-        print(f"❌ Program error: {e}")
+        log_step(f"❌ Program error: {e}")
         # Optional: send error notification
         if "BOT_TOKEN" in os.environ and "CHAT_ID" in os.environ:
             from telegram_alerts import send_telegram_alerts
@@ -198,4 +288,7 @@ if __name__ == "__main__":
                 "HR_Score": 0.0,
                 "tag": "Error"
             }])
-            send_telegram_alerts(error_df)
+            try:
+                send_telegram_alerts(error_df)
+            except Exception as alert_error:
+                log_step(f"❌ Failed to send error alert: {alert_error}")

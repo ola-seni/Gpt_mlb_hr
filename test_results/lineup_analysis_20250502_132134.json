@@ -1,0 +1,272 @@
+[
+  {
+    "game_pk": 778087,
+    "team": "Cincinnati Reds",
+    "side": "home",
+    "has_lineup": false,
+    "lineup_structure": "Unknown",
+    "player_structure": [],
+    "player_count": 0
+  },
+  {
+    "game_pk": 778087,
+    "team": "Washington Nationals",
+    "side": "away",
+    "has_lineup": false,
+    "lineup_structure": "Unknown",
+    "player_structure": [],
+    "player_count": 0
+  },
+  {
+    "game_pk": 778090,
+    "team": "Pittsburgh Pirates",
+    "side": "home",
+    "has_lineup": false,
+    "lineup_structure": "Unknown",
+    "player_structure": [],
+    "player_count": 0
+  },
+  {
+    "game_pk": 778090,
+    "team": "San Diego Padres",
+    "side": "away",
+    "has_lineup": false,
+    "lineup_structure": "Unknown",
+    "player_structure": [],
+    "player_count": 0
+  },
+  {
+    "game_pk": 778086,
+    "team": "Philadelphia Phillies",
+    "side": "home",
+    "has_lineup": false,
+    "lineup_structure": "Unknown",
+    "player_structure": [],
+    "player_count": 0
+  },
+  {
+    "game_pk": 778086,
+    "team": "Arizona Diamondbacks",
+    "side": "away",
+    "has_lineup": false,
+    "lineup_structure": "Unknown",
+    "player_structure": [],
+    "player_count": 0
+  },
+  {
+    "game_pk": 778093,
+    "team": "Baltimore Orioles",
+    "side": "home",
+    "has_lineup": false,
+    "lineup_structure": "Unknown",
+    "player_structure": [],
+    "player_count": 0
+  },
+  {
+    "game_pk": 778093,
+    "team": "Kansas City Royals",
+    "side": "away",
+    "has_lineup": false,
+    "lineup_structure": "Unknown",
+    "player_structure": [],
+    "player_count": 0
+  },
+  {
+    "game_pk": 778088,
+    "team": "New York Yankees",
+    "side": "home",
+    "has_lineup": false,
+    "lineup_structure": "Unknown",
+    "player_structure": [],
+    "player_count": 0
+  },
+  {
+    "game_pk": 778088,
+    "team": "Tampa Bay Rays",
+    "side": "away",
+    "has_lineup": false,
+    "lineup_structure": "Unknown",
+    "player_structure": [],
+    "player_count": 0
+  },
+  {
+    "game_pk": 778081,
+    "team": "Toronto Blue Jays",
+    "side": "home",
+    "has_lineup": false,
+    "lineup_structure": "Unknown",
+    "player_structure": [],
+    "player_count": 0
+  },
+  {
+    "game_pk": 778081,
+    "team": "Cleveland Guardians",
+    "side": "away",
+    "has_lineup": false,
+    "lineup_structure": "Unknown",
+    "player_structure": [],
+    "player_count": 0
+  },
+  {
+    "game_pk": 778089,
+    "team": "Boston Red Sox",
+    "side": "home",
+    "has_lineup": false,
+    "lineup_structure": "Unknown",
+    "player_structure": [],
+    "player_count": 0
+  },
+  {
+    "game_pk": 778089,
+    "team": "Minnesota Twins",
+    "side": "away",
+    "has_lineup": false,
+    "lineup_structure": "Unknown",
+    "player_structure": [],
+    "player_count": 0
+  },
+  {
+    "game_pk": 778091,
+    "team": "Miami Marlins",
+    "side": "home",
+    "has_lineup": false,
+    "lineup_structure": "Unknown",
+    "player_structure": [],
+    "player_count": 0
+  },
+  {
+    "game_pk": 778091,
+    "team": "Athletics",
+    "side": "away",
+    "has_lineup": false,
+    "lineup_structure": "Unknown",
+    "player_structure": [],
+    "player_count": 0
+  },
+  {
+    "game_pk": 778092,
+    "team": "Atlanta Braves",
+    "side": "home",
+    "has_lineup": false,
+    "lineup_structure": "Unknown",
+    "player_structure": [],
+    "player_count": 0
+  },
+  {
+    "game_pk": 778092,
+    "team": "Los Angeles Dodgers",
+    "side": "away",
+    "has_lineup": false,
+    "lineup_structure": "Unknown",
+    "player_structure": [],
+    "player_count": 0
+  },
+  {
+    "game_pk": 778079,
+    "team": "Chicago White Sox",
+    "side": "home",
+    "has_lineup": false,
+    "lineup_structure": "Unknown",
+    "player_structure": [],
+    "player_count": 0
+  },
+  {
+    "game_pk": 778079,
+    "team": "Houston Astros",
+    "side": "away",
+    "has_lineup": false,
+    "lineup_structure": "Unknown",
+    "player_structure": [],
+    "player_count": 0
+  },
+  {
+    "game_pk": 778083,
+    "team": "Texas Rangers",
+    "side": "home",
+    "has_lineup": false,
+    "lineup_structure": "Unknown",
+    "player_structure": [],
+    "player_count": 0
+  },
+  {
+    "game_pk": 778083,
+    "team": "Seattle Mariners",
+    "side": "away",
+    "has_lineup": false,
+    "lineup_structure": "Unknown",
+    "player_structure": [],
+    "player_count": 0
+  },
+  {
+    "game_pk": 778080,
+    "team": "Milwaukee Brewers",
+    "side": "home",
+    "has_lineup": false,
+    "lineup_structure": "Unknown",
+    "player_structure": [],
+    "player_count": 0
+  },
+  {
+    "game_pk": 778080,
+    "team": "Chicago Cubs",
+    "side": "away",
+    "has_lineup": false,
+    "lineup_structure": "Unknown",
+    "player_structure": [],
+    "player_count": 0
+  },
+  {
+    "game_pk": 778084,
+    "team": "St. Louis Cardinals",
+    "side": "home",
+    "has_lineup": false,
+    "lineup_structure": "Unknown",
+    "player_structure": [],
+    "player_count": 0
+  },
+  {
+    "game_pk": 778084,
+    "team": "New York Mets",
+    "side": "away",
+    "has_lineup": false,
+    "lineup_structure": "Unknown",
+    "player_structure": [],
+    "player_count": 0
+  },
+  {
+    "game_pk": 778085,
+    "team": "Los Angeles Angels",
+    "side": "home",
+    "has_lineup": false,
+    "lineup_structure": "Unknown",
+    "player_structure": [],
+    "player_count": 0
+  },
+  {
+    "game_pk": 778085,
+    "team": "Detroit Tigers",
+    "side": "away",
+    "has_lineup": false,
+    "lineup_structure": "Unknown",
+    "player_structure": [],
+    "player_count": 0
+  },
+  {
+    "game_pk": 778082,
+    "team": "San Francisco Giants",
+    "side": "home",
+    "has_lineup": false,
+    "lineup_structure": "Unknown",
+    "player_structure": [],
+    "player_count": 0
+  },
+  {
+    "game_pk": 778082,
+    "team": "Colorado Rockies",
+    "side": "away",
+    "has_lineup": false,
+    "lineup_structure": "Unknown",
+    "player_structure": [],
+    "player_count": 0
+  }
+]
