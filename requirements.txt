@@ -1,4 +1,7 @@
 pandas
-numpy
-pybaseball
 requests
+joblib
+pybaseball
+streamlit
+scikit-learn
+matplotlib

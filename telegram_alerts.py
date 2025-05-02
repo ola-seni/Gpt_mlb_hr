@@ -1,62 +1,86 @@
+
+from dotenv import load_dotenv
+from pathlib import Path
+import os
 import requests
+import re
 
-BOT_TOKEN = "8192445369:AAEpxI3r9imgkfVuV5Y4SDbEmjI9UtosdIs"
-CHAT_ID = 248150489  
+# ⬇️ Force load .env relative to script location
+dotenv_path = Path(__file__).resolve().parent / ".env"
+load_dotenv(dotenv_path)
 
-def send_to_telegram(message):
-    try:
-        url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
-        payload = {
-            "chat_id": CHAT_ID,
-            "text": message,
-            "parse_mode": "Markdown"
-        }
-        response = requests.post(url, json=payload)
-        if response.status_code != 200:
-            print(f"❌ Telegram send error: {response.text}")
-    except Exception as e:
-        print(f"❌ Telegram exception: {e}")
+BOT_TOKEN = os.getenv("BOT_TOKEN")
+CHAT_ID = os.getenv("CHAT_ID")
 
-def generate_alert_message(row):
-    tags = []
+if not BOT_TOKEN or not CHAT_ID:
+    print("❌ Missing BOT_TOKEN or CHAT_ID in your .env file. Please fix and reload with: source .env")
+    exit(1)
 
-    if row.get("HR_Score", 0) >= 0.40:
-        tags.append("🔥")
-    if row.get("wind_boost", 0) >= 1.5:
-        tags.append("💨")
-    if row.get("pitch_matchup_score", 0) >= 0.25:
-        tags.append("🎯")
-    if row.get("bullpen_boost", 0) >= 1.2:
-        tags.append("💣")
-    if row.get("suppression_tag", False):
-        tags.append("🧱")
+def escape_markdown(text):
+    """Escape Telegram MarkdownV2 special characters."""
+    escape_chars = r'\_*[]()~`>#+=|{}.!-'
+    return re.sub(f'([{re.escape(escape_chars)}])', r'\\\1', str(text))
 
-    tag_str = " ".join(tags)
-    name = row.get("batter_name", "Unknown")
-    pitcher = row.get("pitcher_name", "Unknown")
-    score = row.get("HR_Score", 0)
-
-    return f"{tag_str} *{name}* vs {pitcher} — `Score: {score:.2f}`"
-
-def send_telegram_alerts(df):
-    if df.empty:
+def send_telegram_alerts(predictions):
+    if predictions.empty or "HR_Score" not in predictions.columns:
         print("⚠️ No HR predictions to send.")
         return
 
-    # Buckets
-    locks = df[df["HR_Score"] >= 0.40]
-    sleepers = df[(df["HR_Score"] >= 0.25) & (df["HR_Score"] < 0.40)]
-    risky = df[df["HR_Score"] < 0.25]
+    def format_player(row):
+        name = escape_markdown(row.get("batter_name", "Unknown"))
+        pitcher = escape_markdown(row.get("opposing_pitcher", "Unknown"))
+        park = escape_markdown(row.get("ballpark", ""))
+        hr_score = f"`{row['HR_Score']:.3f}`"
+        matchup_score = f"`{row.get('pitch_matchup_score', 0):.3f}`"
+        wind_boost = f"`{row.get('wind_boost', 0):.2f}`"
+        park_boost = f"`{row.get('park_factor', 0):.2f}`"
+        note = row.get("tag", "")
 
-    sections = [
-        ("🔥 *Lock Picks*", locks),
-        ("💤 *Sleepers*", sleepers),
-        ("⚠️ *Risky Picks*", risky),
-    ]
+        message = (
+            f"*{name}* vs *{pitcher}*\n"
+            f"📍 Ballpark: {park} 🏟️\n"
+            f"🔥 HR Score: {hr_score}\n"
+            f"🎯 Pitch Matchup: {matchup_score}\n"
+            f"🌬️ Wind Boost: {wind_boost}\n"
+            f"🏞️ Park Factor: {park_boost}\n"
+        )
+        if note:
+            message += f"📝 _{escape_markdown(note)}_\n"
+        return message.strip()
 
-    for title, group in sections:
-        if group.empty:
+    groups = {
+        "Locks 🔒": predictions[predictions["tag"] == "Lock"],
+        "Sleepers 🌙": predictions[predictions["tag"] == "Sleeper"],
+        "Risky ⚠️": predictions[predictions["tag"] == "Risky"]
+    }
+
+    any_sent = False
+    for group_name, group_df in groups.items():
+        if group_df.empty:
             continue
-        messages = [generate_alert_message(row) for _, row in group.iterrows()]
-        full_message = f"{title}:\n" + "\n".join(messages)
-        send_to_telegram(full_message)
+        sorted_df = group_df.sort_values("HR_Score", ascending=False)
+        msg = f"*{escape_markdown(group_name)}*\n\n"
+        msg += "\n\n".join(format_player(row) for _, row in sorted_df.iterrows())
+        payload = {
+            "chat_id": CHAT_ID,
+            "text": msg,
+            "parse_mode": "MarkdownV2"
+        }
+        try:
+            res = requests.post(f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage", json=payload)
+            res.raise_for_status()
+            any_sent = True
+        except Exception as e:
+            print(f"❌ Telegram send error for {group_name}: {e}")
+
+    if not any_sent:
+        fallback_msg = "*No strong home run picks today.* Stay tuned for tomorrow's predictions. ⚾️"
+        payload = {
+            "chat_id": CHAT_ID,
+            "text": fallback_msg,
+            "parse_mode": "MarkdownV2"
+        }
+        try:
+            requests.post(f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage", json=payload)
+        except Exception as e:
+            print(f"❌ Telegram fallback error: {e}")
