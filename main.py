@@ -12,44 +12,22 @@ from pitcher_suppression import calculate_pitcher_suppression_score
 from cache_utils import load_json_cache, save_json_cache
 from utils import generate_game_id
 from dotenv import load_dotenv
-from projected_lineups import get_projected_lineups
-from get_projected_lineups import get_projected_lineups
-from get_projected_lineups import get_projected_lineups
-
-
-
-
 import pandas as pd
 from datetime import date, datetime
 import os
 import sys
+from projected_lineups import get_projected_lineups
 
 load_dotenv()
 FORCE_TEST_MODE = "--test" in sys.argv
 
-def get_projected_lineups():
-    print("📋 Using projected lineups (fallback mode)")
-    from datetime import date
-    return pd.DataFrame([
-        {
-            "batter_name": "Aaron Judge",
-            "batter_id": 592450,
-            "opposing_pitcher": "Clarke Schmidt",
-            "pitcher_id": 668676,
-            "pitcher_team": "NYY",
-            "game_date": date.today().isoformat(),
-            "game_id": "aaron_judge__vs__clarke_schmidt__" + date.today().isoformat()
-        },
-        {
-            "batter_name": "Juan Soto",
-            "batter_id": 665742,
-            "opposing_pitcher": "Max Scherzer",
-            "pitcher_id": 453286,
-            "pitcher_team": "TEX",
-            "game_date": date.today().isoformat(),
-            "game_id": "juan_soto__vs__max_scherzer__" + date.today().isoformat()
-        }
-    ])
+def safe_execution(func, default_return=None, error_msg="Function failed"):
+    """Safely execute a function with error handling."""
+    try:
+        return func()
+    except Exception as e:
+        print(f"❌ {error_msg}: {e}")
+        return default_return
 
 def main():
     print("🛠️ Gpt_mlb_hr: Starting home run prediction...")
@@ -173,4 +151,18 @@ def main():
     send_telegram_alerts(predictions)
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+        print("✅ Program completed successfully")
+    except Exception as e:
+        print(f"❌ Program error: {e}")
+        # Optional: send error notification
+        if "BOT_TOKEN" in os.environ and "CHAT_ID" in os.environ:
+            from telegram_alerts import send_telegram_alerts
+            error_df = pd.DataFrame([{
+                "batter_name": "ERROR",
+                "opposing_pitcher": f"Program error: {str(e)}",
+                "HR_Score": 0.0,
+                "tag": "Error"
+            }])
+            send_telegram_alerts(error_df)

@@ -8,10 +8,20 @@ model = joblib.load(model_path) if USE_MODEL else None
 def generate_hr_predictions(df):
     if df.empty:
         return df
+        
+    # Define features here, outside of any conditional blocks
+    features = ["ISO", "barrel_rate_50", "pitch_matchup_score", "bullpen_boost", "hr_per_9"]
 
     if USE_MODEL:
         print("🤖 Using ML model for HR predictions...")
-        features = ["ISO", "barrel_rate_50", "pitch_matchup_score", "bullpen_boost", "hr_per_9"]
+        # Make sure all required features exist
+        for feature in features:
+            if feature not in df.columns:
+                print(f"⚠️ Missing feature: {feature}, adding default value")
+                df[feature] = 0.0
+            else:
+                df[feature] = df[feature].fillna(0.0)
+                
         df["HR_Prob"] = model.predict_proba(df[features])[:, 1]
         df["HR_Score"] = df["HR_Prob"]
     else:

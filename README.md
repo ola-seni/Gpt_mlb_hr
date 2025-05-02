@@ -33,16 +33,20 @@ pip install -r requirements.txt
 
 ```
 Gpt_mlb_hr/
-├── main.py
-├── fetch_statcast_data.py
-├── predictor.py
-├── weather.py
-├── telegram_alerts.py
-├── lineup_parser.py
-├── requirements.txt
+├── main.py                  # Main execution script
+├── fetch_statcast_data.py   # Retrieves MLB player statistics
+├── predictor.py             # Core prediction algorithm
+├── weather.py               # Weather and park factor adjustments
+├── telegram_alerts.py       # Notification system
+├── lineup_parser.py         # Gets confirmed starting lineups
+├── bullpen_tracker.py       # Analyzes bullpen quality
+├── cache_utils.py           # Handles data caching
+├── config.py                # Central configuration settings
+├── dashboard.py             # Streamlit prediction performance tracker
+├── requirements.txt         # Project dependencies
 └── .github/
     └── workflows/
-        └── mlb_hr_predictor.yml
+        └── mlb_hr_predictor.yml  # CI/CD automation
 ```
 
 ---
@@ -67,13 +71,69 @@ Configure secrets in your GitHub repo:
 
 ## 📲 Telegram Alerts
 
-Get a clean summary of the top 10 home run picks for the day, delivered directly to your phone:
+Get a clean summary of the top home run picks for the day, delivered directly to your phone:
 
 ```
 🔥 Top HR Predictions Today:
 • Aaron Judge vs Clarke Schmidt: 0.74 | Lock 🔒
 • Juan Soto vs Max Scherzer: 0.65 | Sleeper 🌙
 ```
+
+---
+
+## 🛠️ Development and Contribution
+
+### Setup Development Environment
+
+1. Clone the repository
+```bash
+git clone https://github.com/YOUR_USERNAME/Gpt_mlb_hr.git
+cd Gpt_mlb_hr
+```
+
+2. Create and activate a virtual environment
+```bash
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+```
+
+3. Install dependencies
+```bash
+pip install -r requirements.txt
+```
+
+4. Create a `.env` file with your API keys
+```
+OPENWEATHER_API=your_api_key_here
+BOT_TOKEN=your_telegram_bot_token
+CHAT_ID=your_telegram_chat_id
+```
+
+### Running Tests
+
+Future test suite will be available with:
+```bash
+python -m unittest discover tests
+```
+
+### Project Workflow
+
+1. **Data Collection**: The system first checks for confirmed lineups from the MLB API
+2. **Feature Engineering**: Enriches the data with Statcast metrics and pitcher analysis
+3. **Weather Integration**: Fetches real-time weather data and calculates impact
+4. **Prediction**: Generates HR probabilities and classifies them into tiers
+5. **Notification**: Sends formatted alerts via Telegram
+6. **Tracking**: Logs results daily for ongoing performance analysis
+
+### Performance Dashboard
+
+After collecting prediction data for at least a week, launch the Streamlit dashboard:
+
+```bash
+streamlit run dashboard.py
+```
+
+This provides visual tracking of prediction accuracy over time.
 
 ---
 
@@ -85,8 +145,14 @@ You can also run it manually with:
 python main.py
 ```
 
+For testing without making API calls:
+
+```bash
+python main.py --test
+```
+
 ---
 
 ## 📬 Contact
 
-Built by [@YOUR_USERNAME](https://github.com/YOUR_USERNAME) using `pybaseball`, MLB Stats API, and GitHub Actions.
+Built by [@ollyray](https://github.com/Ola-seni) using `pybaseball`, MLB Stats API, and GitHub Actions.
