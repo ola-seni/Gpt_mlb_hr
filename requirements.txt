@@ -5,3 +5,5 @@ pybaseball
 streamlit
 scikit-learn
 matplotlib
+python-dotenv
+numpy
