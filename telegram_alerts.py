@@ -1,9 +1,9 @@
-
 from dotenv import load_dotenv
 from pathlib import Path
 import os
 import requests
 import re
+from datetime import datetime
 
 # ⬇️ Force load .env relative to script location
 dotenv_path = Path(__file__).resolve().parent / ".env"
@@ -14,73 +14,115 @@ CHAT_ID = os.getenv("CHAT_ID")
 
 if not BOT_TOKEN or not CHAT_ID:
     print("❌ Missing BOT_TOKEN or CHAT_ID in your .env file. Please fix and reload with: source .env")
-    exit(1)
 
 def escape_markdown(text):
-    """Escape Telegram MarkdownV2 special characters."""
-    escape_chars = r'\_*[]()~`>#+=|{}.!-'
-    return re.sub(f'([{re.escape(escape_chars)}])', r'\\\1', str(text))
+    """Escape Telegram MarkdownV2 special characters more thoroughly."""
+    if not text:
+        return ""
+    text = str(text)
+    # Escape these characters: _ * [ ] ( ) ~ ` > # + - = | { } . !
+    escape_chars = r'_*[]()~`>#+=|{}.!'
+    for char in escape_chars:
+        text = text.replace(char, f"\\{char}")
+    return text
+
+def format_date():
+    """Format today's date in a nice way."""
+    return datetime.now().strftime("%A, %B %d, %Y")
 
 def send_telegram_alerts(predictions):
     if predictions.empty or "HR_Score" not in predictions.columns:
         print("⚠️ No HR predictions to send.")
         return
 
-    def format_player(row):
-        name = escape_markdown(row.get("batter_name", "Unknown"))
-        pitcher = escape_markdown(row.get("opposing_pitcher", "Unknown"))
-        park = escape_markdown(row.get("ballpark", ""))
-        hr_score = f"`{row['HR_Score']:.3f}`"
-        matchup_score = f"`{row.get('pitch_matchup_score', 0):.3f}`"
-        wind_boost = f"`{row.get('wind_boost', 0):.2f}`"
-        park_boost = f"`{row.get('park_factor', 0):.2f}`"
-        note = row.get("tag", "")
+    # First send a simple formatted message with top picks
+    print("🔔 Sending top picks message...")
+    
+    # Get top 5 predictions sorted by HR_Score
+    top_predictions = predictions.sort_values("HR_Score", ascending=False).head(5)
+    
+    # Create a simple message with basic formatting
+    msg = f"MLB Home Run Predictions for {format_date()}:\n\n"
+    
+    for idx, (_, row) in enumerate(top_predictions.iterrows(), 1):
+        name = row.get("batter_name", "Unknown")
+        pitcher = row.get("opposing_pitcher", "Unknown Pitcher")
+        hr_score = row.get("HR_Score", 0)
+        ballpark = row.get("ballpark", "")
+        park_info = f" at {ballpark}" if ballpark else ""
+        
+        msg += f"{idx}. {name} vs {pitcher}{park_info}: {hr_score:.3f}\n"
+    
+    simple_payload = {
+        "chat_id": CHAT_ID,
+        "text": msg,
+        "parse_mode": "Markdown"  # Regular Markdown is safer
+    }
+    
+    try:
+        res = requests.post(f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage", json=simple_payload)
+        print(f"Top picks message response: {res.status_code}")
+        if res.status_code != 200:
+            print(f"Top picks message failed: {res.text}")
+        else:
+            print("✅ Top picks message sent successfully")
+    except Exception as e:
+        print(f"❌ Telegram top picks error: {e}")
 
-        message = (
-            f"*{name}* vs *{pitcher}*\n"
-            f"📍 Ballpark: {park} 🏟️\n"
-            f"🔥 HR Score: {hr_score}\n"
-            f"🎯 Pitch Matchup: {matchup_score}\n"
-            f"🌬️ Wind Boost: {wind_boost}\n"
-            f"🏞️ Park Factor: {park_boost}\n"
-        )
-        if note:
-            message += f"📝 _{escape_markdown(note)}_\n"
-        return message.strip()
-
+    # Now try to send detailed breakdown by categories
     groups = {
-        "Locks 🔒": predictions[predictions["tag"] == "Lock"],
-        "Sleepers 🌙": predictions[predictions["tag"] == "Sleeper"],
-        "Risky ⚠️": predictions[predictions["tag"] == "Risky"]
+        "Locks 🔒": predictions[predictions["tag"] == "Lock 🔒"],
+        "Sleepers 🌙": predictions[predictions["tag"] == "Sleeper 🌙"],
+        "Risky ⚠️": predictions[predictions["tag"] == "Risky ⚠️"]
     }
 
-    any_sent = False
+    # Process each category separately with safer formatting
     for group_name, group_df in groups.items():
         if group_df.empty:
+            print(f"⚠️ No predictions in {group_name} category")
             continue
+        
         sorted_df = group_df.sort_values("HR_Score", ascending=False)
-        msg = f"*{escape_markdown(group_name)}*\n\n"
-        msg += "\n\n".join(format_player(row) for _, row in sorted_df.iterrows())
-        payload = {
+        
+        # Limit to top 5 players per group
+        if len(sorted_df) > 5:
+            print(f"⚠️ Limiting {group_name} to top 5 of {len(sorted_df)} predictions")
+            sorted_df = sorted_df.head(5)
+        
+        # Create a detailed message for this category
+        category_msg = f"MLB HR Predictions: {group_name}\n\n"
+        
+        for _, row in sorted_df.iterrows():
+            name = row.get("batter_name", "Unknown")
+            pitcher = row.get("opposing_pitcher", "Unknown")
+            team = row.get("pitcher_team", "")
+            team_info = f" ({team})" if team else ""
+            
+            hr_score = row.get("HR_Score", 0)
+            park = row.get("ballpark", "")
+            park_factor = row.get("park_factor", 1.0)
+            wind_boost = row.get("wind_boost", 0)
+            
+            category_msg += (
+                f"• {name} vs {pitcher}{team_info}\n"
+                f"  HR Score: {hr_score:.3f} | Park: {park} ({park_factor:.2f})\n"
+                f"  Wind Effect: {wind_boost:.2f}\n\n"
+            )
+        
+        # Send with regular Markdown formatting
+        category_payload = {
             "chat_id": CHAT_ID,
-            "text": msg,
-            "parse_mode": "MarkdownV2"
+            "text": category_msg,
+            "parse_mode": "Markdown"  # Regular Markdown is safer
         }
+        
         try:
-            res = requests.post(f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage", json=payload)
-            res.raise_for_status()
-            any_sent = True
+            print(f"🔔 Sending {group_name} category...")
+            res = requests.post(f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage", json=category_payload)
+            print(f"{group_name} response: {res.status_code}")
+            if res.status_code != 200:
+                print(f"{group_name} message failed: {res.text}")
+            else:
+                print(f"✅ {group_name} message sent successfully")
         except Exception as e:
-            print(f"❌ Telegram send error for {group_name}: {e}")
-
-    if not any_sent:
-        fallback_msg = "*No strong home run picks today.* Stay tuned for tomorrow's predictions. ⚾️"
-        payload = {
-            "chat_id": CHAT_ID,
-            "text": fallback_msg,
-            "parse_mode": "MarkdownV2"
-        }
-        try:
-            requests.post(f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage", json=payload)
-        except Exception as e:
-            print(f"❌ Telegram fallback error: {e}")
+            print(f"❌ Telegram {group_name} error: {e}")

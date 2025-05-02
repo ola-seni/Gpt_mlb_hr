@@ -2,7 +2,7 @@
 
 import json
 import os
-from datetime import datetime, timedelta
+from datetime import datetime, timezone, timedelta
 
 def load_json_cache(filepath, max_age_days=30):
     if not os.path.exists(filepath):
@@ -17,13 +17,16 @@ def load_json_cache(filepath, max_age_days=30):
 
     # Filter out stale entries
     valid_cache = {}
-    now = datetime.utcnow()
+    now = datetime.now(timezone.utc)
     for key, entry in raw_cache.items():
         timestamp_str = entry.get("timestamp")
         if not timestamp_str:
             continue
         try:
             ts = datetime.fromisoformat(timestamp_str)
+            # Make ts timezone aware if it isn't already
+            if ts.tzinfo is None:
+                ts = ts.replace(tzinfo=timezone.utc)
             if now - ts <= timedelta(days=max_age_days):
                 valid_cache[key] = entry
         except Exception:
@@ -34,7 +37,8 @@ def load_json_cache(filepath, max_age_days=30):
 def save_json_cache(cache, filepath):
     try:
         # Attach updated timestamps before saving
-        now = datetime.utcnow().isoformat()
+        # Use datetime.now(UTC) instead of utcnow()
+        now = datetime.now(timezone.utc).isoformat()
         timed_cache = {
             key: {
                 "data": val["data"] if isinstance(val, dict) and "data" in val else val,

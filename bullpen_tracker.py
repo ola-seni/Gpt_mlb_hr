@@ -3,15 +3,27 @@
 from pybaseball import team_pitching
 import pandas as pd
 
-# Average innings pitched by starters (basic proxy)
+# In bullpen_tracker.py, modify get_starter_avg_ip:
 def get_starter_avg_ip(pitcher_name, year=2024):
     try:
         df = team_pitching(year)
+        if df.empty:
+            print(f"⚠️ No team pitching data found for {year}")
+            return 5.0  # default
+            
+        # Try different variations of the name
         row = df[df['Name'] == pitcher_name]
         if row.empty:
-            return 5.0  # default
-        gs = row.iloc[0]['GS']  # Games started
-        ip = row.iloc[0]['IP']
+            # Try just the last name
+            last_name = pitcher_name.split()[-1] if ' ' in pitcher_name else pitcher_name
+            row = df[df['Name'].str.contains(last_name, case=False, na=False)]
+            
+        if row.empty:
+            print(f"⚠️ Pitcher not found: {pitcher_name}")
+            return 5.0  # default fallback
+            
+        gs = row.iloc[0].get('GS', 0)  # Games started (use get with default)
+        ip = row.iloc[0].get('IP', 0)  # Innings pitched
         if gs == 0:
             return 5.0
         avg_ip = ip / gs
@@ -19,10 +31,13 @@ def get_starter_avg_ip(pitcher_name, year=2024):
     except Exception as e:
         print(f"⚠️ Starter IP error for {pitcher_name}: {e}")
         return 5.0
-
-# Team bullpen HR/9 (or create a quality score)
+        
+# Also modify get_bullpen_quality to handle UNKNOWN team:
 def get_bullpen_quality(team_name, year=2024):
+    if team_name is None or team_name.upper() == "UNKNOWN":
+        return 1.0  # Neutral value for unknown teams
     try:
+        # Rest of the function remains the same
         df = team_pitching(year)
         # Normalize team name variations
         team_name = team_name.upper() if isinstance(team_name, str) else ""
