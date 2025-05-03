@@ -20,8 +20,8 @@ jobs:
           python-version: '3.11'
 
       - name: Install Dependencies
-	run: |
-	  python -m pip install --upgrade pip
+        run: |
+          python -m pip install --upgrade pip
           pip install -r requirements.txt
           pip install python-dotenv  # Explicitly install python-dotenv
 
@@ -31,7 +31,24 @@ jobs:
           BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
           CHAT_ID: ${{ secrets.CHAT_ID }}
         run: |
+          # Initial prediction run - regular mode
           python main.py
+          
+          # For the morning run, also do real-time updates for a period
+          if [ $(date +%H) -eq 15 ]; then
+            # Run real-time updater for 2 hours with 15-minute intervals
+            python main.py --realtime --update-interval 15 --daemon &
+            UPDATER_PID=$!
+            
+            # Let it run for 2 hours
+            sleep 7200
+            
+            # Kill the updater process
+            kill $UPDATER_PID || true
+            
+            # Run one final update with in-game factors for early games
+            python main.py --in-game
+          fi
 
       - name: Commit Results to GitHub
         run: |

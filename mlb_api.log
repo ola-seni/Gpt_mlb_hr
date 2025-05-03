@@ -196,3 +196,191 @@
 2025-05-03 06:59:06,002 - INFO - 🧪 Test mode enabled: using fallback lineups
 2025-05-03 07:01:02,493 - INFO - 🧪 Test mode enabled: using fallback lineups
 2025-05-03 07:01:06,605 - INFO - 🧪 Test mode enabled: using fallback lineups
+2025-05-03 08:54:21,114 - INFO - 🧪 Test mode enabled: using fallback lineups
+2025-05-03 08:54:23,643 - INFO - Integrating enhanced metrics into prediction system
+2025-05-03 08:54:23,647 - INFO - Fetching enhanced metrics for batter 665742
+2025-05-03 08:54:23,670 - INFO - Fetching enhanced metrics for pitcher 453286
+2025-05-03 08:54:25,705 - WARNING - No data found for pitcher 453286
+2025-05-03 08:54:25,705 - WARNING - Using fallback data for pitcher 453286
+2025-05-03 08:54:25,706 - INFO - Updating prediction formula with enhanced metrics
+2025-05-03 08:54:25,712 - ERROR - Error integrating enhanced metrics: 'park_factor'
+2025-05-03 08:58:32,380 - INFO - 🧪 Test mode enabled: using fallback lineups
+2025-05-03 08:58:34,110 - INFO - Integrating enhanced metrics into prediction system
+2025-05-03 08:58:34,114 - INFO - Fetching enhanced metrics for batter 665742
+2025-05-03 08:58:34,167 - INFO - Fetching enhanced metrics for pitcher 453286
+2025-05-03 08:58:34,291 - WARNING - No data found for pitcher 453286
+2025-05-03 08:58:34,291 - WARNING - Using fallback data for pitcher 453286
+2025-05-03 08:58:34,292 - INFO - Updating prediction formula with enhanced metrics
+2025-05-03 08:58:34,298 - INFO - Successfully added enhanced HR score
+2025-05-03 09:38:56,672 - INFO - 🧪 Test mode enabled: using fallback lineups
+2025-05-03 09:38:58,659 - INFO - Integrating enhanced metrics into prediction system
+2025-05-03 09:38:58,662 - INFO - Fetching enhanced metrics for batter 665742
+2025-05-03 09:38:58,688 - INFO - Fetching enhanced metrics for pitcher 453286
+2025-05-03 09:38:58,832 - WARNING - No data found for pitcher 453286
+2025-05-03 09:38:58,832 - WARNING - Using fallback data for pitcher 453286
+2025-05-03 09:38:58,833 - INFO - Updating prediction formula with enhanced metrics
+2025-05-03 09:38:58,844 - INFO - Successfully added enhanced HR score
+2025-05-03 09:39:41,285 - INFO - 📋 Getting lineups from MLB Stats API...
+2025-05-03 09:39:41,287 - INFO - Fetching schedule from: https://statsapi.mlb.com/api/v1/schedule?sportId=1&date=2025-05-03&hydrate=lineups,probablePitcher,venue,team
+2025-05-03 09:39:42,143 - INFO - Processing game 778074
+2025-05-03 09:39:42,143 - INFO - Game: Tampa Bay Rays @ New York Yankees at Yankee Stadium
+2025-05-03 09:39:42,143 - INFO - No lineup found in schedule for home team, trying alternate endpoint
+2025-05-03 09:39:42,143 - INFO - Fetching lineup from alternate endpoint: https://statsapi.mlb.com/api/v1.1/game/778074/boxscore
+2025-05-03 09:39:42,483 - WARNING - Alternate endpoint returned status code 404
+2025-05-03 09:39:42,484 - WARNING - No lineup available for home team in game 778074
+2025-05-03 09:39:42,485 - INFO - No lineup found in schedule for away team, trying alternate endpoint
+2025-05-03 09:39:42,485 - INFO - Fetching lineup from alternate endpoint: https://statsapi.mlb.com/api/v1.1/game/778074/boxscore
+2025-05-03 09:39:42,624 - WARNING - Alternate endpoint returned status code 404
+2025-05-03 09:39:42,625 - WARNING - No lineup available for away team in game 778074
+2025-05-03 09:39:42,625 - INFO - Processing game 778066
+2025-05-03 09:39:42,626 - INFO - Game: Houston Astros @ Chicago White Sox at Rate Field
+2025-05-03 09:39:42,626 - INFO - No lineup found in schedule for home team, trying alternate endpoint
+2025-05-03 09:39:42,626 - INFO - Fetching lineup from alternate endpoint: https://statsapi.mlb.com/api/v1.1/game/778066/boxscore
+2025-05-03 09:39:42,840 - WARNING - Alternate endpoint returned status code 404
+2025-05-03 09:39:42,840 - WARNING - No lineup available for home team in game 778066
+2025-05-03 09:39:42,841 - INFO - No lineup found in schedule for away team, trying alternate endpoint
+2025-05-03 09:39:42,841 - INFO - Fetching lineup from alternate endpoint: https://statsapi.mlb.com/api/v1.1/game/778066/boxscore
+2025-05-03 09:39:42,969 - WARNING - Alternate endpoint returned status code 404
+2025-05-03 09:39:42,970 - WARNING - No lineup available for away team in game 778066
+2025-05-03 09:39:42,970 - INFO - Processing game 778068
+2025-05-03 09:39:42,971 - INFO - Game: New York Mets @ St. Louis Cardinals at Busch Stadium
+2025-05-03 09:39:42,971 - INFO - No lineup found in schedule for home team, trying alternate endpoint
+2025-05-03 09:39:42,971 - INFO - Fetching lineup from alternate endpoint: https://statsapi.mlb.com/api/v1.1/game/778068/boxscore
+2025-05-03 09:39:43,210 - WARNING - Alternate endpoint returned status code 404
+2025-05-03 09:39:43,210 - WARNING - No lineup available for home team in game 778068
+2025-05-03 09:39:43,211 - INFO - No lineup found in schedule for away team, trying alternate endpoint
+2025-05-03 09:39:43,211 - INFO - Fetching lineup from alternate endpoint: https://statsapi.mlb.com/api/v1.1/game/778068/boxscore
+2025-05-03 09:39:43,338 - WARNING - Alternate endpoint returned status code 404
+2025-05-03 09:39:43,339 - WARNING - No lineup available for away team in game 778068
+2025-05-03 09:39:43,339 - INFO - Processing game 778064
+2025-05-03 09:39:43,339 - INFO - Game: Cleveland Guardians @ Toronto Blue Jays at Rogers Centre
+2025-05-03 09:39:43,339 - INFO - No lineup found in schedule for home team, trying alternate endpoint
+2025-05-03 09:39:43,339 - INFO - Fetching lineup from alternate endpoint: https://statsapi.mlb.com/api/v1.1/game/778064/boxscore
+2025-05-03 09:39:43,587 - WARNING - Alternate endpoint returned status code 404
+2025-05-03 09:39:43,588 - WARNING - No lineup available for home team in game 778064
+2025-05-03 09:39:43,588 - INFO - No lineup found in schedule for away team, trying alternate endpoint
+2025-05-03 09:39:43,588 - INFO - Fetching lineup from alternate endpoint: https://statsapi.mlb.com/api/v1.1/game/778064/boxscore
+2025-05-03 09:39:43,715 - WARNING - Alternate endpoint returned status code 404
+2025-05-03 09:39:43,715 - WARNING - No lineup available for away team in game 778064
+2025-05-03 09:39:43,716 - INFO - Processing game 778065
+2025-05-03 09:39:43,716 - INFO - Game: San Diego Padres @ Pittsburgh Pirates at PNC Park
+2025-05-03 09:39:43,716 - INFO - No lineup found in schedule for home team, trying alternate endpoint
+2025-05-03 09:39:43,716 - INFO - Fetching lineup from alternate endpoint: https://statsapi.mlb.com/api/v1.1/game/778065/boxscore
+2025-05-03 09:39:43,933 - WARNING - Alternate endpoint returned status code 404
+2025-05-03 09:39:43,934 - WARNING - No lineup available for home team in game 778065
+2025-05-03 09:39:43,934 - INFO - No lineup found in schedule for away team, trying alternate endpoint
+2025-05-03 09:39:43,934 - INFO - Fetching lineup from alternate endpoint: https://statsapi.mlb.com/api/v1.1/game/778065/boxscore
+2025-05-03 09:39:44,060 - WARNING - Alternate endpoint returned status code 404
+2025-05-03 09:39:44,060 - WARNING - No lineup available for away team in game 778065
+2025-05-03 09:39:44,061 - INFO - Processing game 778069
+2025-05-03 09:39:44,061 - INFO - Game: Colorado Rockies @ San Francisco Giants at Oracle Park
+2025-05-03 09:39:44,061 - INFO - No lineup found in schedule for home team, trying alternate endpoint
+2025-05-03 09:39:44,061 - INFO - Fetching lineup from alternate endpoint: https://statsapi.mlb.com/api/v1.1/game/778069/boxscore
+2025-05-03 09:39:44,291 - WARNING - Alternate endpoint returned status code 404
+2025-05-03 09:39:44,292 - WARNING - No lineup available for home team in game 778069
+2025-05-03 09:39:44,292 - INFO - No lineup found in schedule for away team, trying alternate endpoint
+2025-05-03 09:39:44,293 - INFO - Fetching lineup from alternate endpoint: https://statsapi.mlb.com/api/v1.1/game/778069/boxscore
+2025-05-03 09:39:44,446 - WARNING - Alternate endpoint returned status code 404
+2025-05-03 09:39:44,447 - WARNING - No lineup available for away team in game 778069
+2025-05-03 09:39:44,447 - INFO - Processing game 778073
+2025-05-03 09:39:44,448 - INFO - Game: Minnesota Twins @ Boston Red Sox at Fenway Park
+2025-05-03 09:39:44,448 - INFO - No lineup found in schedule for home team, trying alternate endpoint
+2025-05-03 09:39:44,448 - INFO - Fetching lineup from alternate endpoint: https://statsapi.mlb.com/api/v1.1/game/778073/boxscore
+2025-05-03 09:39:44,681 - WARNING - Alternate endpoint returned status code 404
+2025-05-03 09:39:44,682 - WARNING - No lineup available for home team in game 778073
+2025-05-03 09:39:44,682 - INFO - No lineup found in schedule for away team, trying alternate endpoint
+2025-05-03 09:39:44,683 - INFO - Fetching lineup from alternate endpoint: https://statsapi.mlb.com/api/v1.1/game/778073/boxscore
+2025-05-03 09:39:44,804 - WARNING - Alternate endpoint returned status code 404
+2025-05-03 09:39:44,804 - WARNING - No lineup available for away team in game 778073
+2025-05-03 09:39:44,805 - INFO - Processing game 778075
+2025-05-03 09:39:44,805 - INFO - Game: Athletics @ Miami Marlins at loanDepot park
+2025-05-03 09:39:44,805 - INFO - No lineup found in schedule for home team, trying alternate endpoint
+2025-05-03 09:39:44,805 - INFO - Fetching lineup from alternate endpoint: https://statsapi.mlb.com/api/v1.1/game/778075/boxscore
+2025-05-03 09:39:45,011 - WARNING - Alternate endpoint returned status code 404
+2025-05-03 09:39:45,012 - WARNING - No lineup available for home team in game 778075
+2025-05-03 09:39:45,012 - INFO - No lineup found in schedule for away team, trying alternate endpoint
+2025-05-03 09:39:45,012 - INFO - Fetching lineup from alternate endpoint: https://statsapi.mlb.com/api/v1.1/game/778075/boxscore
+2025-05-03 09:39:45,151 - WARNING - Alternate endpoint returned status code 404
+2025-05-03 09:39:45,152 - WARNING - No lineup available for away team in game 778075
+2025-05-03 09:39:45,152 - INFO - Processing game 778078
+2025-05-03 09:39:45,153 - INFO - Game: Arizona Diamondbacks @ Philadelphia Phillies at Citizens Bank Park
+2025-05-03 09:39:45,153 - INFO - No lineup found in schedule for home team, trying alternate endpoint
+2025-05-03 09:39:45,153 - INFO - Fetching lineup from alternate endpoint: https://statsapi.mlb.com/api/v1.1/game/778078/boxscore
+2025-05-03 09:39:45,368 - WARNING - Alternate endpoint returned status code 404
+2025-05-03 09:39:45,369 - WARNING - No lineup available for home team in game 778078
+2025-05-03 09:39:45,369 - INFO - No lineup found in schedule for away team, trying alternate endpoint
+2025-05-03 09:39:45,369 - INFO - Fetching lineup from alternate endpoint: https://statsapi.mlb.com/api/v1.1/game/778078/boxscore
+2025-05-03 09:39:45,495 - WARNING - Alternate endpoint returned status code 404
+2025-05-03 09:39:45,496 - WARNING - No lineup available for away team in game 778078
+2025-05-03 09:39:45,496 - INFO - Processing game 778077
+2025-05-03 09:39:45,496 - INFO - Game: Washington Nationals @ Cincinnati Reds at Great American Ball Park
+2025-05-03 09:39:45,496 - INFO - No lineup found in schedule for home team, trying alternate endpoint
+2025-05-03 09:39:45,496 - INFO - Fetching lineup from alternate endpoint: https://statsapi.mlb.com/api/v1.1/game/778077/boxscore
+2025-05-03 09:39:45,703 - WARNING - Alternate endpoint returned status code 404
+2025-05-03 09:39:45,703 - WARNING - No lineup available for home team in game 778077
+2025-05-03 09:39:45,704 - INFO - No lineup found in schedule for away team, trying alternate endpoint
+2025-05-03 09:39:45,704 - INFO - Fetching lineup from alternate endpoint: https://statsapi.mlb.com/api/v1.1/game/778077/boxscore
+2025-05-03 09:39:45,829 - WARNING - Alternate endpoint returned status code 404
+2025-05-03 09:39:45,830 - WARNING - No lineup available for away team in game 778077
+2025-05-03 09:39:45,830 - INFO - Processing game 778070
+2025-05-03 09:39:45,830 - INFO - Game: Seattle Mariners @ Texas Rangers at Globe Life Field
+2025-05-03 09:39:45,830 - INFO - No lineup found in schedule for home team, trying alternate endpoint
+2025-05-03 09:39:45,831 - INFO - Fetching lineup from alternate endpoint: https://statsapi.mlb.com/api/v1.1/game/778070/boxscore
+2025-05-03 09:39:46,065 - WARNING - Alternate endpoint returned status code 404
+2025-05-03 09:39:46,066 - WARNING - No lineup available for home team in game 778070
+2025-05-03 09:39:46,066 - INFO - No lineup found in schedule for away team, trying alternate endpoint
+2025-05-03 09:39:46,067 - INFO - Fetching lineup from alternate endpoint: https://statsapi.mlb.com/api/v1.1/game/778070/boxscore
+2025-05-03 09:39:46,230 - WARNING - Alternate endpoint returned status code 404
+2025-05-03 09:39:46,231 - WARNING - No lineup available for away team in game 778070
+2025-05-03 09:39:46,231 - INFO - Processing game 778071
+2025-05-03 09:39:46,231 - INFO - Game: Chicago Cubs @ Milwaukee Brewers at American Family Field
+2025-05-03 09:39:46,231 - INFO - No lineup found in schedule for home team, trying alternate endpoint
+2025-05-03 09:39:46,232 - INFO - Fetching lineup from alternate endpoint: https://statsapi.mlb.com/api/v1.1/game/778071/boxscore
+2025-05-03 09:39:46,447 - WARNING - Alternate endpoint returned status code 404
+2025-05-03 09:39:46,448 - WARNING - No lineup available for home team in game 778071
+2025-05-03 09:39:46,448 - INFO - No lineup found in schedule for away team, trying alternate endpoint
+2025-05-03 09:39:46,449 - INFO - Fetching lineup from alternate endpoint: https://statsapi.mlb.com/api/v1.1/game/778071/boxscore
+2025-05-03 09:39:46,584 - WARNING - Alternate endpoint returned status code 404
+2025-05-03 09:39:46,584 - WARNING - No lineup available for away team in game 778071
+2025-05-03 09:39:46,584 - INFO - Processing game 778072
+2025-05-03 09:39:46,585 - INFO - Game: Kansas City Royals @ Baltimore Orioles at Oriole Park at Camden Yards
+2025-05-03 09:39:46,585 - INFO - No lineup found in schedule for home team, trying alternate endpoint
+2025-05-03 09:39:46,585 - INFO - Fetching lineup from alternate endpoint: https://statsapi.mlb.com/api/v1.1/game/778072/boxscore
+2025-05-03 09:39:46,844 - WARNING - Alternate endpoint returned status code 404
+2025-05-03 09:39:46,845 - WARNING - No lineup available for home team in game 778072
+2025-05-03 09:39:46,845 - INFO - No lineup found in schedule for away team, trying alternate endpoint
+2025-05-03 09:39:46,845 - INFO - Fetching lineup from alternate endpoint: https://statsapi.mlb.com/api/v1.1/game/778072/boxscore
+2025-05-03 09:39:46,975 - WARNING - Alternate endpoint returned status code 404
+2025-05-03 09:39:46,975 - WARNING - No lineup available for away team in game 778072
+2025-05-03 09:39:46,976 - INFO - Processing game 778076
+2025-05-03 09:39:46,976 - INFO - Game: Los Angeles Dodgers @ Atlanta Braves at Truist Park
+2025-05-03 09:39:46,976 - INFO - No lineup found in schedule for home team, trying alternate endpoint
+2025-05-03 09:39:46,976 - INFO - Fetching lineup from alternate endpoint: https://statsapi.mlb.com/api/v1.1/game/778076/boxscore
+2025-05-03 09:39:47,217 - WARNING - Alternate endpoint returned status code 404
+2025-05-03 09:39:47,218 - WARNING - No lineup available for home team in game 778076
+2025-05-03 09:39:47,218 - INFO - No lineup found in schedule for away team, trying alternate endpoint
+2025-05-03 09:39:47,218 - INFO - Fetching lineup from alternate endpoint: https://statsapi.mlb.com/api/v1.1/game/778076/boxscore
+2025-05-03 09:39:47,360 - WARNING - Alternate endpoint returned status code 404
+2025-05-03 09:39:47,361 - WARNING - No lineup available for away team in game 778076
+2025-05-03 09:39:47,361 - INFO - Processing game 778067
+2025-05-03 09:39:47,361 - INFO - Game: Detroit Tigers @ Los Angeles Angels at Angel Stadium
+2025-05-03 09:39:47,361 - INFO - No lineup found in schedule for home team, trying alternate endpoint
+2025-05-03 09:39:47,361 - INFO - Fetching lineup from alternate endpoint: https://statsapi.mlb.com/api/v1.1/game/778067/boxscore
+2025-05-03 09:39:47,626 - WARNING - Alternate endpoint returned status code 404
+2025-05-03 09:39:47,630 - WARNING - No lineup available for home team in game 778067
+2025-05-03 09:39:47,630 - INFO - No lineup found in schedule for away team, trying alternate endpoint
+2025-05-03 09:39:47,630 - INFO - Fetching lineup from alternate endpoint: https://statsapi.mlb.com/api/v1.1/game/778067/boxscore
+2025-05-03 09:39:47,757 - WARNING - Alternate endpoint returned status code 404
+2025-05-03 09:39:47,758 - WARNING - No lineup available for away team in game 778067
+2025-05-03 09:39:47,759 - WARNING - ⚠️ No confirmed lineups found via MLB API
+2025-05-03 09:40:22,660 - INFO - Integrating enhanced metrics into prediction system
+2025-05-03 09:40:22,672 - INFO - Fetching enhanced metrics for batter 592450
+2025-05-03 09:40:22,747 - INFO - Fetching enhanced metrics for pitcher 669203
+2025-05-03 09:40:22,771 - INFO - Fetching enhanced metrics for batter 624413
+2025-05-03 09:40:24,342 - INFO - Fetching enhanced metrics for pitcher 571945
+2025-05-03 09:40:29,526 - INFO - Fetching enhanced metrics for batter 665742
+2025-05-03 09:40:29,564 - INFO - Fetching enhanced metrics for pitcher 641154
+2025-05-03 09:40:31,120 - INFO - Fetching enhanced metrics for batter 621566
+2025-05-03 09:40:33,061 - INFO - Fetching enhanced metrics for pitcher 657277
+2025-05-03 09:40:38,017 - INFO - Updating prediction formula with enhanced metrics
+2025-05-03 09:40:38,046 - INFO - Successfully added enhanced HR score

@@ -20,11 +20,50 @@ import os
 import sys
 from projected_lineups import get_projected_lineups
 import numpy as np 
+import time
+import argparse
 
 load_dotenv()
 FORCE_TEST_MODE = "--test" in sys.argv
 # Maximum number of API retries
 MAX_RETRIES = 3
+
+def parse_args():
+    """Parse command line arguments"""
+    parser = argparse.ArgumentParser(description="Enhanced MLB HR Prediction System")
+    
+    # Prediction modes
+    parser.add_argument("--test", action="store_true", help="Run in test mode")
+    parser.add_argument("--in-game", action="store_true", help="Use in-game prediction mode")
+    parser.add_argument("--realtime", action="store_true", help="Enable real-time updates")
+    
+    # Real-time update settings
+    parser.add_argument("--update-interval", type=int, default=15, help="Minutes between updates")
+    parser.add_argument("--daemon", action="store_true", help="Run as daemon process")
+    
+    # Outcome types
+    parser.add_argument("--hr", action="store_true", help="Predict home runs")
+    parser.add_argument("--doubles", action="store_true", help="Predict doubles")
+    parser.add_argument("--triples", action="store_true", help="Predict triples")
+    parser.add_argument("--rbis", action="store_true", help="Predict RBIs")
+    parser.add_argument("--hits", action="store_true", help="Predict hits")
+    parser.add_argument("--runs", action="store_true", help="Predict runs")
+    parser.add_argument("--all-outcomes", action="store_true", help="Predict all outcome types")
+    
+    # Enhancement options
+    parser.add_argument("--advanced-matchups", action="store_true", help="Use advanced matchup analysis")
+    parser.add_argument("--holistic", action="store_true", help="Generate holistic player analysis")
+    parser.add_argument("--all-enhancements", action="store_true", help="Enable all enhancements")
+    
+    # Output options
+    parser.add_argument("--output", type=str, help="Output file path")
+    parser.add_argument("--format", choices=["csv", "json"], default="csv", help="Output format")
+    
+    # Parse args
+    if "--test" in sys.argv:
+        return parser.parse_args(["--test"])  # Keep backward compatibility
+    
+    return parser.parse_args()
 
 def log_step(message):
     """Log a step with timestamp for better workflow debugging"""
@@ -109,10 +148,43 @@ def calculate_enhanced_matchup_score(row):
 def main():
     log_step("🛠️ Gpt_mlb_hr ENHANCED: Starting home run prediction...")
     
+    # Parse command line arguments
+    args = parse_args()
+    
+    # Update modes
+    prediction_mode = "standard"
+    if args.in_game:
+        prediction_mode = "in_game"
+    if args.realtime:
+        prediction_mode = "realtime"
+    
+    # Outcome types
+    outcome_types = []
+    if args.all_outcomes:
+        outcome_types = ["hr", "double", "triple", "rbi", "hit", "run"]
+    elif args.hr:
+        outcome_types.append("hr")
+    if args.doubles:
+        outcome_types.append("double")
+    if args.triples:
+        outcome_types.append("triple")
+    if args.rbis:
+        outcome_types.append("rbi")
+    if args.hits:
+        outcome_types.append("hit")
+    if args.runs:
+        outcome_types.append("run")
+    
+    # If no outcome types specified, default to HR
+    if not outcome_types:
+        outcome_types = ["hr"]
+    
     # Print environment configuration
     test_mode = is_test_mode()
     log_step(f"🧪 Test mode: {'ENABLED' if test_mode else 'DISABLED'}")
     log_step(f"📅 Current date: {date.today().isoformat()}")
+    log_step(f"🔮 Prediction mode: {prediction_mode}")
+    log_step(f"🎯 Outcome types: {', '.join(outcome_types)}")
     
     # Create required directories
     os.makedirs("results", exist_ok=True)
@@ -283,15 +355,7 @@ def main():
         
         # MODIFIED: Use enhanced matchup score calculation when available
         predictions["matchup_score"] = predictions.apply(
-            lambda row: calculate_enhanced_matchup_score(row)
-            if any(pd.notna(row.get(col)) for col in ['avg_exit_velo', 'xSLG', 'platoon_advantage', 'hard_hit_pct_allowed'])
-            else (
-                row["HR_Score"] * 0.4 +
-                row.get("pitch_matchup_score", 0) * 0.2 +
-                row.get("park_factor", 1.0) * 0.15 +
-                row.get("wind_boost", 0) * 0.15 +
-                row.get("bullpen_boost", 0) * 0.1
-            ),
+            calculate_enhanced_matchup_score,
             axis=1
         )
 
@@ -306,9 +370,18 @@ def main():
     today = date.today().isoformat()
     out_path = f"results/hr_predictions_{today}.csv"
     
+    # Use custom output path if provided
+    if args.output:
+        out_path = args.output
+    
     try:
-        predictions.to_csv(out_path, index=False)
-        log_step(f"✅ Saved predictions to {out_path}")
+        # Save in specified format
+        if args.format == "json":
+            predictions.to_json(out_path.replace(".csv", ".json"), orient="records")
+            log_step(f"✅ Saved predictions to {out_path.replace('.csv', '.json')}")
+        else:
+            predictions.to_csv(out_path, index=False)
+            log_step(f"✅ Saved predictions to {out_path}")
     except Exception as e:
         log_step(f"❌ Error saving predictions: {str(e)}")
         
