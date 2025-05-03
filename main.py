@@ -1,3 +1,4 @@
+# main.py
 from fetch_statcast_data import fetch_batter_metrics, fetch_pitcher_metrics
 from predictor import generate_enhanced_hr_predictions  # Use enhanced prediction function
 from lineup_parser import get_confirmed_lineups
@@ -12,6 +13,7 @@ from pitcher_suppression import calculate_pitcher_suppression_score
 from cache_utils import load_json_cache, save_json_cache
 from utils import generate_game_id
 from dotenv import load_dotenv
+from integrate_enhanced_metrics import integrate_enhanced_metrics  # New import
 import pandas as pd
 from datetime import date, datetime
 import os
@@ -66,6 +68,44 @@ def enhance_batter_data(batters_df):
     
     return batters_df
 
+def calculate_enhanced_matchup_score(row):
+    """
+    Calculate an enhanced matchup score incorporating all available metrics.
+    """
+    # Base components (same as original)
+    base_score = (
+        row["HR_Score"] * 0.35 +
+        row.get("pitch_matchup_score", 0) * 0.15 +
+        row.get("park_factor", 1.0) * 0.15 +
+        row.get("wind_boost", 0) * 0.15 +
+        row.get("bullpen_boost", 0) * 0.1
+    )
+    
+    # Advanced components if available
+    advanced_score = 0.0
+    
+    # Exit velocity contribution
+    if pd.notna(row.get("avg_exit_velo")):
+        advanced_score += max(0, (row["avg_exit_velo"] - 85) / 100) * 0.02
+    
+    # xSLG contribution
+    if pd.notna(row.get("xSLG")):
+        advanced_score += row["xSLG"] * 0.03
+    
+    # Recent HR contribution
+    if pd.notna(row.get("hrs_last_10_games")):
+        advanced_score += min(row["hrs_last_10_games"] * 0.01, 0.03)
+    
+    # Platoon advantage
+    if pd.notna(row.get("platoon_advantage")):
+        advanced_score += (row["platoon_advantage"] - 0.5) * 0.05
+    
+    # Hard Hit % allowed by pitcher
+    if pd.notna(row.get("hard_hit_pct_allowed")):
+        advanced_score += row["hard_hit_pct_allowed"] * 0.02
+    
+    return base_score + advanced_score
+
 def main():
     log_step("🛠️ Gpt_mlb_hr ENHANCED: Starting home run prediction...")
     
@@ -96,8 +136,6 @@ def main():
     if pitchers.empty or batters.empty:
         log_step("❌ No valid player data found — exiting.")
         return
-
-    # Add this code to replace your existing data merging section in main.py
 
     try:
         log_step("🔄 Merging batter and pitcher data...")
@@ -211,6 +249,26 @@ def main():
         log_step("❌ No predictions generated — exiting.")
         return
 
+    # NEW SECTION: Add enhanced metrics integration
+    log_step("🔍 Enhancing predictions with additional metrics...")
+    enhanced_predictions = safe_execution(
+        lambda: integrate_enhanced_metrics(predictions),
+        predictions,
+        "Failed to integrate enhanced metrics"
+    )
+    
+    # If successful enhancement, use the enhanced score
+    if 'enhanced_HR_Score' in enhanced_predictions.columns:
+        enhanced_predictions['original_HR_Score'] = enhanced_predictions['HR_Score']
+        enhanced_predictions['HR_Score'] = enhanced_predictions['enhanced_HR_Score']
+        log_step("✅ Successfully applied enhanced metrics")
+        
+        # Use enhanced predictions going forward
+        predictions = enhanced_predictions
+    else:
+        log_step("⚠️ Enhanced metrics not available, using original predictions")
+    # END NEW SECTION
+
     # Use enhanced weather function instead of original
     log_step("🌤️ Applying weather boosts...")
     predictions = safe_execution(
@@ -222,12 +280,19 @@ def main():
     try:
         # Enhanced scoring formula with more factors
         log_step("📊 Calculating final matchup scores...")
-        predictions["matchup_score"] = (
-            predictions["HR_Score"] * 0.4 +
-            predictions.get("pitch_matchup_score", 0) * 0.2 +
-            predictions.get("park_factor", 1.0) * 0.15 +
-            predictions.get("wind_boost", 0) * 0.15 +
-            predictions.get("bullpen_boost", 0) * 0.1
+        
+        # MODIFIED: Use enhanced matchup score calculation when available
+        predictions["matchup_score"] = predictions.apply(
+            lambda row: calculate_enhanced_matchup_score(row)
+            if any(pd.notna(row.get(col)) for col in ['avg_exit_velo', 'xSLG', 'platoon_advantage', 'hard_hit_pct_allowed'])
+            else (
+                row["HR_Score"] * 0.4 +
+                row.get("pitch_matchup_score", 0) * 0.2 +
+                row.get("park_factor", 1.0) * 0.15 +
+                row.get("wind_boost", 0) * 0.15 +
+                row.get("bullpen_boost", 0) * 0.1
+            ),
+            axis=1
         )
 
         log_step("🔮 Prediction sample:")
