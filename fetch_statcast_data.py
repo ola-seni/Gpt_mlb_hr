@@ -42,18 +42,77 @@ def fetch_batter_metrics(lineups_df):
             metrics.append({
                 "batter_name": row["batter_name"],
                 "batter_id": batter_id,
-                "pitcher_name": row["opposing_pitcher"],
+                "opposing_pitcher": row["opposing_pitcher"],
                 "game_date": row["game_date"],
                 "game_id": row["game_id"],
                 "ISO": round(iso, 3),
                 "barrel_rate_50": round(barrels, 3),
+                # Preserve ballpark and home team info
+                "ballpark": row.get("ballpark", "Unknown Ballpark"),
+                "home_team": row.get("home_team", "Unknown"),
             })
             seen_ids.add(batter_id)
 
         except Exception as e:
             print(f"❌ Error fetching data for {row['batter_name']}: {e}")
     return pd.DataFrame(metrics)
-
+       
+def apply_enhanced_weather_boosts(df):
+    print("🌤️ Applying enhanced weather and park effects...")
+    ballpark_locations = get_ballpark_locations()
+    ballpark_names = get_ballpark_names()
+    
+    # Add columns for weather data
+    df['wind_boost'] = 0.0
+    df['park_factor'] = 1.0
+    df['temperature'] = 20.0  # Default temperature in Celsius
+    df['wind_speed'] = 0.0
+    df['wind_direction'] = None
+    
+    # Apply team-specific park factors
+    for idx, row in df.iterrows():
+        # Get home team for ballpark data
+        home_team = row.get('home_team')
+        
+        # Get ballpark info if available
+        if not home_team or home_team == "Unknown":
+            # Try to infer from ballpark name
+            ballpark = row.get('ballpark', "Unknown Ballpark")
+            home_team = next((team for team, name in ballpark_names.items() 
+                             if name.lower() == ballpark.lower()), None)
+        
+        # Apply park factor if we have team info
+        if home_team and home_team != "Unknown":
+            # Ensure it's uppercase to match our dictionaries
+            home_team = home_team.upper()
+            
+            # Set ballpark name if not already set
+            if 'ballpark' not in df.columns or pd.isna(row.get('ballpark')) or row.get('ballpark') == "Unknown Ballpark":
+                df.at[idx, 'ballpark'] = ballpark_names.get(home_team, f"{home_team} Ballpark")
+            
+            # Apply park factor
+            weather_conditions = {
+                'batter_stands': row.get('batter_stands', 'R'),
+                'temperature': 20,
+                'wind_direction': None,
+                'wind_speed': 0
+            }
+            
+            # Get location for weather
+            location = ballpark_locations.get(home_team)
+            if location and OPENWEATHER_API:
+                # Weather API call - existing code
+                pass  # Keep your existing weather API call code here
+            
+            # Apply park factor (use enhanced version)
+            df.at[idx, 'park_factor'] = get_enhanced_park_factor(home_team, weather_conditions)
+            print(f"⚾ Applied park factor {df.at[idx, 'park_factor']} for {df.at[idx, 'ballpark']}")
+        else:
+            print(f"⚠️ Unknown home team or ballpark for {row.get('batter_name')} vs {row.get('opposing_pitcher')}")
+            # Set default reasonable values
+            df.at[idx, 'park_factor'] = 1.0
+    
+    return df
 
 def fetch_pitcher_metrics(lineups_df):
     print("📊 Fetching pitcher metrics...")

@@ -97,10 +97,26 @@ def main():
         log_step("❌ No valid player data found — exiting.")
         return
 
+    # Add this code to replace your existing data merging section in main.py
+
     try:
         log_step("🔄 Merging batter and pitcher data...")
+        # Rename columns before merging to avoid conflicts
+        if "pitcher_name" in pitchers.columns:
+            pitchers.rename(columns={"pitcher_name": "pitcher_name_db"}, inplace=True)
+    
         merged = pd.merge(batters, pitchers, on="game_id", how="inner")
-        
+    
+        # Ensure opposing_pitcher is preserved
+        if "opposing_pitcher" in batters.columns and "opposing_pitcher" not in merged.columns:
+            merged["opposing_pitcher"] = batters["opposing_pitcher"]
+    
+        # Make sure we have pitcher name info for display
+        merged["pitcher_display_name"] = merged.apply(
+            lambda row: row.get("pitcher_name_db", row.get("opposing_pitcher", "Unknown")),
+            axis=1
+        )
+    
         log_step("🧩 Sample merged matchups:")
         if not merged.empty:
             print("✅ Columns in merged:", merged.columns.tolist())

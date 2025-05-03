@@ -2,73 +2,55 @@ import requests
 import pandas as pd
 from datetime import date
 
-def get_projected_lineups():
-    print("📋 Getting projected lineups from MLB Stats API...")
-    today = date.today().isoformat()
-    projected = []
+# Modified section for lineup_parser.py
 
-    # NL ballpark check (DH not always used)
-    nl_parks = {
-        "CHC", "CIN", "COL", "LAD", "MIA", "MIL",
-        "NYM", "PHI", "PIT", "SD", "SF", "STL", "WSH"
-    }
+def get_confirmed_lineups(force_test=False):
+    if force_test:
+        print("🧪 Test mode enabled: using fallback lineups")
+        today = date.today().isoformat()
+        return pd.DataFrame([
+            {
+                "batter_name": "Aaron Judge",
+                "batter_id": 592450,
+                "opposing_pitcher": "Clarke Schmidt",  # Make sure these are filled
+                "pitcher_id": 688676,
+                "pitcher_team": "NYY",
+                "game_date": today,
+                "game_id": generate_game_id("Aaron Judge", "Clarke Schmidt", today),
+                "ballpark": "Yankee Stadium",  # Ensure ballpark is provided
+                "home_team": "NYY"
+            },
+            # Other test data
+        ])
 
-    schedule_url = (
-        f"https://statsapi.mlb.com/api/v1/schedule?"
-        f"sportId=1&hydrate=probablePitcher,team&startDate={today}&endDate={today}"
+    # Rest of the function
+
+# Modify the merger in main.py to ensure pitcher info is preserved:
+try:
+    log_step("🔄 Merging batter and pitcher data...")
+    # Rename columns before merging to avoid conflicts
+    if "pitcher_name" in pitchers.columns:
+        pitchers.rename(columns={"pitcher_name": "pitcher_name_db"}, inplace=True)
+    
+    merged = pd.merge(batters, pitchers, on="game_id", how="inner")
+    
+    # Ensure opposing_pitcher is preserved
+    if "opposing_pitcher" in batters.columns and "opposing_pitcher" not in merged.columns:
+        merged["opposing_pitcher"] = batters["opposing_pitcher"]
+    
+    # Make sure we have pitcher name info
+    merged["pitcher_display_name"] = merged.apply(
+        lambda row: row.get("pitcher_name_db", row.get("opposing_pitcher", "Unknown")),
+        axis=1
     )
-
-    try:
-        schedule_data = requests.get(schedule_url).json()
-        for date_block in schedule_data.get("dates", []):
-            for game in date_block.get("games", []):
-                teams = game.get("teams", {})
-                game_date = game.get("gameDate", today)
-                home_team = teams.get("home", {}).get("team", {})
-                home_abbr = home_team.get("abbreviation", "")
-                is_nl_park = home_abbr in nl_parks
-
-                for side in ["away", "home"]:
-                    team_info = teams.get(side, {})
-                    team = team_info.get("team", {})
-                    team_id = team.get("id")
-                    pitcher = team_info.get("probablePitcher", {})
-                    pitcher_name = pitcher.get("fullName")
-                    pitcher_id = pitcher.get("id")
-                    opponent_team = teams.get("home" if side == "away" else "away", {}).get("team", {}).get("name", "Unknown")
-
-                    if not (team_id and pitcher_name and pitcher_id):
-                        continue
-
-                    # Fetch team roster
-                    roster_url = f"https://statsapi.mlb.com/api/v1/teams/{team_id}/roster"
-                    roster_data = requests.get(roster_url).json()
-                    players = roster_data.get("roster", [])
-
-                    # Filter out pitchers and skip DH-only hitters in NL parks
-                    batters = [
-                        p for p in players
-                        if p.get("position", {}).get("abbreviation") not in {"P", "SP", "RP"}
-                        and not (is_nl_park and p.get("position", {}).get("abbreviation") == "DH")
-                    ]
-
-                    for player in batters[:9]:
-                        person = player.get("person", {})
-                        batter_name = person.get("fullName")
-                        batter_id = person.get("id")
-                        if batter_name and batter_id:
-                            game_id = f"{batter_name.lower().replace(' ', '_')}__vs__{pitcher_name.lower().replace(' ', '_')}__{today}"
-                            projected.append({
-                                "batter_name": batter_name,
-                                "batter_id": batter_id,
-                                "opposing_pitcher": pitcher_name,
-                                "pitcher_id": pitcher_id,
-                                "pitcher_team": opponent_team,
-                                "game_date": today,
-                                "game_id": game_id
-                            })
-
-        return pd.DataFrame(projected)
-    except Exception as e:
-        print(f"❌ Failed to fetch projected lineups: {e}")
-        return pd.DataFrame()
+    
+    log_step("🧩 Sample merged matchups:")
+    if not merged.empty:
+        print("✅ Columns in merged:", merged.columns.tolist())
+        print(merged.head(3))
+    else:
+        log_step("❌ No matchups merged — check game_id alignment.")
+        return
+except Exception as e:
+    log_step(f"❌ Error merging data: {str(e)}")
+    return
