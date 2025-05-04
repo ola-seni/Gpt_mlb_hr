@@ -384,3 +384,2417 @@
 2025-05-03 09:40:33,061 - INFO - Fetching enhanced metrics for pitcher 657277
 2025-05-03 09:40:38,017 - INFO - Updating prediction formula with enhanced metrics
 2025-05-03 09:40:38,046 - INFO - Successfully added enhanced HR score
+2025-05-03 19:27:02,753 - INFO - [2025-05-03 19:27:02] 🛠️ Gpt_mlb_hr ENHANCED: Starting home run prediction...
+2025-05-03 19:27:02,756 - INFO - [2025-05-03 19:27:02] 🧪 Test mode: ENABLED
+2025-05-03 19:27:02,763 - INFO - [2025-05-03 19:27:02] 🐞 Debug mode: ENABLED
+2025-05-03 19:27:02,763 - INFO - [2025-05-03 19:27:02] 📅 Target date: 2025-05-03
+2025-05-03 19:27:02,763 - INFO - [2025-05-03 19:27:02] 🔮 Prediction mode: standard
+2025-05-03 19:27:02,763 - INFO - [2025-05-03 19:27:02] 🎯 Outcome types: hr
+2025-05-03 19:27:02,764 - INFO - 🧪 Test mode enabled: using fallback lineups
+2025-05-03 19:27:02,765 - INFO - [2025-05-03 19:27:02] 📋 Confirmed lineups sample:
+2025-05-03 19:27:05,310 - INFO - [2025-05-03 19:27:05] 🔄 Merging batter and pitcher data...
+2025-05-03 19:27:05,310 - INFO - [2025-05-03 19:27:05] 🔍 Preserving ballpark data before merge
+2025-05-03 19:27:05,321 - INFO - [2025-05-03 19:27:05] 🧩 Sample merged matchups:
+2025-05-03 19:27:05,322 - INFO - ✅ Columns in merged: ['batter_name', 'batter_id', 'opposing_pitcher', 'game_date_x', 'game_id', 'ISO', 'barrel_rate_50', 'ballpark', 'home_team', 'pitcher_name_db', 'pitcher_id', 'game_date_y', 'hr_per_9', 'pitcher_display_name']
+2025-05-03 19:27:05,335 - INFO - 🧮 Adding enhanced batting metrics...
+2025-05-03 19:27:05,342 - INFO - ✅ Enhanced 1 batter records
+2025-05-03 19:27:05,343 - INFO - [2025-05-03 19:27:05] 🗃️ Loading cache data...
+2025-05-03 19:27:05,343 - INFO - [2025-05-03 19:27:05] ⚙️ Enriching features...
+2025-05-03 19:27:07,788 - INFO - [2025-05-03 19:27:07] 💾 Saving cache data...
+2025-05-03 19:27:07,793 - INFO - [2025-05-03 19:27:07] 🔮 Generating predictions...
+2025-05-03 19:27:07,799 - INFO - [2025-05-03 19:27:07] 🔍 Enhancing predictions with additional metrics...
+2025-05-03 19:27:07,799 - INFO - Integrating enhanced metrics into prediction system
+2025-05-03 19:27:07,802 - INFO - Fetching enhanced metrics for batter 665742
+2025-05-03 19:27:07,841 - INFO - Fetching enhanced metrics for pitcher 453286
+2025-05-03 19:27:08,966 - WARNING - No data found for pitcher 453286
+2025-05-03 19:27:08,966 - WARNING - Using fallback data for pitcher 453286
+2025-05-03 19:27:08,968 - INFO - Updating prediction formula with enhanced metrics
+2025-05-03 19:27:08,976 - INFO - Successfully added enhanced HR score
+2025-05-03 19:27:08,977 - INFO - [2025-05-03 19:27:08] ✅ Successfully applied enhanced metrics
+2025-05-03 19:27:08,978 - INFO - [2025-05-03 19:27:08] 🌤️ Applying weather boosts...
+2025-05-03 19:27:08,978 - INFO - 🌤️ Applying enhanced weather and park effects...
+2025-05-03 19:27:08,980 - INFO - 🌤️ Fetching weather for Arlington,US (attempt 1/3)
+2025-05-03 19:27:09,134 - INFO - ✅ Saved 1 weather cache entries
+2025-05-03 19:27:09,134 - INFO - ✅ Weather data fetched for Arlington,US
+2025-05-03 19:27:09,136 - INFO - 🌡️ Globe Life Field: 22.59°C, Wind: 4.12m/s at 360°
+2025-05-03 19:27:09,136 - INFO - ⚾ Applied park factor 0.97 for Globe Life Field
+2025-05-03 19:27:09,136 - INFO - [2025-05-03 19:27:09] 📊 Calculating final matchup scores...
+2025-05-03 19:27:09,138 - INFO - [2025-05-03 19:27:09] 🔮 Prediction sample:
+2025-05-03 19:27:09,159 - INFO - [2025-05-03 19:27:09] ✅ Saved predictions to results/hr_predictions_2025-05-03.csv
+2025-05-03 19:27:09,159 - INFO - [2025-05-03 19:27:09] 🧪 Skipping update_local_csv in test mode
+2025-05-03 19:27:09,159 - INFO - [2025-05-03 19:27:09] 🏷️ Assigning prediction tiers...
+2025-05-03 19:27:09,160 - INFO - [2025-05-03 19:27:09] 🧪 Skipping Telegram alerts in test mode
+2025-05-03 19:27:09,160 - INFO - ✅ Processing completed in 0.00 seconds
+2025-05-03 19:27:09,160 - INFO - [2025-05-03 19:27:09] ✅ Process completed successfully
+2025-05-03 19:27:09,161 - INFO - [2025-05-03 19:27:09] ✅ Program completed successfully
+2025-05-03 19:30:59,874 - INFO - [2025-05-03 19:30:59] 🛠️ Gpt_mlb_hr ENHANCED: Starting home run prediction...
+2025-05-03 19:30:59,876 - INFO - [2025-05-03 19:30:59] 🧪 Test mode: ENABLED
+2025-05-03 19:30:59,876 - INFO - [2025-05-03 19:30:59] 🐞 Debug mode: ENABLED
+2025-05-03 19:30:59,876 - INFO - [2025-05-03 19:30:59] 📅 Target date: 2025-05-03
+2025-05-03 19:30:59,876 - INFO - [2025-05-03 19:30:59] 🔮 Prediction mode: standard
+2025-05-03 19:30:59,876 - INFO - [2025-05-03 19:30:59] 🎯 Outcome types: hr
+2025-05-03 19:30:59,876 - INFO - 🧪 Test mode enabled: using fallback lineups
+2025-05-03 19:30:59,877 - INFO - [2025-05-03 19:30:59] 📋 Confirmed lineups sample:
+2025-05-03 19:31:28,291 - INFO - [2025-05-03 19:31:28] 🔄 Merging batter and pitcher data...
+2025-05-03 19:31:28,291 - INFO - [2025-05-03 19:31:28] 🔍 Preserving ballpark data before merge
+2025-05-03 19:31:28,304 - INFO - [2025-05-03 19:31:28] 🧩 Sample merged matchups:
+2025-05-03 19:31:28,305 - INFO - ✅ Columns in merged: ['batter_name', 'batter_id', 'opposing_pitcher', 'game_date_x', 'game_id', 'ISO', 'barrel_rate_50', 'ballpark', 'home_team', 'pitcher_name_db', 'pitcher_id', 'game_date_y', 'hr_per_9', 'pitcher_display_name']
+2025-05-03 19:31:28,317 - INFO - 🧮 Adding enhanced batting metrics...
+2025-05-03 19:31:28,321 - INFO - ✅ Enhanced 10 batter records
+2025-05-03 19:31:28,321 - INFO - [2025-05-03 19:31:28] 🗃️ Loading cache data...
+2025-05-03 19:31:28,322 - INFO - [2025-05-03 19:31:28] ⚙️ Enriching features...
+2025-05-03 19:31:50,812 - INFO - [2025-05-03 19:31:50] 💾 Saving cache data...
+2025-05-03 19:31:50,843 - INFO - [2025-05-03 19:31:50] 🔮 Generating predictions...
+2025-05-03 19:31:50,873 - INFO - [2025-05-03 19:31:50] 🔍 Enhancing predictions with additional metrics...
+2025-05-03 19:31:50,873 - INFO - Integrating enhanced metrics into prediction system
+2025-05-03 19:31:50,879 - INFO - Fetching enhanced metrics for batter 592450
+2025-05-03 19:31:50,960 - INFO - Fetching enhanced metrics for pitcher 669203.0
+2025-05-03 19:31:50,986 - INFO - Fetching enhanced metrics for batter 624413
+2025-05-03 19:31:51,010 - INFO - Fetching enhanced metrics for pitcher 571945.0
+2025-05-03 19:31:51,031 - INFO - Fetching enhanced metrics for batter 660271
+2025-05-03 19:31:51,394 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:31:52,415 - WARNING - No data found for pitcher nan
+2025-05-03 19:31:52,415 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:31:52,416 - INFO - Fetching enhanced metrics for batter 665487
+2025-05-03 19:31:53,914 - INFO - Fetching enhanced metrics for pitcher 607192.0
+2025-05-03 19:31:56,483 - INFO - Fetching enhanced metrics for batter 665742
+2025-05-03 19:31:56,509 - INFO - Fetching enhanced metrics for pitcher 453286.0
+2025-05-03 19:31:57,118 - WARNING - No data found for pitcher 453286.0
+2025-05-03 19:31:57,118 - WARNING - Using fallback data for pitcher 453286.0
+2025-05-03 19:31:57,118 - INFO - Fetching enhanced metrics for batter 605141
+2025-05-03 19:31:57,408 - INFO - Fetching enhanced metrics for pitcher 506433.0
+2025-05-03 19:31:58,883 - WARNING - No data found for pitcher 506433.0
+2025-05-03 19:31:58,883 - WARNING - Using fallback data for pitcher 506433.0
+2025-05-03 19:31:58,884 - INFO - Fetching enhanced metrics for batter 571448
+2025-05-03 19:32:00,567 - INFO - Fetching enhanced metrics for pitcher 622663.0
+2025-05-03 19:32:03,346 - INFO - Fetching enhanced metrics for batter 665489
+2025-05-03 19:32:05,005 - INFO - Fetching enhanced metrics for pitcher 621107.0
+2025-05-03 19:32:06,082 - INFO - Fetching enhanced metrics for batter 621566
+2025-05-03 19:32:06,117 - INFO - Fetching enhanced metrics for pitcher 554430.0
+2025-05-03 19:32:08,928 - INFO - Fetching enhanced metrics for batter 646240
+2025-05-03 19:32:10,811 - INFO - Fetching enhanced metrics for pitcher 543037.0
+2025-05-03 19:32:11,504 - WARNING - No data found for pitcher 543037.0
+2025-05-03 19:32:11,504 - WARNING - Using fallback data for pitcher 543037.0
+2025-05-03 19:32:11,505 - INFO - Updating prediction formula with enhanced metrics
+2025-05-03 19:32:11,534 - INFO - Successfully added enhanced HR score
+2025-05-03 19:32:11,537 - INFO - [2025-05-03 19:32:11] ✅ Successfully applied enhanced metrics
+2025-05-03 19:32:11,538 - INFO - [2025-05-03 19:32:11] 🌤️ Applying weather boosts...
+2025-05-03 19:32:11,539 - INFO - 🌤️ Applying enhanced weather and park effects...
+2025-05-03 19:32:11,542 - INFO - 🌤️ Fetching weather for Baltimore,US (attempt 1/3)
+2025-05-03 19:32:11,612 - INFO - ✅ Saved 1 weather cache entries
+2025-05-03 19:32:11,612 - INFO - ✅ Weather data fetched for Baltimore,US
+2025-05-03 19:32:11,614 - INFO - 🌡️ Oriole Park at Camden Yards: 23.45°C, Wind: 2.06m/s at 130°
+2025-05-03 19:32:11,616 - INFO - ⚾ Applied park factor 1.04 for Oriole Park at Camden Yards
+2025-05-03 19:32:11,617 - INFO - 🌤️ Fetching weather for Queens,US (attempt 1/3)
+2025-05-03 19:32:11,696 - INFO - ✅ Saved 2 weather cache entries
+2025-05-03 19:32:11,696 - INFO - ✅ Weather data fetched for Queens,US
+2025-05-03 19:32:11,706 - INFO - 🌡️ Citi Field: 19.54°C, Wind: 8.23m/s at 190°
+2025-05-03 19:32:11,706 - INFO - ⚾ Applied park factor 0.97 for Citi Field
+2025-05-03 19:32:11,706 - INFO - 🌤️ Fetching weather for Denver,US (attempt 1/3)
+2025-05-03 19:32:11,766 - INFO - ✅ Saved 3 weather cache entries
+2025-05-03 19:32:11,766 - INFO - ✅ Weather data fetched for Denver,US
+2025-05-03 19:32:11,767 - INFO - 🌡️ Coors Field: 24.58°C, Wind: 2.24m/s at 118°
+2025-05-03 19:32:11,767 - INFO - ⚾ Applied park factor 1.15 for Coors Field
+2025-05-03 19:32:11,767 - INFO - 🌤️ Fetching weather for San Diego,US (attempt 1/3)
+2025-05-03 19:32:11,828 - INFO - ✅ Saved 4 weather cache entries
+2025-05-03 19:32:11,844 - INFO - ✅ Weather data fetched for San Diego,US
+2025-05-03 19:32:11,848 - INFO - 🌡️ Petco Park: 17.59°C, Wind: 4.12m/s at 210°
+2025-05-03 19:32:11,848 - INFO - ⚾ Applied park factor 0.92 for Petco Park
+2025-05-03 19:32:11,849 - INFO - 🌤️ Fetching weather for Arlington,US (attempt 1/3)
+2025-05-03 19:32:11,898 - INFO - ✅ Saved 5 weather cache entries
+2025-05-03 19:32:11,898 - INFO - ✅ Weather data fetched for Arlington,US
+2025-05-03 19:32:11,898 - INFO - 🌡️ Globe Life Field: 22.59°C, Wind: 4.12m/s at 360°
+2025-05-03 19:32:11,898 - INFO - ⚾ Applied park factor 0.97 for Globe Life Field
+2025-05-03 19:32:11,899 - INFO - 🌤️ Fetching weather for Los Angeles,US (attempt 1/3)
+2025-05-03 19:32:11,952 - INFO - ✅ Saved 6 weather cache entries
+2025-05-03 19:32:11,952 - INFO - ✅ Weather data fetched for Los Angeles,US
+2025-05-03 19:32:11,953 - INFO - 🌡️ Dodger Stadium: 15.71°C, Wind: 4.12m/s at 270°
+2025-05-03 19:32:11,953 - INFO - ⚾ Applied park factor 0.99 for Dodger Stadium
+2025-05-03 19:32:11,954 - INFO - 🌤️ Fetching weather for St. Louis,US (attempt 1/3)
+2025-05-03 19:32:12,005 - INFO - ✅ Saved 7 weather cache entries
+2025-05-03 19:32:12,005 - INFO - ✅ Weather data fetched for St. Louis,US
+2025-05-03 19:32:12,007 - INFO - 🌡️ Busch Stadium: 10.96°C, Wind: 5.66m/s at 330°
+2025-05-03 19:32:12,007 - INFO - ⚾ Applied park factor 0.99 for Busch Stadium
+2025-05-03 19:32:12,008 - INFO - 🌤️ Fetching weather for Toronto,CA (attempt 1/3)
+2025-05-03 19:32:12,063 - INFO - ✅ Saved 8 weather cache entries
+2025-05-03 19:32:12,064 - INFO - ✅ Weather data fetched for Toronto,CA
+2025-05-03 19:32:12,065 - INFO - 🌡️ Rogers Centre: 9.52°C, Wind: 4.47m/s at 100°
+2025-05-03 19:32:12,065 - INFO - ⚾ Applied park factor 1.01 for Rogers Centre
+2025-05-03 19:32:12,066 - INFO - 🌤️ Fetching weather for Atlanta,US (attempt 1/3)
+2025-05-03 19:32:12,119 - INFO - ✅ Saved 9 weather cache entries
+2025-05-03 19:32:12,119 - INFO - ✅ Weather data fetched for Atlanta,US
+2025-05-03 19:32:12,120 - INFO - 🌡️ Truist Park: 20.19°C, Wind: 5.66m/s at 230°
+2025-05-03 19:32:12,120 - INFO - ⚾ Applied park factor 1.0 for Truist Park
+2025-05-03 19:32:12,121 - INFO - 🌤️ Fetching weather for Boston,US (attempt 1/3)
+2025-05-03 19:32:12,182 - INFO - ✅ Saved 10 weather cache entries
+2025-05-03 19:32:12,182 - INFO - ✅ Weather data fetched for Boston,US
+2025-05-03 19:32:12,183 - INFO - 🌡️ Fenway Park: 19.55°C, Wind: 0.89m/s at 285°
+2025-05-03 19:32:12,184 - INFO - ⚾ Applied park factor 1.07 for Fenway Park
+2025-05-03 19:32:12,185 - INFO - [2025-05-03 19:32:12] 📊 Calculating final matchup scores...
+2025-05-03 19:32:12,188 - INFO - [2025-05-03 19:32:12] 🔮 Prediction sample:
+2025-05-03 19:32:12,235 - INFO - [2025-05-03 19:32:12] ✅ Saved predictions to results/hr_predictions_2025-05-03.csv
+2025-05-03 19:32:12,235 - INFO - [2025-05-03 19:32:12] 🧪 Skipping update_local_csv in test mode
+2025-05-03 19:32:12,235 - INFO - [2025-05-03 19:32:12] 🏷️ Assigning prediction tiers...
+2025-05-03 19:32:12,236 - INFO - [2025-05-03 19:32:12] 🧪 Skipping Telegram alerts in test mode
+2025-05-03 19:32:12,237 - INFO - ✅ Processing completed in 0.00 seconds
+2025-05-03 19:32:12,237 - INFO - [2025-05-03 19:32:12] ✅ Process completed successfully
+2025-05-03 19:32:12,239 - INFO - [2025-05-03 19:32:12] ✅ Program completed successfully
+2025-05-03 19:34:39,549 - INFO - [2025-05-03 19:34:39] 🛠️ Gpt_mlb_hr ENHANCED: Starting home run prediction...
+2025-05-03 19:34:39,551 - INFO - [2025-05-03 19:34:39] 🧪 Test mode: DISABLED
+2025-05-03 19:34:39,552 - INFO - [2025-05-03 19:34:39] 🐞 Debug mode: DISABLED
+2025-05-03 19:34:39,552 - INFO - [2025-05-03 19:34:39] 📅 Target date: 2025-05-03
+2025-05-03 19:34:39,552 - INFO - [2025-05-03 19:34:39] 🔮 Prediction mode: standard
+2025-05-03 19:34:39,552 - INFO - [2025-05-03 19:34:39] 🎯 Outcome types: hr
+2025-05-03 19:34:39,552 - INFO - 📋 Getting lineups from MLB Stats API...
+2025-05-03 19:34:39,553 - INFO - Trying MLB API v1 with lineups: https://statsapi.mlb.com/api/v1/schedule?sportId=1&date=2025-05-03&hydrate=lineups,probablePitcher,venue,team
+2025-05-03 19:34:39,850 - INFO - ✅ Success with MLB API v1 with lineups
+2025-05-03 19:34:39,850 - INFO - Processing game 778074
+2025-05-03 19:34:39,850 - INFO - Game: Tampa Bay Rays @ New York Yankees at Yankee Stadium
+2025-05-03 19:34:39,850 - INFO - No lineup found in schedule for home team, trying alternate endpoint
+2025-05-03 19:34:39,850 - INFO - Fetching lineup from alternate endpoint: https://statsapi.mlb.com/api/v1.1/game/778074/boxscore
+2025-05-03 19:34:40,035 - WARNING - Boxscore endpoint returned status 404
+2025-05-03 19:34:40,035 - INFO - Fetching from dedicated lineup endpoint: https://statsapi.mlb.com/api/v1/game/778074/lineups
+2025-05-03 19:34:40,258 - WARNING - Lineup endpoint returned status 404
+2025-05-03 19:34:40,258 - WARNING - No lineup available for home team in game 778074
+2025-05-03 19:34:40,258 - INFO - Fetching active roster for team 147 as fallback
+2025-05-03 19:34:40,408 - INFO - ✅ Created projected lineup from roster with 9 players
+2025-05-03 19:34:40,410 - INFO - No lineup found in schedule for away team, trying alternate endpoint
+2025-05-03 19:34:40,410 - INFO - Fetching lineup from alternate endpoint: https://statsapi.mlb.com/api/v1.1/game/778074/boxscore
+2025-05-03 19:34:40,505 - WARNING - Boxscore endpoint returned status 404
+2025-05-03 19:34:40,505 - INFO - Fetching from dedicated lineup endpoint: https://statsapi.mlb.com/api/v1/game/778074/lineups
+2025-05-03 19:34:40,589 - WARNING - Lineup endpoint returned status 404
+2025-05-03 19:34:40,589 - WARNING - No lineup available for away team in game 778074
+2025-05-03 19:34:40,589 - INFO - Fetching active roster for team 139 as fallback
+2025-05-03 19:34:40,741 - INFO - ✅ Created projected lineup from roster with 9 players
+2025-05-03 19:34:40,741 - INFO - Processing game 778066
+2025-05-03 19:34:40,741 - INFO - Game: Houston Astros @ Chicago White Sox at Rate Field
+2025-05-03 19:34:40,742 - INFO - No lineup found in schedule for home team, trying alternate endpoint
+2025-05-03 19:34:40,742 - INFO - Fetching lineup from alternate endpoint: https://statsapi.mlb.com/api/v1.1/game/778066/boxscore
+2025-05-03 19:34:40,915 - WARNING - Boxscore endpoint returned status 404
+2025-05-03 19:34:40,915 - INFO - Fetching from dedicated lineup endpoint: https://statsapi.mlb.com/api/v1/game/778066/lineups
+2025-05-03 19:34:41,150 - WARNING - Lineup endpoint returned status 404
+2025-05-03 19:34:41,150 - WARNING - No lineup available for home team in game 778066
+2025-05-03 19:34:41,150 - INFO - Fetching active roster for team 145 as fallback
+2025-05-03 19:34:41,346 - INFO - ✅ Created projected lineup from roster with 9 players
+2025-05-03 19:34:41,346 - INFO - No lineup found in schedule for away team, trying alternate endpoint
+2025-05-03 19:34:41,346 - INFO - Fetching lineup from alternate endpoint: https://statsapi.mlb.com/api/v1.1/game/778066/boxscore
+2025-05-03 19:34:41,437 - WARNING - Boxscore endpoint returned status 404
+2025-05-03 19:34:41,437 - INFO - Fetching from dedicated lineup endpoint: https://statsapi.mlb.com/api/v1/game/778066/lineups
+2025-05-03 19:34:41,535 - WARNING - Lineup endpoint returned status 404
+2025-05-03 19:34:41,535 - WARNING - No lineup available for away team in game 778066
+2025-05-03 19:34:41,535 - INFO - Fetching active roster for team 117 as fallback
+2025-05-03 19:34:41,717 - INFO - ✅ Created projected lineup from roster with 9 players
+2025-05-03 19:34:41,717 - INFO - Processing game 778064
+2025-05-03 19:34:41,717 - INFO - Game: Cleveland Guardians @ Toronto Blue Jays at Rogers Centre
+2025-05-03 19:34:41,717 - INFO - No lineup found in schedule for home team, trying alternate endpoint
+2025-05-03 19:34:41,717 - INFO - Fetching lineup from alternate endpoint: https://statsapi.mlb.com/api/v1.1/game/778064/boxscore
+2025-05-03 19:34:41,943 - WARNING - Boxscore endpoint returned status 404
+2025-05-03 19:34:41,943 - INFO - Fetching from dedicated lineup endpoint: https://statsapi.mlb.com/api/v1/game/778064/lineups
+2025-05-03 19:34:42,214 - WARNING - Lineup endpoint returned status 404
+2025-05-03 19:34:42,215 - WARNING - No lineup available for home team in game 778064
+2025-05-03 19:34:42,215 - INFO - Fetching active roster for team 141 as fallback
+2025-05-03 19:34:42,367 - INFO - ✅ Created projected lineup from roster with 9 players
+2025-05-03 19:34:42,368 - INFO - No lineup found in schedule for away team, trying alternate endpoint
+2025-05-03 19:34:42,368 - INFO - Fetching lineup from alternate endpoint: https://statsapi.mlb.com/api/v1.1/game/778064/boxscore
+2025-05-03 19:34:42,458 - WARNING - Boxscore endpoint returned status 404
+2025-05-03 19:34:42,458 - INFO - Fetching from dedicated lineup endpoint: https://statsapi.mlb.com/api/v1/game/778064/lineups
+2025-05-03 19:34:42,544 - WARNING - Lineup endpoint returned status 404
+2025-05-03 19:34:42,544 - WARNING - No lineup available for away team in game 778064
+2025-05-03 19:34:42,544 - INFO - Fetching active roster for team 114 as fallback
+2025-05-03 19:34:42,690 - INFO - ✅ Created projected lineup from roster with 9 players
+2025-05-03 19:34:42,691 - INFO - Processing game 778065
+2025-05-03 19:34:42,691 - INFO - Game: San Diego Padres @ Pittsburgh Pirates at PNC Park
+2025-05-03 19:34:42,691 - INFO - No lineup found in schedule for home team, trying alternate endpoint
+2025-05-03 19:34:42,691 - INFO - Fetching lineup from alternate endpoint: https://statsapi.mlb.com/api/v1.1/game/778065/boxscore
+2025-05-03 19:34:42,891 - WARNING - Boxscore endpoint returned status 404
+2025-05-03 19:34:42,891 - INFO - Fetching from dedicated lineup endpoint: https://statsapi.mlb.com/api/v1/game/778065/lineups
+2025-05-03 19:34:43,107 - WARNING - Lineup endpoint returned status 404
+2025-05-03 19:34:43,108 - WARNING - No lineup available for home team in game 778065
+2025-05-03 19:34:43,108 - INFO - Fetching active roster for team 134 as fallback
+2025-05-03 19:34:43,268 - INFO - ✅ Created projected lineup from roster with 9 players
+2025-05-03 19:34:43,269 - INFO - No lineup found in schedule for away team, trying alternate endpoint
+2025-05-03 19:34:43,269 - INFO - Fetching lineup from alternate endpoint: https://statsapi.mlb.com/api/v1.1/game/778065/boxscore
+2025-05-03 19:34:43,360 - WARNING - Boxscore endpoint returned status 404
+2025-05-03 19:34:43,360 - INFO - Fetching from dedicated lineup endpoint: https://statsapi.mlb.com/api/v1/game/778065/lineups
+2025-05-03 19:34:43,465 - WARNING - Lineup endpoint returned status 404
+2025-05-03 19:34:43,465 - WARNING - No lineup available for away team in game 778065
+2025-05-03 19:34:43,465 - INFO - Fetching active roster for team 135 as fallback
+2025-05-03 19:34:43,618 - INFO - ✅ Created projected lineup from roster with 9 players
+2025-05-03 19:34:43,619 - INFO - Processing game 778069
+2025-05-03 19:34:43,619 - INFO - Game: Colorado Rockies @ San Francisco Giants at Oracle Park
+2025-05-03 19:34:43,619 - INFO - No lineup found in schedule for home team, trying alternate endpoint
+2025-05-03 19:34:43,619 - INFO - Fetching lineup from alternate endpoint: https://statsapi.mlb.com/api/v1.1/game/778069/boxscore
+2025-05-03 19:34:43,828 - WARNING - Boxscore endpoint returned status 404
+2025-05-03 19:34:43,828 - INFO - Fetching from dedicated lineup endpoint: https://statsapi.mlb.com/api/v1/game/778069/lineups
+2025-05-03 19:34:44,066 - WARNING - Lineup endpoint returned status 404
+2025-05-03 19:34:44,067 - WARNING - No lineup available for home team in game 778069
+2025-05-03 19:34:44,067 - INFO - Fetching active roster for team 137 as fallback
+2025-05-03 19:34:44,216 - INFO - ✅ Created projected lineup from roster with 9 players
+2025-05-03 19:34:44,216 - INFO - No lineup found in schedule for away team, trying alternate endpoint
+2025-05-03 19:34:44,216 - INFO - Fetching lineup from alternate endpoint: https://statsapi.mlb.com/api/v1.1/game/778069/boxscore
+2025-05-03 19:34:44,312 - WARNING - Boxscore endpoint returned status 404
+2025-05-03 19:34:44,312 - INFO - Fetching from dedicated lineup endpoint: https://statsapi.mlb.com/api/v1/game/778069/lineups
+2025-05-03 19:34:44,406 - WARNING - Lineup endpoint returned status 404
+2025-05-03 19:34:44,406 - WARNING - No lineup available for away team in game 778069
+2025-05-03 19:34:44,406 - INFO - Fetching active roster for team 115 as fallback
+2025-05-03 19:34:44,558 - INFO - ✅ Created projected lineup from roster with 9 players
+2025-05-03 19:34:44,558 - INFO - Processing game 778073
+2025-05-03 19:34:44,558 - INFO - Game: Minnesota Twins @ Boston Red Sox at Fenway Park
+2025-05-03 19:34:44,558 - INFO - No lineup found in schedule for home team, trying alternate endpoint
+2025-05-03 19:34:44,558 - INFO - Fetching lineup from alternate endpoint: https://statsapi.mlb.com/api/v1.1/game/778073/boxscore
+2025-05-03 19:34:44,768 - WARNING - Boxscore endpoint returned status 404
+2025-05-03 19:34:44,769 - INFO - Fetching from dedicated lineup endpoint: https://statsapi.mlb.com/api/v1/game/778073/lineups
+2025-05-03 19:34:44,990 - WARNING - Lineup endpoint returned status 404
+2025-05-03 19:34:44,991 - WARNING - No lineup available for home team in game 778073
+2025-05-03 19:34:44,991 - INFO - Fetching active roster for team 111 as fallback
+2025-05-03 19:34:45,160 - INFO - ✅ Created projected lineup from roster with 9 players
+2025-05-03 19:34:45,161 - INFO - No lineup found in schedule for away team, trying alternate endpoint
+2025-05-03 19:34:45,161 - INFO - Fetching lineup from alternate endpoint: https://statsapi.mlb.com/api/v1.1/game/778073/boxscore
+2025-05-03 19:34:45,255 - WARNING - Boxscore endpoint returned status 404
+2025-05-03 19:34:45,256 - INFO - Fetching from dedicated lineup endpoint: https://statsapi.mlb.com/api/v1/game/778073/lineups
+2025-05-03 19:34:45,349 - WARNING - Lineup endpoint returned status 404
+2025-05-03 19:34:45,350 - WARNING - No lineup available for away team in game 778073
+2025-05-03 19:34:45,350 - INFO - Fetching active roster for team 142 as fallback
+2025-05-03 19:34:45,505 - INFO - ✅ Created projected lineup from roster with 9 players
+2025-05-03 19:34:45,506 - INFO - Processing game 778075
+2025-05-03 19:34:45,506 - INFO - Game: Athletics @ Miami Marlins at loanDepot park
+2025-05-03 19:34:45,506 - INFO - No lineup found in schedule for home team, trying alternate endpoint
+2025-05-03 19:34:45,506 - INFO - Fetching lineup from alternate endpoint: https://statsapi.mlb.com/api/v1.1/game/778075/boxscore
+2025-05-03 19:34:45,671 - WARNING - Boxscore endpoint returned status 404
+2025-05-03 19:34:45,671 - INFO - Fetching from dedicated lineup endpoint: https://statsapi.mlb.com/api/v1/game/778075/lineups
+2025-05-03 19:34:45,930 - WARNING - Lineup endpoint returned status 404
+2025-05-03 19:34:45,930 - WARNING - No lineup available for home team in game 778075
+2025-05-03 19:34:45,930 - INFO - Fetching active roster for team 146 as fallback
+2025-05-03 19:34:46,088 - INFO - ✅ Created projected lineup from roster with 9 players
+2025-05-03 19:34:46,089 - INFO - No lineup found in schedule for away team, trying alternate endpoint
+2025-05-03 19:34:46,089 - INFO - Fetching lineup from alternate endpoint: https://statsapi.mlb.com/api/v1.1/game/778075/boxscore
+2025-05-03 19:34:46,177 - WARNING - Boxscore endpoint returned status 404
+2025-05-03 19:34:46,177 - INFO - Fetching from dedicated lineup endpoint: https://statsapi.mlb.com/api/v1/game/778075/lineups
+2025-05-03 19:34:46,276 - WARNING - Lineup endpoint returned status 404
+2025-05-03 19:34:46,277 - WARNING - No lineup available for away team in game 778075
+2025-05-03 19:34:46,277 - INFO - Fetching active roster for team 133 as fallback
+2025-05-03 19:34:46,437 - INFO - ✅ Created projected lineup from roster with 9 players
+2025-05-03 19:34:46,437 - INFO - Processing game 778078
+2025-05-03 19:34:46,437 - INFO - Game: Arizona Diamondbacks @ Philadelphia Phillies at Citizens Bank Park
+2025-05-03 19:34:46,437 - INFO - No lineup found in schedule for home team, trying alternate endpoint
+2025-05-03 19:34:46,437 - INFO - Fetching lineup from alternate endpoint: https://statsapi.mlb.com/api/v1.1/game/778078/boxscore
+2025-05-03 19:34:46,638 - WARNING - Boxscore endpoint returned status 404
+2025-05-03 19:34:46,638 - INFO - Fetching from dedicated lineup endpoint: https://statsapi.mlb.com/api/v1/game/778078/lineups
+2025-05-03 19:34:46,885 - WARNING - Lineup endpoint returned status 404
+2025-05-03 19:34:46,885 - WARNING - No lineup available for home team in game 778078
+2025-05-03 19:34:46,885 - INFO - Fetching active roster for team 143 as fallback
+2025-05-03 19:34:47,038 - INFO - ✅ Created projected lineup from roster with 9 players
+2025-05-03 19:34:47,039 - INFO - No lineup found in schedule for away team, trying alternate endpoint
+2025-05-03 19:34:47,039 - INFO - Fetching lineup from alternate endpoint: https://statsapi.mlb.com/api/v1.1/game/778078/boxscore
+2025-05-03 19:34:47,136 - WARNING - Boxscore endpoint returned status 404
+2025-05-03 19:34:47,136 - INFO - Fetching from dedicated lineup endpoint: https://statsapi.mlb.com/api/v1/game/778078/lineups
+2025-05-03 19:34:47,231 - WARNING - Lineup endpoint returned status 404
+2025-05-03 19:34:47,231 - WARNING - No lineup available for away team in game 778078
+2025-05-03 19:34:47,231 - INFO - Fetching active roster for team 109 as fallback
+2025-05-03 19:34:47,389 - INFO - ✅ Created projected lineup from roster with 9 players
+2025-05-03 19:34:47,389 - INFO - Processing game 778077
+2025-05-03 19:34:47,389 - INFO - Game: Washington Nationals @ Cincinnati Reds at Great American Ball Park
+2025-05-03 19:34:47,389 - INFO - No lineup found in schedule for home team, trying alternate endpoint
+2025-05-03 19:34:47,389 - INFO - Fetching lineup from alternate endpoint: https://statsapi.mlb.com/api/v1.1/game/778077/boxscore
+2025-05-03 19:34:47,567 - WARNING - Boxscore endpoint returned status 404
+2025-05-03 19:34:47,567 - INFO - Fetching from dedicated lineup endpoint: https://statsapi.mlb.com/api/v1/game/778077/lineups
+2025-05-03 19:34:47,842 - WARNING - Lineup endpoint returned status 404
+2025-05-03 19:34:47,842 - WARNING - No lineup available for home team in game 778077
+2025-05-03 19:34:47,842 - INFO - Fetching active roster for team 113 as fallback
+2025-05-03 19:34:48,002 - INFO - ✅ Created projected lineup from roster with 9 players
+2025-05-03 19:34:48,002 - INFO - No lineup found in schedule for away team, trying alternate endpoint
+2025-05-03 19:34:48,002 - INFO - Fetching lineup from alternate endpoint: https://statsapi.mlb.com/api/v1.1/game/778077/boxscore
+2025-05-03 19:34:48,090 - WARNING - Boxscore endpoint returned status 404
+2025-05-03 19:34:48,090 - INFO - Fetching from dedicated lineup endpoint: https://statsapi.mlb.com/api/v1/game/778077/lineups
+2025-05-03 19:34:48,183 - WARNING - Lineup endpoint returned status 404
+2025-05-03 19:34:48,183 - WARNING - No lineup available for away team in game 778077
+2025-05-03 19:34:48,183 - INFO - Fetching active roster for team 120 as fallback
+2025-05-03 19:34:48,342 - INFO - ✅ Created projected lineup from roster with 9 players
+2025-05-03 19:34:48,342 - INFO - Processing game 778070
+2025-05-03 19:34:48,342 - INFO - Game: Seattle Mariners @ Texas Rangers at Globe Life Field
+2025-05-03 19:34:48,342 - INFO - No lineup found in schedule for home team, trying alternate endpoint
+2025-05-03 19:34:48,342 - INFO - Fetching lineup from alternate endpoint: https://statsapi.mlb.com/api/v1.1/game/778070/boxscore
+2025-05-03 19:34:48,568 - WARNING - Boxscore endpoint returned status 404
+2025-05-03 19:34:48,569 - INFO - Fetching from dedicated lineup endpoint: https://statsapi.mlb.com/api/v1/game/778070/lineups
+2025-05-03 19:34:48,845 - WARNING - Lineup endpoint returned status 404
+2025-05-03 19:34:48,845 - WARNING - No lineup available for home team in game 778070
+2025-05-03 19:34:48,845 - INFO - Fetching active roster for team 140 as fallback
+2025-05-03 19:34:49,023 - INFO - ✅ Created projected lineup from roster with 9 players
+2025-05-03 19:34:49,023 - INFO - No lineup found in schedule for away team, trying alternate endpoint
+2025-05-03 19:34:49,023 - INFO - Fetching lineup from alternate endpoint: https://statsapi.mlb.com/api/v1.1/game/778070/boxscore
+2025-05-03 19:34:49,110 - WARNING - Boxscore endpoint returned status 404
+2025-05-03 19:34:49,110 - INFO - Fetching from dedicated lineup endpoint: https://statsapi.mlb.com/api/v1/game/778070/lineups
+2025-05-03 19:34:49,191 - WARNING - Lineup endpoint returned status 404
+2025-05-03 19:34:49,191 - WARNING - No lineup available for away team in game 778070
+2025-05-03 19:34:49,191 - INFO - Fetching active roster for team 136 as fallback
+2025-05-03 19:34:49,350 - INFO - ✅ Created projected lineup from roster with 9 players
+2025-05-03 19:34:49,350 - INFO - Processing game 778071
+2025-05-03 19:34:49,350 - INFO - Game: Chicago Cubs @ Milwaukee Brewers at American Family Field
+2025-05-03 19:34:49,350 - INFO - No lineup found in schedule for home team, trying alternate endpoint
+2025-05-03 19:34:49,350 - INFO - Fetching lineup from alternate endpoint: https://statsapi.mlb.com/api/v1.1/game/778071/boxscore
+2025-05-03 19:34:49,519 - WARNING - Boxscore endpoint returned status 404
+2025-05-03 19:34:49,519 - INFO - Fetching from dedicated lineup endpoint: https://statsapi.mlb.com/api/v1/game/778071/lineups
+2025-05-03 19:34:49,776 - WARNING - Lineup endpoint returned status 404
+2025-05-03 19:34:49,776 - WARNING - No lineup available for home team in game 778071
+2025-05-03 19:34:49,776 - INFO - Fetching active roster for team 158 as fallback
+2025-05-03 19:34:49,927 - INFO - ✅ Created projected lineup from roster with 9 players
+2025-05-03 19:34:49,927 - INFO - No lineup found in schedule for away team, trying alternate endpoint
+2025-05-03 19:34:49,927 - INFO - Fetching lineup from alternate endpoint: https://statsapi.mlb.com/api/v1.1/game/778071/boxscore
+2025-05-03 19:34:50,019 - WARNING - Boxscore endpoint returned status 404
+2025-05-03 19:34:50,019 - INFO - Fetching from dedicated lineup endpoint: https://statsapi.mlb.com/api/v1/game/778071/lineups
+2025-05-03 19:34:50,119 - WARNING - Lineup endpoint returned status 404
+2025-05-03 19:34:50,119 - WARNING - No lineup available for away team in game 778071
+2025-05-03 19:34:50,119 - INFO - Fetching active roster for team 112 as fallback
+2025-05-03 19:34:50,273 - INFO - ✅ Created projected lineup from roster with 9 players
+2025-05-03 19:34:50,273 - INFO - Processing game 778072
+2025-05-03 19:34:50,273 - INFO - Game: Kansas City Royals @ Baltimore Orioles at Oriole Park at Camden Yards
+2025-05-03 19:34:50,273 - INFO - No lineup found in schedule for home team, trying alternate endpoint
+2025-05-03 19:34:50,273 - INFO - Fetching lineup from alternate endpoint: https://statsapi.mlb.com/api/v1.1/game/778072/boxscore
+2025-05-03 19:34:50,453 - WARNING - Boxscore endpoint returned status 404
+2025-05-03 19:34:50,453 - INFO - Fetching from dedicated lineup endpoint: https://statsapi.mlb.com/api/v1/game/778072/lineups
+2025-05-03 19:34:50,676 - WARNING - Lineup endpoint returned status 404
+2025-05-03 19:34:50,676 - WARNING - No lineup available for home team in game 778072
+2025-05-03 19:34:50,676 - INFO - Fetching active roster for team 110 as fallback
+2025-05-03 19:34:50,852 - INFO - ✅ Created projected lineup from roster with 9 players
+2025-05-03 19:34:50,852 - INFO - No lineup found in schedule for away team, trying alternate endpoint
+2025-05-03 19:34:50,852 - INFO - Fetching lineup from alternate endpoint: https://statsapi.mlb.com/api/v1.1/game/778072/boxscore
+2025-05-03 19:34:50,943 - WARNING - Boxscore endpoint returned status 404
+2025-05-03 19:34:50,943 - INFO - Fetching from dedicated lineup endpoint: https://statsapi.mlb.com/api/v1/game/778072/lineups
+2025-05-03 19:34:51,040 - WARNING - Lineup endpoint returned status 404
+2025-05-03 19:34:51,040 - WARNING - No lineup available for away team in game 778072
+2025-05-03 19:34:51,040 - INFO - Fetching active roster for team 118 as fallback
+2025-05-03 19:34:51,214 - INFO - ✅ Created projected lineup from roster with 9 players
+2025-05-03 19:34:51,214 - INFO - Processing game 778076
+2025-05-03 19:34:51,214 - INFO - Game: Los Angeles Dodgers @ Atlanta Braves at Truist Park
+2025-05-03 19:34:51,214 - INFO - No lineup found in schedule for home team, trying alternate endpoint
+2025-05-03 19:34:51,215 - INFO - Fetching lineup from alternate endpoint: https://statsapi.mlb.com/api/v1.1/game/778076/boxscore
+2025-05-03 19:34:51,404 - WARNING - Boxscore endpoint returned status 404
+2025-05-03 19:34:51,405 - INFO - Fetching from dedicated lineup endpoint: https://statsapi.mlb.com/api/v1/game/778076/lineups
+2025-05-03 19:34:51,604 - WARNING - Lineup endpoint returned status 404
+2025-05-03 19:34:51,604 - WARNING - No lineup available for home team in game 778076
+2025-05-03 19:34:51,604 - INFO - Fetching active roster for team 144 as fallback
+2025-05-03 19:34:51,760 - INFO - ✅ Created projected lineup from roster with 9 players
+2025-05-03 19:34:51,760 - INFO - No lineup found in schedule for away team, trying alternate endpoint
+2025-05-03 19:34:51,761 - INFO - Fetching lineup from alternate endpoint: https://statsapi.mlb.com/api/v1.1/game/778076/boxscore
+2025-05-03 19:34:51,848 - WARNING - Boxscore endpoint returned status 404
+2025-05-03 19:34:51,848 - INFO - Fetching from dedicated lineup endpoint: https://statsapi.mlb.com/api/v1/game/778076/lineups
+2025-05-03 19:34:51,931 - WARNING - Lineup endpoint returned status 404
+2025-05-03 19:34:51,931 - WARNING - No lineup available for away team in game 778076
+2025-05-03 19:34:51,932 - INFO - Fetching active roster for team 119 as fallback
+2025-05-03 19:34:52,097 - INFO - ✅ Created projected lineup from roster with 9 players
+2025-05-03 19:34:52,097 - INFO - Processing game 778067
+2025-05-03 19:34:52,097 - INFO - Game: Detroit Tigers @ Los Angeles Angels at Angel Stadium
+2025-05-03 19:34:52,097 - INFO - No lineup found in schedule for home team, trying alternate endpoint
+2025-05-03 19:34:52,097 - INFO - Fetching lineup from alternate endpoint: https://statsapi.mlb.com/api/v1.1/game/778067/boxscore
+2025-05-03 19:34:52,294 - WARNING - Boxscore endpoint returned status 404
+2025-05-03 19:34:52,294 - INFO - Fetching from dedicated lineup endpoint: https://statsapi.mlb.com/api/v1/game/778067/lineups
+2025-05-03 19:34:52,540 - WARNING - Lineup endpoint returned status 404
+2025-05-03 19:34:52,541 - WARNING - No lineup available for home team in game 778067
+2025-05-03 19:34:52,541 - INFO - Fetching active roster for team 108 as fallback
+2025-05-03 19:34:52,702 - INFO - ✅ Created projected lineup from roster with 9 players
+2025-05-03 19:34:52,703 - INFO - No lineup found in schedule for away team, trying alternate endpoint
+2025-05-03 19:34:52,703 - INFO - Fetching lineup from alternate endpoint: https://statsapi.mlb.com/api/v1.1/game/778067/boxscore
+2025-05-03 19:34:52,800 - WARNING - Boxscore endpoint returned status 404
+2025-05-03 19:34:52,800 - INFO - Fetching from dedicated lineup endpoint: https://statsapi.mlb.com/api/v1/game/778067/lineups
+2025-05-03 19:34:52,899 - WARNING - Lineup endpoint returned status 404
+2025-05-03 19:34:52,900 - WARNING - No lineup available for away team in game 778067
+2025-05-03 19:34:52,900 - INFO - Fetching active roster for team 116 as fallback
+2025-05-03 19:34:53,052 - INFO - ✅ Created projected lineup from roster with 9 players
+2025-05-03 19:34:53,053 - INFO - Processing game 778068
+2025-05-03 19:34:53,053 - INFO - Game: New York Mets @ St. Louis Cardinals at Busch Stadium
+2025-05-03 19:34:53,053 - INFO - No lineup found in schedule for home team, trying alternate endpoint
+2025-05-03 19:34:53,053 - INFO - Fetching lineup from alternate endpoint: https://statsapi.mlb.com/api/v1.1/game/778068/boxscore
+2025-05-03 19:34:53,237 - WARNING - Boxscore endpoint returned status 404
+2025-05-03 19:34:53,237 - INFO - Fetching from dedicated lineup endpoint: https://statsapi.mlb.com/api/v1/game/778068/lineups
+2025-05-03 19:34:53,440 - WARNING - Lineup endpoint returned status 404
+2025-05-03 19:34:53,440 - WARNING - No lineup available for home team in game 778068
+2025-05-03 19:34:53,440 - INFO - Fetching active roster for team 138 as fallback
+2025-05-03 19:34:53,591 - INFO - ✅ Created projected lineup from roster with 9 players
+2025-05-03 19:34:53,592 - INFO - No lineup found in schedule for away team, trying alternate endpoint
+2025-05-03 19:34:53,592 - INFO - Fetching lineup from alternate endpoint: https://statsapi.mlb.com/api/v1.1/game/778068/boxscore
+2025-05-03 19:34:53,672 - WARNING - Boxscore endpoint returned status 404
+2025-05-03 19:34:53,672 - INFO - Fetching from dedicated lineup endpoint: https://statsapi.mlb.com/api/v1/game/778068/lineups
+2025-05-03 19:34:53,761 - WARNING - Lineup endpoint returned status 404
+2025-05-03 19:34:53,761 - WARNING - No lineup available for away team in game 778068
+2025-05-03 19:34:53,761 - INFO - Fetching active roster for team 121 as fallback
+2025-05-03 19:34:53,924 - INFO - ✅ Created projected lineup from roster with 9 players
+2025-05-03 19:34:53,938 - INFO - ✅ Loaded 270 confirmed hitters
+2025-05-03 19:34:53,940 - INFO - [2025-05-03 19:34:53] 📋 Confirmed lineups sample:
+2025-05-03 19:45:54,217 - INFO - [2025-05-03 19:45:54] 🔄 Merging batter and pitcher data...
+2025-05-03 19:45:54,240 - INFO - [2025-05-03 19:45:54] 🔍 Preserving ballpark data before merge
+2025-05-03 19:45:54,376 - INFO - [2025-05-03 19:45:54] 🧩 Sample merged matchups:
+2025-05-03 19:45:54,377 - INFO - ✅ Columns in merged: ['batter_name', 'batter_id', 'opposing_pitcher', 'game_date_x', 'game_id', 'ISO', 'barrel_rate_50', 'ballpark', 'home_team', 'pitcher_name_db', 'pitcher_id', 'game_date_y', 'hr_per_9', 'pitcher_display_name']
+2025-05-03 19:45:54,443 - INFO - 🧮 Adding enhanced batting metrics...
+2025-05-03 19:45:54,509 - INFO - ✅ Enhanced 269 batter records
+2025-05-03 19:45:54,513 - INFO - [2025-05-03 19:45:54] 🗃️ Loading cache data...
+2025-05-03 19:45:54,543 - INFO - [2025-05-03 19:45:54] ⚙️ Enriching features...
+2025-05-03 19:52:53,728 - INFO - [2025-05-03 19:52:53] 💾 Saving cache data...
+2025-05-03 19:52:53,770 - INFO - [2025-05-03 19:52:53] 🔮 Generating predictions...
+2025-05-03 19:52:53,833 - INFO - [2025-05-03 19:52:53] 🔍 Enhancing predictions with additional metrics...
+2025-05-03 19:52:53,833 - INFO - Integrating enhanced metrics into prediction system
+2025-05-03 19:52:53,843 - INFO - Fetching enhanced metrics for batter 662139
+2025-05-03 19:52:54,885 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:52:55,027 - WARNING - No data found for pitcher nan
+2025-05-03 19:52:55,027 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:52:55,032 - INFO - Fetching enhanced metrics for batter 682663
+2025-05-03 19:52:55,306 - INFO - Fetching enhanced metrics for pitcher 674370.0
+2025-05-03 19:52:56,852 - INFO - Fetching enhanced metrics for batter 593871
+2025-05-03 19:52:58,002 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:52:58,146 - WARNING - No data found for pitcher nan
+2025-05-03 19:52:58,147 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:52:58,147 - INFO - Fetching enhanced metrics for batter 518692
+2025-05-03 19:52:58,450 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:52:58,604 - WARNING - No data found for pitcher nan
+2025-05-03 19:52:58,605 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:52:58,606 - INFO - Fetching enhanced metrics for batter 663728
+2025-05-03 19:53:00,462 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:53:00,649 - WARNING - No data found for pitcher nan
+2025-05-03 19:53:00,650 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:53:00,650 - INFO - Fetching enhanced metrics for batter 608348
+2025-05-03 19:53:01,766 - INFO - Fetching enhanced metrics for pitcher 500779.0
+2025-05-03 19:53:03,348 - INFO - Fetching enhanced metrics for batter 647351
+2025-05-03 19:53:04,209 - WARNING - No data found for batter 647351
+2025-05-03 19:53:04,209 - INFO - Fetching enhanced metrics for pitcher 641927.0
+2025-05-03 19:53:05,808 - WARNING - Using fallback data for batter 647351
+2025-05-03 19:53:05,809 - INFO - Fetching enhanced metrics for batter 700250
+2025-05-03 19:53:07,652 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:53:07,797 - WARNING - No data found for pitcher nan
+2025-05-03 19:53:07,798 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:53:07,799 - INFO - Fetching enhanced metrics for batter 682998
+2025-05-03 19:53:09,495 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:53:09,658 - WARNING - No data found for pitcher nan
+2025-05-03 19:53:09,658 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:53:09,658 - INFO - Fetching enhanced metrics for batter 553993
+2025-05-03 19:53:11,775 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:53:12,097 - WARNING - No data found for pitcher nan
+2025-05-03 19:53:12,098 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:53:12,099 - INFO - Fetching enhanced metrics for batter 657757
+2025-05-03 19:53:14,048 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:53:14,276 - WARNING - No data found for pitcher nan
+2025-05-03 19:53:14,276 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:53:14,277 - INFO - Fetching enhanced metrics for batter 687597
+2025-05-03 19:53:15,736 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:53:15,931 - WARNING - No data found for pitcher nan
+2025-05-03 19:53:15,932 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:53:15,932 - INFO - Fetching enhanced metrics for batter 669224
+2025-05-03 19:53:17,396 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:53:17,537 - WARNING - No data found for pitcher nan
+2025-05-03 19:53:17,537 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:53:17,538 - INFO - Fetching enhanced metrics for batter 695578
+2025-05-03 19:53:19,401 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:53:19,547 - WARNING - No data found for pitcher nan
+2025-05-03 19:53:19,547 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:53:19,548 - INFO - Fetching enhanced metrics for batter 667670
+2025-05-03 19:53:19,910 - INFO - Fetching enhanced metrics for pitcher 676974.0
+2025-05-03 19:53:22,720 - INFO - Fetching enhanced metrics for batter 681584
+2025-05-03 19:53:23,830 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:53:23,979 - WARNING - No data found for pitcher nan
+2025-05-03 19:53:23,979 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:53:23,980 - INFO - Fetching enhanced metrics for batter 694192
+2025-05-03 19:53:25,890 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:53:26,037 - WARNING - No data found for pitcher nan
+2025-05-03 19:53:26,038 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:53:26,038 - INFO - Fetching enhanced metrics for batter 592450
+2025-05-03 19:53:26,240 - INFO - Fetching enhanced metrics for pitcher 641793.0
+2025-05-03 19:53:28,123 - INFO - Fetching enhanced metrics for batter 656941
+2025-05-03 19:53:29,812 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:53:29,989 - WARNING - No data found for pitcher nan
+2025-05-03 19:53:29,989 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:53:29,990 - INFO - Fetching enhanced metrics for batter 681351
+2025-05-03 19:53:31,535 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:53:31,675 - WARNING - No data found for pitcher nan
+2025-05-03 19:53:31,675 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:53:31,676 - INFO - Fetching enhanced metrics for batter 641555
+2025-05-03 19:53:32,549 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:53:32,707 - WARNING - No data found for pitcher nan
+2025-05-03 19:53:32,707 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:53:32,708 - INFO - Fetching enhanced metrics for batter 696100
+2025-05-03 19:53:34,238 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:53:34,395 - WARNING - No data found for pitcher nan
+2025-05-03 19:53:34,395 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:53:34,396 - INFO - Fetching enhanced metrics for batter 642851
+2025-05-03 19:53:35,307 - INFO - Fetching enhanced metrics for pitcher 592866.0
+2025-05-03 19:53:37,044 - INFO - Fetching enhanced metrics for batter 682622
+2025-05-03 19:53:38,119 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:53:38,262 - WARNING - No data found for pitcher nan
+2025-05-03 19:53:38,262 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:53:38,263 - INFO - Fetching enhanced metrics for batter 621439
+2025-05-03 19:53:39,974 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:53:40,164 - WARNING - No data found for pitcher nan
+2025-05-03 19:53:40,164 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:53:40,164 - INFO - Fetching enhanced metrics for batter 573262
+2025-05-03 19:53:41,806 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:53:41,935 - WARNING - No data found for pitcher nan
+2025-05-03 19:53:41,935 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:53:41,936 - INFO - Fetching enhanced metrics for batter 677347
+2025-05-03 19:53:43,168 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:53:43,349 - WARNING - No data found for pitcher nan
+2025-05-03 19:53:43,350 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:53:43,350 - INFO - Fetching enhanced metrics for batter 691406
+2025-05-03 19:53:44,958 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:53:45,134 - WARNING - No data found for pitcher nan
+2025-05-03 19:53:45,134 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:53:45,135 - INFO - Fetching enhanced metrics for batter 642201
+2025-05-03 19:53:46,126 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:53:46,338 - WARNING - No data found for pitcher nan
+2025-05-03 19:53:46,341 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:53:46,342 - INFO - Fetching enhanced metrics for batter 608324
+2025-05-03 19:53:48,512 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:53:48,800 - WARNING - No data found for pitcher nan
+2025-05-03 19:53:48,801 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:53:48,801 - INFO - Fetching enhanced metrics for batter 663656
+2025-05-03 19:53:50,909 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:53:51,206 - WARNING - No data found for pitcher nan
+2025-05-03 19:53:51,209 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:53:51,211 - INFO - Fetching enhanced metrics for batter 624585
+2025-05-03 19:53:53,044 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:53:53,246 - WARNING - No data found for pitcher nan
+2025-05-03 19:53:53,246 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:53:53,247 - INFO - Fetching enhanced metrics for batter 608369
+2025-05-03 19:53:54,533 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:53:54,719 - WARNING - No data found for pitcher nan
+2025-05-03 19:53:54,720 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:53:54,722 - INFO - Fetching enhanced metrics for batter 641355
+2025-05-03 19:53:56,236 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:53:56,435 - WARNING - No data found for pitcher nan
+2025-05-03 19:53:56,436 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:53:56,436 - INFO - Fetching enhanced metrics for batter 682928
+2025-05-03 19:53:57,942 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:53:58,141 - WARNING - No data found for pitcher nan
+2025-05-03 19:53:58,142 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:53:58,143 - INFO - Fetching enhanced metrics for batter 596146
+2025-05-03 19:53:59,496 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:53:59,671 - WARNING - No data found for pitcher nan
+2025-05-03 19:53:59,672 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:53:59,672 - INFO - Fetching enhanced metrics for batter 650402
+2025-05-03 19:54:00,886 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:54:01,051 - WARNING - No data found for pitcher nan
+2025-05-03 19:54:01,051 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:54:01,052 - INFO - Fetching enhanced metrics for batter 571771
+2025-05-03 19:54:02,000 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:54:02,165 - WARNING - No data found for pitcher nan
+2025-05-03 19:54:02,165 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:54:02,166 - INFO - Fetching enhanced metrics for batter 666018
+2025-05-03 19:54:03,664 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:54:03,800 - WARNING - No data found for pitcher nan
+2025-05-03 19:54:03,800 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:54:03,801 - INFO - Fetching enhanced metrics for batter 680474
+2025-05-03 19:54:04,686 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:54:04,849 - WARNING - No data found for pitcher nan
+2025-05-03 19:54:04,849 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:54:04,849 - INFO - Fetching enhanced metrics for batter 671221
+2025-05-03 19:54:05,162 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:54:05,295 - WARNING - No data found for pitcher nan
+2025-05-03 19:54:05,295 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:54:05,296 - INFO - Fetching enhanced metrics for batter 643446
+2025-05-03 19:54:06,320 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:54:06,581 - WARNING - No data found for pitcher nan
+2025-05-03 19:54:06,581 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:54:06,582 - INFO - Fetching enhanced metrics for batter 665742
+2025-05-03 19:54:06,745 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:54:06,966 - WARNING - No data found for pitcher nan
+2025-05-03 19:54:06,966 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:54:06,966 - INFO - Fetching enhanced metrics for batter 607043
+2025-05-03 19:54:08,439 - INFO - Fetching enhanced metrics for pitcher 607200.0
+2025-05-03 19:54:10,388 - INFO - Fetching enhanced metrics for batter 665161
+2025-05-03 19:54:11,976 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:54:12,118 - WARNING - No data found for pitcher nan
+2025-05-03 19:54:12,118 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:54:12,118 - INFO - Fetching enhanced metrics for batter 665804
+2025-05-03 19:54:13,242 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:54:13,440 - WARNING - No data found for pitcher nan
+2025-05-03 19:54:13,440 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:54:13,441 - INFO - Fetching enhanced metrics for batter 683737
+2025-05-03 19:54:14,812 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:54:14,947 - WARNING - No data found for pitcher nan
+2025-05-03 19:54:14,947 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:54:14,947 - INFO - Fetching enhanced metrics for batter 693307
+2025-05-03 19:54:16,160 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:54:16,335 - WARNING - No data found for pitcher nan
+2025-05-03 19:54:16,335 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:54:16,336 - INFO - Fetching enhanced metrics for batter 680718
+2025-05-03 19:54:17,384 - INFO - Fetching enhanced metrics for pitcher 668909.0
+2025-05-03 19:54:19,374 - INFO - Fetching enhanced metrics for batter 656896
+2025-05-03 19:54:19,563 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:54:19,722 - WARNING - No data found for pitcher nan
+2025-05-03 19:54:19,723 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:54:19,723 - INFO - Fetching enhanced metrics for batter 677594
+2025-05-03 19:54:21,498 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:54:21,704 - WARNING - No data found for pitcher nan
+2025-05-03 19:54:21,704 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:54:21,704 - INFO - Fetching enhanced metrics for batter 666310
+2025-05-03 19:54:22,858 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:54:23,053 - WARNING - No data found for pitcher nan
+2025-05-03 19:54:23,054 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:54:23,054 - INFO - Fetching enhanced metrics for batter 663586
+2025-05-03 19:54:25,060 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:54:25,393 - WARNING - No data found for pitcher nan
+2025-05-03 19:54:25,393 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:54:25,397 - INFO - Fetching enhanced metrics for batter 666969
+2025-05-03 19:54:26,999 - INFO - Fetching enhanced metrics for pitcher 622491.0
+2025-05-03 19:54:29,484 - INFO - Fetching enhanced metrics for batter 665487
+2025-05-03 19:54:29,565 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:54:29,757 - WARNING - No data found for pitcher nan
+2025-05-03 19:54:29,758 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:54:29,759 - INFO - Fetching enhanced metrics for batter 641343
+2025-05-03 19:54:30,653 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:54:30,844 - WARNING - No data found for pitcher nan
+2025-05-03 19:54:30,844 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:54:30,845 - INFO - Fetching enhanced metrics for batter 592626
+2025-05-03 19:54:31,960 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:54:32,123 - WARNING - No data found for pitcher nan
+2025-05-03 19:54:32,124 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:54:32,124 - INFO - Fetching enhanced metrics for batter 595978
+2025-05-03 19:54:33,350 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:54:33,545 - WARNING - No data found for pitcher nan
+2025-05-03 19:54:33,545 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:54:33,546 - INFO - Fetching enhanced metrics for batter 592696
+2025-05-03 19:54:34,243 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:54:34,432 - WARNING - No data found for pitcher nan
+2025-05-03 19:54:34,432 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:54:34,433 - INFO - Fetching enhanced metrics for batter 687957
+2025-05-03 19:54:35,322 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:54:35,469 - WARNING - No data found for pitcher nan
+2025-05-03 19:54:35,469 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:54:35,470 - INFO - Fetching enhanced metrics for batter 686555
+2025-05-03 19:54:37,061 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:54:37,253 - WARNING - No data found for pitcher nan
+2025-05-03 19:54:37,253 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:54:37,254 - INFO - Fetching enhanced metrics for batter 682177
+2025-05-03 19:54:38,266 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:54:38,399 - WARNING - No data found for pitcher nan
+2025-05-03 19:54:38,399 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:54:38,400 - INFO - Fetching enhanced metrics for batter 592885
+2025-05-03 19:54:41,199 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:54:41,375 - WARNING - No data found for pitcher nan
+2025-05-03 19:54:41,375 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:54:41,375 - INFO - Fetching enhanced metrics for batter 595879
+2025-05-03 19:54:42,945 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:54:43,087 - WARNING - No data found for pitcher nan
+2025-05-03 19:54:43,087 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:54:43,088 - INFO - Fetching enhanced metrics for batter 672744
+2025-05-03 19:54:44,088 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:54:44,223 - WARNING - No data found for pitcher nan
+2025-05-03 19:54:44,223 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:54:44,223 - INFO - Fetching enhanced metrics for batter 808982
+2025-05-03 19:54:46,617 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:54:46,805 - WARNING - No data found for pitcher nan
+2025-05-03 19:54:46,806 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:54:46,806 - INFO - Fetching enhanced metrics for batter 542303
+2025-05-03 19:54:48,458 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:54:49,409 - WARNING - No data found for pitcher nan
+2025-05-03 19:54:49,409 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:54:49,410 - INFO - Fetching enhanced metrics for batter 683011
+2025-05-03 19:54:50,916 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:54:51,096 - WARNING - No data found for pitcher nan
+2025-05-03 19:54:51,096 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:54:51,097 - INFO - Fetching enhanced metrics for batter 691176
+2025-05-03 19:54:52,439 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:54:52,577 - WARNING - No data found for pitcher nan
+2025-05-03 19:54:52,577 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:54:52,578 - INFO - Fetching enhanced metrics for batter 677951
+2025-05-03 19:54:52,891 - INFO - Fetching enhanced metrics for pitcher 608372.0
+2025-05-03 19:54:54,539 - INFO - Fetching enhanced metrics for batter 647304
+2025-05-03 19:54:56,724 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:54:56,880 - WARNING - No data found for pitcher nan
+2025-05-03 19:54:56,880 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:54:56,881 - INFO - Fetching enhanced metrics for batter 656305
+2025-05-03 19:54:58,752 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:54:58,888 - WARNING - No data found for pitcher nan
+2025-05-03 19:54:58,888 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:54:58,888 - INFO - Fetching enhanced metrics for batter 665019
+2025-05-03 19:54:59,746 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:54:59,944 - WARNING - No data found for pitcher nan
+2025-05-03 19:54:59,944 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:54:59,945 - INFO - Fetching enhanced metrics for batter 649966
+2025-05-03 19:55:01,074 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:55:01,288 - WARNING - No data found for pitcher nan
+2025-05-03 19:55:01,288 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:55:01,288 - INFO - Fetching enhanced metrics for batter 682985
+2025-05-03 19:55:02,838 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:55:03,025 - WARNING - No data found for pitcher nan
+2025-05-03 19:55:03,025 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:55:03,026 - INFO - Fetching enhanced metrics for batter 672356
+2025-05-03 19:55:04,238 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:55:04,378 - WARNING - No data found for pitcher nan
+2025-05-03 19:55:04,379 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:55:04,379 - INFO - Fetching enhanced metrics for batter 572233
+2025-05-03 19:55:05,863 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:55:06,049 - WARNING - No data found for pitcher nan
+2025-05-03 19:55:06,049 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:55:06,050 - INFO - Fetching enhanced metrics for batter 666160
+2025-05-03 19:55:07,203 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:55:07,341 - WARNING - No data found for pitcher nan
+2025-05-03 19:55:07,341 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:55:07,342 - INFO - Fetching enhanced metrics for batter 692225
+2025-05-03 19:55:08,763 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:55:08,955 - WARNING - No data found for pitcher nan
+2025-05-03 19:55:08,955 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:55:08,957 - INFO - Fetching enhanced metrics for batter 624641
+2025-05-03 19:55:09,794 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:55:10,134 - WARNING - No data found for pitcher nan
+2025-05-03 19:55:10,135 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:55:10,136 - INFO - Fetching enhanced metrics for batter 701358
+2025-05-03 19:55:11,391 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:55:11,584 - WARNING - No data found for pitcher nan
+2025-05-03 19:55:11,584 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:55:11,584 - INFO - Fetching enhanced metrics for batter 665926
+2025-05-03 19:55:13,293 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:55:13,458 - WARNING - No data found for pitcher nan
+2025-05-03 19:55:13,458 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:55:13,459 - INFO - Fetching enhanced metrics for batter 646240
+2025-05-03 19:55:13,542 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:55:13,741 - WARNING - No data found for pitcher nan
+2025-05-03 19:55:13,741 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:55:13,742 - INFO - Fetching enhanced metrics for batter 621020
+2025-05-03 19:55:15,191 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:55:15,338 - WARNING - No data found for pitcher nan
+2025-05-03 19:55:15,338 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:55:15,339 - INFO - Fetching enhanced metrics for batter 671732
+2025-05-03 19:55:17,029 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:55:17,187 - WARNING - No data found for pitcher nan
+2025-05-03 19:55:17,187 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:55:17,188 - INFO - Fetching enhanced metrics for batter 656775
+2025-05-03 19:55:18,633 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:55:18,782 - WARNING - No data found for pitcher nan
+2025-05-03 19:55:18,783 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:55:18,784 - INFO - Fetching enhanced metrics for batter 668709
+2025-05-03 19:55:20,084 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:55:20,278 - WARNING - No data found for pitcher nan
+2025-05-03 19:55:20,278 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:55:20,278 - INFO - Fetching enhanced metrics for batter 672386
+2025-05-03 19:55:21,389 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:55:21,591 - WARNING - No data found for pitcher nan
+2025-05-03 19:55:21,591 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:55:21,592 - INFO - Fetching enhanced metrics for batter 624431
+2025-05-03 19:55:22,851 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:55:23,031 - WARNING - No data found for pitcher nan
+2025-05-03 19:55:23,031 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:55:23,032 - INFO - Fetching enhanced metrics for batter 676480
+2025-05-03 19:55:23,804 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:55:24,018 - WARNING - No data found for pitcher nan
+2025-05-03 19:55:24,019 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:55:24,020 - INFO - Fetching enhanced metrics for batter 671218
+2025-05-03 19:55:25,479 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:55:25,638 - WARNING - No data found for pitcher nan
+2025-05-03 19:55:25,639 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:55:25,639 - INFO - Fetching enhanced metrics for batter 805779
+2025-05-03 19:55:26,001 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:55:26,236 - WARNING - No data found for pitcher nan
+2025-05-03 19:55:26,236 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:55:26,237 - INFO - Fetching enhanced metrics for batter 681481
+2025-05-03 19:55:27,538 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:55:27,770 - WARNING - No data found for pitcher nan
+2025-05-03 19:55:27,770 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:55:27,771 - INFO - Fetching enhanced metrics for batter 669911
+2025-05-03 19:55:29,462 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:55:29,672 - WARNING - No data found for pitcher nan
+2025-05-03 19:55:29,674 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:55:29,675 - INFO - Fetching enhanced metrics for batter 689172
+2025-05-03 19:55:30,386 - WARNING - No data found for batter 689172
+2025-05-03 19:55:30,388 - INFO - Fetching enhanced metrics for pitcher 687134.0
+2025-05-03 19:55:31,345 - WARNING - Using fallback data for batter 689172
+2025-05-03 19:55:31,346 - INFO - Fetching enhanced metrics for batter 608385
+2025-05-03 19:55:32,436 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:55:32,785 - WARNING - No data found for pitcher nan
+2025-05-03 19:55:32,785 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:55:32,786 - INFO - Fetching enhanced metrics for batter 666158
+2025-05-03 19:55:34,722 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:55:34,976 - WARNING - No data found for pitcher nan
+2025-05-03 19:55:34,976 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:55:34,978 - INFO - Fetching enhanced metrics for batter 676572
+2025-05-03 19:55:37,059 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:55:37,302 - WARNING - No data found for pitcher nan
+2025-05-03 19:55:37,302 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:55:37,303 - INFO - Fetching enhanced metrics for batter 694362
+2025-05-03 19:55:38,495 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:55:38,803 - WARNING - No data found for pitcher nan
+2025-05-03 19:55:38,804 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:55:38,805 - INFO - Fetching enhanced metrics for batter 808975
+2025-05-03 19:55:40,038 - WARNING - No data found for batter 808975
+2025-05-03 19:55:40,046 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:55:40,341 - WARNING - No data found for pitcher nan
+2025-05-03 19:55:40,341 - WARNING - Using fallback data for batter 808975
+2025-05-03 19:55:40,341 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:55:40,345 - INFO - Fetching enhanced metrics for batter 680779
+2025-05-03 19:55:41,300 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:55:41,564 - WARNING - No data found for pitcher nan
+2025-05-03 19:55:41,564 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:55:41,565 - INFO - Fetching enhanced metrics for batter 571448
+2025-05-03 19:55:41,813 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:55:42,071 - WARNING - No data found for pitcher nan
+2025-05-03 19:55:42,071 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:55:42,072 - INFO - Fetching enhanced metrics for batter 664040
+2025-05-03 19:55:43,522 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:55:43,779 - WARNING - No data found for pitcher nan
+2025-05-03 19:55:43,779 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:55:43,782 - INFO - Fetching enhanced metrics for batter 663698
+2025-05-03 19:55:45,690 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:55:45,921 - WARNING - No data found for pitcher nan
+2025-05-03 19:55:45,922 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:55:45,923 - INFO - Fetching enhanced metrics for batter 666624
+2025-05-03 19:55:47,617 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:55:47,867 - WARNING - No data found for pitcher nan
+2025-05-03 19:55:47,868 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:55:47,868 - INFO - Fetching enhanced metrics for batter 669234
+2025-05-03 19:55:49,154 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:55:49,425 - WARNING - No data found for pitcher nan
+2025-05-03 19:55:49,425 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:55:49,426 - INFO - Fetching enhanced metrics for batter 668939
+2025-05-03 19:55:49,723 - INFO - Fetching enhanced metrics for pitcher 663460.0
+2025-05-03 19:55:49,879 - INFO - Fetching enhanced metrics for batter 571912
+2025-05-03 19:55:50,853 - WARNING - No data found for batter 571912
+2025-05-03 19:55:50,854 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:55:51,109 - WARNING - No data found for pitcher nan
+2025-05-03 19:55:51,109 - WARNING - Using fallback data for batter 571912
+2025-05-03 19:55:51,109 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:55:51,110 - INFO - Fetching enhanced metrics for batter 608070
+2025-05-03 19:55:52,661 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:55:52,967 - WARNING - No data found for pitcher nan
+2025-05-03 19:55:52,967 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:55:52,970 - INFO - Fetching enhanced metrics for batter 628451
+2025-05-03 19:55:54,431 - INFO - Fetching enhanced metrics for pitcher 543294.0
+2025-05-03 19:55:55,909 - INFO - Fetching enhanced metrics for batter 666397
+2025-05-03 19:55:57,547 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:55:57,779 - WARNING - No data found for pitcher nan
+2025-05-03 19:55:57,780 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:55:57,782 - INFO - Fetching enhanced metrics for batter 669357
+2025-05-03 19:55:58,919 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:55:59,104 - WARNING - No data found for pitcher nan
+2025-05-03 19:55:59,104 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:55:59,104 - INFO - Fetching enhanced metrics for batter 665839
+2025-05-03 19:56:00,578 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:56:00,789 - WARNING - No data found for pitcher nan
+2025-05-03 19:56:00,789 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:56:00,790 - INFO - Fetching enhanced metrics for batter 666182
+2025-05-03 19:56:02,206 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:56:02,391 - WARNING - No data found for pitcher nan
+2025-05-03 19:56:02,391 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:56:02,392 - INFO - Fetching enhanced metrics for batter 543807
+2025-05-03 19:56:04,112 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:56:04,286 - WARNING - No data found for pitcher nan
+2025-05-03 19:56:04,286 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:56:04,287 - INFO - Fetching enhanced metrics for batter 547180
+2025-05-03 19:56:18,710 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:56:20,125 - WARNING - No data found for pitcher nan
+2025-05-03 19:56:20,126 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:56:20,128 - INFO - Fetching enhanced metrics for batter 620443
+2025-05-03 19:56:22,153 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:56:22,396 - WARNING - No data found for pitcher nan
+2025-05-03 19:56:22,396 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:56:22,397 - INFO - Fetching enhanced metrics for batter 641487
+2025-05-03 19:56:24,252 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:56:24,505 - WARNING - No data found for pitcher nan
+2025-05-03 19:56:24,505 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:56:24,506 - INFO - Fetching enhanced metrics for batter 514888
+2025-05-03 19:56:25,874 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:56:26,035 - WARNING - No data found for pitcher nan
+2025-05-03 19:56:26,036 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:56:26,036 - INFO - Fetching enhanced metrics for batter 570482
+2025-05-03 19:56:27,126 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:56:27,314 - WARNING - No data found for pitcher nan
+2025-05-03 19:56:27,315 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:56:27,315 - INFO - Fetching enhanced metrics for batter 669701
+2025-05-03 19:56:29,014 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:56:29,186 - WARNING - No data found for pitcher nan
+2025-05-03 19:56:29,186 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:56:29,187 - INFO - Fetching enhanced metrics for batter 660688
+2025-05-03 19:56:31,649 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:56:31,936 - WARNING - No data found for pitcher nan
+2025-05-03 19:56:31,936 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:56:31,939 - INFO - Fetching enhanced metrics for batter 678877
+2025-05-03 19:56:33,406 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:56:33,634 - WARNING - No data found for pitcher nan
+2025-05-03 19:56:33,634 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:56:33,635 - INFO - Fetching enhanced metrics for batter 571970
+2025-05-03 19:56:33,996 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:56:34,210 - WARNING - No data found for pitcher nan
+2025-05-03 19:56:34,210 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:56:34,211 - INFO - Fetching enhanced metrics for batter 650333
+2025-05-03 19:56:35,186 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:56:35,395 - WARNING - No data found for pitcher nan
+2025-05-03 19:56:35,395 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:56:35,396 - INFO - Fetching enhanced metrics for batter 681624
+2025-05-03 19:56:35,778 - INFO - Fetching enhanced metrics for pitcher 680885.0
+2025-05-03 19:56:37,293 - INFO - Fetching enhanced metrics for batter 663457
+2025-05-03 19:56:39,290 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:56:39,433 - WARNING - No data found for pitcher nan
+2025-05-03 19:56:39,434 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:56:39,435 - INFO - Fetching enhanced metrics for batter 643217
+2025-05-03 19:56:40,602 - INFO - Fetching enhanced metrics for pitcher 686613.0
+2025-05-03 19:56:42,379 - INFO - Fetching enhanced metrics for batter 681460
+2025-05-03 19:56:43,937 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:56:44,118 - WARNING - No data found for pitcher nan
+2025-05-03 19:56:44,118 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:56:44,119 - INFO - Fetching enhanced metrics for batter 680977
+2025-05-03 19:56:45,620 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:56:45,796 - WARNING - No data found for pitcher nan
+2025-05-03 19:56:45,796 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:56:45,797 - INFO - Fetching enhanced metrics for batter 606466
+2025-05-03 19:56:46,569 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:56:46,812 - WARNING - No data found for pitcher nan
+2025-05-03 19:56:46,812 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:56:46,813 - INFO - Fetching enhanced metrics for batter 665966
+2025-05-03 19:56:48,509 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:56:48,705 - WARNING - No data found for pitcher nan
+2025-05-03 19:56:48,706 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:56:48,708 - INFO - Fetching enhanced metrics for batter 680776
+2025-05-03 19:56:50,527 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:56:50,669 - WARNING - No data found for pitcher nan
+2025-05-03 19:56:50,670 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:56:50,670 - INFO - Fetching enhanced metrics for batter 621566
+2025-05-03 19:56:50,765 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:56:50,914 - WARNING - No data found for pitcher nan
+2025-05-03 19:56:50,914 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:56:50,915 - INFO - Fetching enhanced metrics for batter 676701
+2025-05-03 19:56:52,111 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:56:52,299 - WARNING - No data found for pitcher nan
+2025-05-03 19:56:52,299 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:56:52,299 - INFO - Fetching enhanced metrics for batter 672515
+2025-05-03 19:56:53,708 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:56:53,878 - WARNING - No data found for pitcher nan
+2025-05-03 19:56:53,878 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:56:53,879 - INFO - Fetching enhanced metrics for batter 640902
+2025-05-03 19:56:55,353 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:56:55,598 - WARNING - No data found for pitcher nan
+2025-05-03 19:56:55,598 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:56:55,599 - INFO - Fetching enhanced metrics for batter 672580
+2025-05-03 19:56:55,938 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:56:56,134 - WARNING - No data found for pitcher nan
+2025-05-03 19:56:56,135 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:56:56,136 - INFO - Fetching enhanced metrics for batter 667472
+2025-05-03 19:56:57,240 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:56:57,417 - WARNING - No data found for pitcher nan
+2025-05-03 19:56:57,418 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:56:57,418 - INFO - Fetching enhanced metrics for batter 673962
+2025-05-03 19:56:58,527 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:56:58,721 - WARNING - No data found for pitcher nan
+2025-05-03 19:56:58,721 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:56:58,722 - INFO - Fetching enhanced metrics for batter 686668
+2025-05-03 19:56:59,941 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:57:00,082 - WARNING - No data found for pitcher nan
+2025-05-03 19:57:00,082 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:57:00,083 - INFO - Fetching enhanced metrics for batter 680574
+2025-05-03 19:57:03,307 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:57:03,524 - WARNING - No data found for pitcher nan
+2025-05-03 19:57:03,524 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:57:03,529 - INFO - Fetching enhanced metrics for batter 657077
+2025-05-03 19:57:04,662 - INFO - Fetching enhanced metrics for pitcher 808963.0
+2025-05-03 19:57:06,095 - INFO - Fetching enhanced metrics for batter 592518
+2025-05-03 19:57:07,401 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:57:07,603 - WARNING - No data found for pitcher nan
+2025-05-03 19:57:07,603 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:57:07,604 - INFO - Fetching enhanced metrics for batter 682829
+2025-05-03 19:57:09,276 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:57:09,489 - WARNING - No data found for pitcher nan
+2025-05-03 19:57:09,490 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:57:09,491 - INFO - Fetching enhanced metrics for batter 671739
+2025-05-03 19:57:09,832 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:57:09,972 - WARNING - No data found for pitcher nan
+2025-05-03 19:57:09,972 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:57:09,973 - INFO - Fetching enhanced metrics for batter 660821
+2025-05-03 19:57:11,081 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:57:11,268 - WARNING - No data found for pitcher nan
+2025-05-03 19:57:11,268 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:57:11,268 - INFO - Fetching enhanced metrics for batter 596019
+2025-05-03 19:57:13,087 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:57:13,283 - WARNING - No data found for pitcher nan
+2025-05-03 19:57:13,283 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:57:13,284 - INFO - Fetching enhanced metrics for batter 592663
+2025-05-03 19:57:14,860 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:57:15,028 - WARNING - No data found for pitcher nan
+2025-05-03 19:57:15,028 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:57:15,029 - INFO - Fetching enhanced metrics for batter 688760
+2025-05-03 19:57:15,794 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:57:15,985 - WARNING - No data found for pitcher nan
+2025-05-03 19:57:15,985 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:57:15,986 - INFO - Fetching enhanced metrics for batter 666176
+2025-05-03 19:57:17,182 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:57:17,340 - WARNING - No data found for pitcher nan
+2025-05-03 19:57:17,341 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:57:17,342 - INFO - Fetching enhanced metrics for batter 668804
+2025-05-03 19:57:19,151 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:57:19,354 - WARNING - No data found for pitcher nan
+2025-05-03 19:57:19,354 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:57:19,354 - INFO - Fetching enhanced metrics for batter 682657
+2025-05-03 19:57:20,427 - INFO - Fetching enhanced metrics for pitcher 592332.0
+2025-05-03 19:57:22,017 - INFO - Fetching enhanced metrics for batter 609280
+2025-05-03 19:57:23,172 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:57:23,333 - WARNING - No data found for pitcher nan
+2025-05-03 19:57:23,333 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:57:23,334 - INFO - Fetching enhanced metrics for batter 664774
+2025-05-03 19:57:25,660 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:57:25,849 - WARNING - No data found for pitcher nan
+2025-05-03 19:57:25,850 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:57:25,851 - INFO - Fetching enhanced metrics for batter 666185
+2025-05-03 19:57:26,522 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:57:26,772 - WARNING - No data found for pitcher nan
+2025-05-03 19:57:26,772 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:57:26,773 - INFO - Fetching enhanced metrics for batter 592669
+2025-05-03 19:57:27,938 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:57:28,146 - WARNING - No data found for pitcher nan
+2025-05-03 19:57:28,147 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:57:28,148 - INFO - Fetching enhanced metrics for batter 676475
+2025-05-03 19:57:29,459 - INFO - Fetching enhanced metrics for pitcher 656731.0
+2025-05-03 19:57:31,075 - INFO - Fetching enhanced metrics for batter 607732
+2025-05-03 19:57:32,213 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:57:32,412 - WARNING - No data found for pitcher nan
+2025-05-03 19:57:32,412 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:57:32,412 - INFO - Fetching enhanced metrics for batter 607680
+2025-05-03 19:57:33,587 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:57:33,895 - WARNING - No data found for pitcher nan
+2025-05-03 19:57:33,896 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:57:33,896 - INFO - Fetching enhanced metrics for batter 666023
+2025-05-03 19:57:34,988 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:57:35,172 - WARNING - No data found for pitcher nan
+2025-05-03 19:57:35,172 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:57:35,173 - INFO - Fetching enhanced metrics for batter 676694
+2025-05-03 19:57:36,891 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:57:37,231 - WARNING - No data found for pitcher nan
+2025-05-03 19:57:37,231 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:57:37,233 - INFO - Fetching enhanced metrics for batter 518792
+2025-05-03 19:57:38,604 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:57:38,904 - WARNING - No data found for pitcher nan
+2025-05-03 19:57:38,904 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:57:38,905 - INFO - Fetching enhanced metrics for batter 641680
+2025-05-03 19:57:40,955 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:57:41,203 - WARNING - No data found for pitcher nan
+2025-05-03 19:57:41,203 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:57:41,204 - INFO - Fetching enhanced metrics for batter 663609
+2025-05-03 19:57:42,179 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:57:42,354 - WARNING - No data found for pitcher nan
+2025-05-03 19:57:42,354 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:57:42,355 - INFO - Fetching enhanced metrics for batter 681393
+2025-05-03 19:57:43,803 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:57:44,014 - WARNING - No data found for pitcher nan
+2025-05-03 19:57:44,014 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:57:44,015 - INFO - Fetching enhanced metrics for batter 687401
+2025-05-03 19:57:45,524 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:57:45,762 - WARNING - No data found for pitcher nan
+2025-05-03 19:57:45,767 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:57:45,768 - INFO - Fetching enhanced metrics for batter 688363
+2025-05-03 19:57:46,699 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:57:46,905 - WARNING - No data found for pitcher nan
+2025-05-03 19:57:46,905 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:57:46,906 - INFO - Fetching enhanced metrics for batter 605137
+2025-05-03 19:57:48,589 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:57:48,821 - WARNING - No data found for pitcher nan
+2025-05-03 19:57:48,821 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:57:48,822 - INFO - Fetching enhanced metrics for batter 682641
+2025-05-03 19:57:49,684 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:57:49,895 - WARNING - No data found for pitcher nan
+2025-05-03 19:57:49,895 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:57:49,896 - INFO - Fetching enhanced metrics for batter 624424
+2025-05-03 19:57:53,420 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:57:53,621 - WARNING - No data found for pitcher nan
+2025-05-03 19:57:53,621 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:57:53,622 - INFO - Fetching enhanced metrics for batter 691723
+2025-05-03 19:57:55,545 - WARNING - No data found for batter 691723
+2025-05-03 19:57:55,545 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:57:55,698 - WARNING - No data found for pitcher nan
+2025-05-03 19:57:55,698 - WARNING - Using fallback data for batter 691723
+2025-05-03 19:57:55,698 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:57:55,698 - INFO - Fetching enhanced metrics for batter 641598
+2025-05-03 19:57:56,971 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:57:57,108 - WARNING - No data found for pitcher nan
+2025-05-03 19:57:57,108 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:57:57,109 - INFO - Fetching enhanced metrics for batter 672695
+2025-05-03 19:57:58,674 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:57:58,821 - WARNING - No data found for pitcher nan
+2025-05-03 19:57:58,821 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:57:58,822 - INFO - Fetching enhanced metrics for batter 670032
+2025-05-03 19:57:59,722 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:57:59,903 - WARNING - No data found for pitcher nan
+2025-05-03 19:57:59,903 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:57:59,904 - INFO - Fetching enhanced metrics for batter 679032
+2025-05-03 19:58:01,007 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:58:01,194 - WARNING - No data found for pitcher nan
+2025-05-03 19:58:01,194 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:58:01,195 - INFO - Fetching enhanced metrics for batter 669707
+2025-05-03 19:58:01,975 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:58:02,107 - WARNING - No data found for pitcher nan
+2025-05-03 19:58:02,107 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:58:02,108 - INFO - Fetching enhanced metrics for batter 669065
+2025-05-03 19:58:02,391 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:58:02,583 - WARNING - No data found for pitcher nan
+2025-05-03 19:58:02,583 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:58:02,583 - INFO - Fetching enhanced metrics for batter 682626
+2025-05-03 19:58:03,461 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:58:03,621 - WARNING - No data found for pitcher nan
+2025-05-03 19:58:03,621 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:58:03,622 - INFO - Fetching enhanced metrics for batter 672820
+2025-05-03 19:58:05,010 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:58:05,158 - WARNING - No data found for pitcher nan
+2025-05-03 19:58:05,159 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:58:05,159 - INFO - Fetching enhanced metrics for batter 664056
+2025-05-03 19:58:06,602 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:58:06,743 - WARNING - No data found for pitcher nan
+2025-05-03 19:58:06,743 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:58:06,744 - INFO - Fetching enhanced metrics for batter 666152
+2025-05-03 19:58:07,843 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:58:08,026 - WARNING - No data found for pitcher nan
+2025-05-03 19:58:08,026 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:58:08,027 - INFO - Fetching enhanced metrics for batter 623993
+2025-05-03 19:58:09,751 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:58:09,932 - WARNING - No data found for pitcher nan
+2025-05-03 19:58:09,932 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:58:09,933 - INFO - Fetching enhanced metrics for batter 571657
+2025-05-03 19:58:10,939 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:58:11,078 - WARNING - No data found for pitcher nan
+2025-05-03 19:58:11,078 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:58:11,080 - INFO - Fetching enhanced metrics for batter 664761
+2025-05-03 19:58:12,505 - INFO - Fetching enhanced metrics for pitcher 694297.0
+2025-05-03 19:58:14,274 - INFO - Fetching enhanced metrics for batter 681082
+2025-05-03 19:58:16,103 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:58:16,260 - WARNING - No data found for pitcher nan
+2025-05-03 19:58:16,260 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:58:16,260 - INFO - Fetching enhanced metrics for batter 664023
+2025-05-03 19:58:18,187 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:58:18,331 - WARNING - No data found for pitcher nan
+2025-05-03 19:58:18,332 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:58:18,332 - INFO - Fetching enhanced metrics for batter 663604
+2025-05-03 19:58:19,211 - INFO - Fetching enhanced metrics for pitcher 663559.0
+2025-05-03 19:58:20,779 - INFO - Fetching enhanced metrics for batter 686948
+2025-05-03 19:58:21,592 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:58:21,783 - WARNING - No data found for pitcher nan
+2025-05-03 19:58:21,784 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:58:21,784 - INFO - Fetching enhanced metrics for batter 663647
+2025-05-03 19:58:23,236 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:58:23,424 - WARNING - No data found for pitcher nan
+2025-05-03 19:58:23,425 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:58:23,425 - INFO - Fetching enhanced metrics for batter 683734
+2025-05-03 19:58:24,931 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:58:25,116 - WARNING - No data found for pitcher nan
+2025-05-03 19:58:25,117 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:58:25,118 - INFO - Fetching enhanced metrics for batter 686797
+2025-05-03 19:58:26,380 - INFO - Fetching enhanced metrics for pitcher 690928.0
+2025-05-03 19:58:27,682 - INFO - Fetching enhanced metrics for batter 669134
+2025-05-03 19:58:28,359 - WARNING - No data found for batter 669134
+2025-05-03 19:58:28,359 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:58:28,508 - WARNING - No data found for pitcher nan
+2025-05-03 19:58:28,508 - WARNING - Using fallback data for batter 669134
+2025-05-03 19:58:28,508 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:58:28,509 - INFO - Fetching enhanced metrics for batter 457705
+2025-05-03 19:58:30,163 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:58:30,309 - WARNING - No data found for pitcher nan
+2025-05-03 19:58:30,309 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:58:30,309 - INFO - Fetching enhanced metrics for batter 702332
+2025-05-03 19:58:31,512 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:58:31,782 - WARNING - No data found for pitcher nan
+2025-05-03 19:58:31,782 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:58:31,786 - INFO - Fetching enhanced metrics for batter 643376
+2025-05-03 19:58:33,765 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:58:33,961 - WARNING - No data found for pitcher nan
+2025-05-03 19:58:33,961 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:58:33,962 - INFO - Fetching enhanced metrics for batter 694384
+2025-05-03 19:58:35,427 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:58:35,601 - WARNING - No data found for pitcher nan
+2025-05-03 19:58:35,601 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:58:35,601 - INFO - Fetching enhanced metrics for batter 702176
+2025-05-03 19:58:36,802 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:58:36,976 - WARNING - No data found for pitcher nan
+2025-05-03 19:58:36,976 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:58:36,977 - INFO - Fetching enhanced metrics for batter 677950
+2025-05-03 19:58:38,258 - INFO - Fetching enhanced metrics for pitcher 605400.0
+2025-05-03 19:58:39,836 - INFO - Fetching enhanced metrics for batter 456781
+2025-05-03 19:58:40,880 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:58:41,091 - WARNING - No data found for pitcher nan
+2025-05-03 19:58:41,091 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:58:41,091 - INFO - Fetching enhanced metrics for batter 691023
+2025-05-03 19:58:42,559 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:58:42,721 - WARNING - No data found for pitcher nan
+2025-05-03 19:58:42,721 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:58:42,722 - INFO - Fetching enhanced metrics for batter 691182
+2025-05-03 19:58:43,528 - INFO - Fetching enhanced metrics for pitcher 663855.0
+2025-05-03 19:58:45,334 - INFO - Fetching enhanced metrics for batter 677008
+2025-05-03 19:58:46,802 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:58:46,950 - WARNING - No data found for pitcher nan
+2025-05-03 19:58:46,950 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:58:46,951 - INFO - Fetching enhanced metrics for batter 678882
+2025-05-03 19:58:48,298 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:58:48,457 - WARNING - No data found for pitcher nan
+2025-05-03 19:58:48,457 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:58:48,457 - INFO - Fetching enhanced metrics for batter 641584
+2025-05-03 19:58:49,638 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:58:49,844 - WARNING - No data found for pitcher nan
+2025-05-03 19:58:49,845 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:58:49,846 - INFO - Fetching enhanced metrics for batter 676609
+2025-05-03 19:58:51,040 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:58:51,243 - WARNING - No data found for pitcher nan
+2025-05-03 19:58:51,243 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:58:51,243 - INFO - Fetching enhanced metrics for batter 670623
+2025-05-03 19:58:52,862 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:58:53,021 - WARNING - No data found for pitcher nan
+2025-05-03 19:58:53,021 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:58:53,022 - INFO - Fetching enhanced metrics for batter 691026
+2025-05-03 19:58:54,331 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:58:54,479 - WARNING - No data found for pitcher nan
+2025-05-03 19:58:54,480 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:58:54,480 - INFO - Fetching enhanced metrics for batter 669289
+2025-05-03 19:58:55,681 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:58:55,876 - WARNING - No data found for pitcher nan
+2025-05-03 19:58:55,876 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:58:55,877 - INFO - Fetching enhanced metrics for batter 657136
+2025-05-03 19:58:56,610 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:58:57,410 - WARNING - No data found for pitcher nan
+2025-05-03 19:58:57,410 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:58:57,411 - INFO - Fetching enhanced metrics for batter 676801
+2025-05-03 19:58:58,509 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:58:58,709 - WARNING - No data found for pitcher nan
+2025-05-03 19:58:58,710 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:58:58,710 - INFO - Fetching enhanced metrics for batter 543877
+2025-05-03 19:59:00,040 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:59:00,186 - WARNING - No data found for pitcher nan
+2025-05-03 19:59:00,186 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:59:00,187 - INFO - Fetching enhanced metrics for batter 686611
+2025-05-03 19:59:01,605 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:59:01,806 - WARNING - No data found for pitcher nan
+2025-05-03 19:59:01,807 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:59:01,807 - INFO - Fetching enhanced metrics for batter 663697
+2025-05-03 19:59:03,441 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:59:03,592 - WARNING - No data found for pitcher nan
+2025-05-03 19:59:03,593 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:59:03,593 - INFO - Fetching enhanced metrics for batter 621043
+2025-05-03 19:59:05,163 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:59:05,374 - WARNING - No data found for pitcher nan
+2025-05-03 19:59:05,375 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:59:05,375 - INFO - Fetching enhanced metrics for batter 690993
+2025-05-03 19:59:06,327 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:59:06,516 - WARNING - No data found for pitcher nan
+2025-05-03 19:59:06,517 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:59:06,517 - INFO - Fetching enhanced metrics for batter 645444
+2025-05-03 19:59:07,617 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:59:07,820 - WARNING - No data found for pitcher nan
+2025-05-03 19:59:07,820 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:59:07,821 - INFO - Fetching enhanced metrics for batter 677588
+2025-05-03 19:59:08,985 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:59:09,149 - WARNING - No data found for pitcher nan
+2025-05-03 19:59:09,150 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:59:09,150 - INFO - Fetching enhanced metrics for batter 672569
+2025-05-03 19:59:10,020 - INFO - Fetching enhanced metrics for pitcher 656427.0
+2025-05-03 19:59:11,994 - INFO - Fetching enhanced metrics for batter 664728
+2025-05-03 19:59:12,286 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:59:12,436 - WARNING - No data found for pitcher nan
+2025-05-03 19:59:12,436 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:59:12,437 - INFO - Fetching enhanced metrics for batter 668930
+2025-05-03 19:59:14,494 - INFO - Fetching enhanced metrics for pitcher 592791.0
+2025-05-03 19:59:16,068 - INFO - Fetching enhanced metrics for batter 676391
+2025-05-03 19:59:17,065 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:59:17,229 - WARNING - No data found for pitcher nan
+2025-05-03 19:59:17,229 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:59:17,229 - INFO - Fetching enhanced metrics for batter 681146
+2025-05-03 19:59:18,626 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:59:18,784 - WARNING - No data found for pitcher nan
+2025-05-03 19:59:18,784 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:59:18,785 - INFO - Fetching enhanced metrics for batter 702616
+2025-05-03 19:59:19,877 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:59:20,080 - WARNING - No data found for pitcher nan
+2025-05-03 19:59:20,081 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:59:20,081 - INFO - Fetching enhanced metrics for batter 666915
+2025-05-03 19:59:21,022 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:59:21,178 - WARNING - No data found for pitcher nan
+2025-05-03 19:59:21,178 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:59:21,179 - INFO - Fetching enhanced metrics for batter 467793
+2025-05-03 19:59:22,836 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:59:23,028 - WARNING - No data found for pitcher nan
+2025-05-03 19:59:23,028 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:59:23,028 - INFO - Fetching enhanced metrics for batter 642708
+2025-05-03 19:59:23,997 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:59:24,230 - WARNING - No data found for pitcher nan
+2025-05-03 19:59:24,231 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:59:24,231 - INFO - Fetching enhanced metrics for batter 663898
+2025-05-03 19:59:25,281 - INFO - Fetching enhanced metrics for pitcher 663436.0
+2025-05-03 19:59:27,154 - INFO - Fetching enhanced metrics for batter 672724
+2025-05-03 19:59:28,193 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:59:28,395 - WARNING - No data found for pitcher nan
+2025-05-03 19:59:28,395 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:59:28,396 - INFO - Fetching enhanced metrics for batter 682668
+2025-05-03 19:59:29,651 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:59:29,859 - WARNING - No data found for pitcher nan
+2025-05-03 19:59:29,859 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:59:29,860 - INFO - Fetching enhanced metrics for batter 678391
+2025-05-03 19:59:30,548 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:59:30,697 - WARNING - No data found for pitcher nan
+2025-05-03 19:59:30,697 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:59:30,697 - INFO - Fetching enhanced metrics for batter 669016
+2025-05-03 19:59:31,487 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:59:31,689 - WARNING - No data found for pitcher nan
+2025-05-03 19:59:31,689 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:59:31,690 - INFO - Fetching enhanced metrics for batter 624428
+2025-05-03 19:59:33,685 - INFO - Fetching enhanced metrics for pitcher 681190.0
+2025-05-03 19:59:35,501 - INFO - Fetching enhanced metrics for batter 691594
+2025-05-03 19:59:36,549 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:59:36,738 - WARNING - No data found for pitcher nan
+2025-05-03 19:59:36,739 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:59:36,739 - INFO - Fetching enhanced metrics for batter 810938
+2025-05-03 19:59:37,865 - INFO - Fetching enhanced metrics for pitcher 571578.0
+2025-05-03 19:59:39,422 - INFO - Fetching enhanced metrics for batter 553869
+2025-05-03 19:59:40,643 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:59:40,808 - WARNING - No data found for pitcher nan
+2025-05-03 19:59:40,808 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:59:40,810 - INFO - Fetching enhanced metrics for batter 622761
+2025-05-03 19:59:41,549 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:59:41,861 - WARNING - No data found for pitcher nan
+2025-05-03 19:59:41,862 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:59:41,863 - INFO - Fetching enhanced metrics for batter 676070
+2025-05-03 19:59:42,958 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:59:43,140 - WARNING - No data found for pitcher nan
+2025-05-03 19:59:43,140 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:59:43,141 - INFO - Fetching enhanced metrics for batter 606992
+2025-05-03 19:59:44,170 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:59:44,391 - WARNING - No data found for pitcher nan
+2025-05-03 19:59:44,391 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:59:44,391 - INFO - Fetching enhanced metrics for batter 621035
+2025-05-03 19:59:45,227 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:59:45,419 - WARNING - No data found for pitcher nan
+2025-05-03 19:59:45,419 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:59:45,419 - INFO - Fetching enhanced metrics for batter 689414
+2025-05-03 19:59:46,468 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:59:46,751 - WARNING - No data found for pitcher nan
+2025-05-03 19:59:46,751 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:59:46,752 - INFO - Fetching enhanced metrics for batter 650859
+2025-05-03 19:59:48,097 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:59:48,468 - WARNING - No data found for pitcher nan
+2025-05-03 19:59:48,468 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:59:48,473 - INFO - Fetching enhanced metrics for batter 677587
+2025-05-03 19:59:49,937 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:59:50,114 - WARNING - No data found for pitcher nan
+2025-05-03 19:59:50,115 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:59:50,115 - INFO - Fetching enhanced metrics for batter 669397
+2025-05-03 19:59:50,434 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:59:50,606 - WARNING - No data found for pitcher nan
+2025-05-03 19:59:50,606 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:59:50,607 - INFO - Fetching enhanced metrics for batter 669743
+2025-05-03 19:59:51,749 - INFO - Fetching enhanced metrics for pitcher 666157.0
+2025-05-03 19:59:53,437 - INFO - Fetching enhanced metrics for batter 578428
+2025-05-03 19:59:54,637 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:59:54,818 - WARNING - No data found for pitcher nan
+2025-05-03 19:59:54,818 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:59:54,819 - INFO - Fetching enhanced metrics for batter 700337
+2025-05-03 19:59:55,857 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:59:56,084 - WARNING - No data found for pitcher nan
+2025-05-03 19:59:56,084 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:59:56,085 - INFO - Fetching enhanced metrics for batter 643289
+2025-05-03 19:59:57,089 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:59:57,323 - WARNING - No data found for pitcher nan
+2025-05-03 19:59:57,324 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:59:57,324 - INFO - Fetching enhanced metrics for batter 683766
+2025-05-03 19:59:58,288 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:59:58,508 - WARNING - No data found for pitcher nan
+2025-05-03 19:59:58,508 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:59:58,509 - INFO - Fetching enhanced metrics for batter 690291
+2025-05-03 19:59:59,652 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 19:59:59,891 - WARNING - No data found for pitcher nan
+2025-05-03 19:59:59,892 - WARNING - Using fallback data for pitcher nan
+2025-05-03 19:59:59,892 - INFO - Fetching enhanced metrics for batter 670156
+2025-05-03 20:00:01,412 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 20:00:01,664 - WARNING - No data found for pitcher nan
+2025-05-03 20:00:01,664 - WARNING - Using fallback data for pitcher nan
+2025-05-03 20:00:01,665 - INFO - Fetching enhanced metrics for batter 641943
+2025-05-03 20:00:02,816 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 20:00:03,021 - WARNING - No data found for pitcher nan
+2025-05-03 20:00:03,021 - WARNING - Using fallback data for pitcher nan
+2025-05-03 20:00:03,021 - INFO - Fetching enhanced metrics for batter 542932
+2025-05-03 20:00:04,653 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 20:00:04,899 - WARNING - No data found for pitcher nan
+2025-05-03 20:00:04,900 - WARNING - Using fallback data for pitcher nan
+2025-05-03 20:00:04,900 - INFO - Fetching enhanced metrics for batter 605131
+2025-05-03 20:00:06,721 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 20:00:06,890 - WARNING - No data found for pitcher nan
+2025-05-03 20:00:06,890 - WARNING - Using fallback data for pitcher nan
+2025-05-03 20:00:06,890 - INFO - Fetching enhanced metrics for batter 696285
+2025-05-03 20:00:08,799 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 20:00:09,024 - WARNING - No data found for pitcher nan
+2025-05-03 20:00:09,024 - WARNING - Using fallback data for pitcher nan
+2025-05-03 20:00:09,026 - INFO - Fetching enhanced metrics for batter 500743
+2025-05-03 20:00:11,511 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 20:00:11,682 - WARNING - No data found for pitcher nan
+2025-05-03 20:00:11,682 - WARNING - Using fallback data for pitcher nan
+2025-05-03 20:00:11,683 - INFO - Fetching enhanced metrics for batter 641658
+2025-05-03 20:00:13,539 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 20:00:13,720 - WARNING - No data found for pitcher nan
+2025-05-03 20:00:13,721 - WARNING - Using fallback data for pitcher nan
+2025-05-03 20:00:13,722 - INFO - Fetching enhanced metrics for batter 805367
+2025-05-03 20:00:15,702 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 20:00:15,914 - WARNING - No data found for pitcher nan
+2025-05-03 20:00:15,915 - WARNING - Using fallback data for pitcher nan
+2025-05-03 20:00:15,915 - INFO - Fetching enhanced metrics for batter 666163
+2025-05-03 20:00:16,653 - ERROR - Error fetching enhanced batter metrics: Error tokenizing data. C error: Expected 1 fields in line 13, saw 2
+
+2025-05-03 20:00:16,654 - INFO - Fetching enhanced metrics for pitcher 642232.0
+2025-05-03 20:00:18,844 - WARNING - Using fallback data for batter 666163
+2025-05-03 20:00:18,845 - INFO - Fetching enhanced metrics for batter 663662
+2025-05-03 20:00:19,833 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 20:00:20,121 - WARNING - No data found for pitcher nan
+2025-05-03 20:00:20,121 - WARNING - Using fallback data for pitcher nan
+2025-05-03 20:00:20,122 - INFO - Fetching enhanced metrics for batter 680577
+2025-05-03 20:00:21,366 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 20:00:21,541 - WARNING - No data found for pitcher nan
+2025-05-03 20:00:21,542 - WARNING - Using fallback data for pitcher nan
+2025-05-03 20:00:21,542 - INFO - Fetching enhanced metrics for batter 802415
+2025-05-03 20:00:22,685 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 20:00:22,882 - WARNING - No data found for pitcher nan
+2025-05-03 20:00:22,882 - WARNING - Using fallback data for pitcher nan
+2025-05-03 20:00:22,882 - INFO - Fetching enhanced metrics for batter 624415
+2025-05-03 20:00:24,255 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 20:00:24,444 - WARNING - No data found for pitcher nan
+2025-05-03 20:00:24,444 - WARNING - Using fallback data for pitcher nan
+2025-05-03 20:00:24,445 - INFO - Fetching enhanced metrics for batter 621028
+2025-05-03 20:00:25,289 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 20:00:25,506 - WARNING - No data found for pitcher nan
+2025-05-03 20:00:25,506 - WARNING - Using fallback data for pitcher nan
+2025-05-03 20:00:25,506 - INFO - Fetching enhanced metrics for batter 678554
+2025-05-03 20:00:26,464 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 20:00:26,655 - WARNING - No data found for pitcher nan
+2025-05-03 20:00:26,655 - WARNING - Using fallback data for pitcher nan
+2025-05-03 20:00:26,655 - INFO - Fetching enhanced metrics for batter 457759
+2025-05-03 20:00:27,915 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 20:00:28,128 - WARNING - No data found for pitcher nan
+2025-05-03 20:00:28,128 - WARNING - Using fallback data for pitcher nan
+2025-05-03 20:00:28,130 - INFO - Fetching enhanced metrics for batter 694359
+2025-05-03 20:00:29,005 - WARNING - No data found for batter 694359
+2025-05-03 20:00:29,005 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 20:00:29,251 - WARNING - No data found for pitcher nan
+2025-05-03 20:00:29,252 - WARNING - Using fallback data for batter 694359
+2025-05-03 20:00:29,252 - WARNING - Using fallback data for pitcher nan
+2025-05-03 20:00:29,252 - INFO - Fetching enhanced metrics for batter 660844
+2025-05-03 20:00:30,337 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 20:00:30,575 - WARNING - No data found for pitcher nan
+2025-05-03 20:00:30,575 - WARNING - Using fallback data for pitcher nan
+2025-05-03 20:00:30,577 - INFO - Fetching enhanced metrics for batter 640492
+2025-05-03 20:00:31,401 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-03 20:00:31,559 - WARNING - No data found for pitcher nan
+2025-05-03 20:00:31,560 - WARNING - Using fallback data for pitcher nan
+2025-05-03 20:00:31,573 - INFO - Updating prediction formula with enhanced metrics
+2025-05-03 20:00:31,651 - INFO - Successfully added enhanced HR score
+2025-05-03 20:00:31,652 - INFO - [2025-05-03 20:00:31] ✅ Successfully applied enhanced metrics
+2025-05-03 20:00:31,654 - INFO - [2025-05-03 20:00:31] 🌤️ Applying weather boosts...
+2025-05-03 20:00:31,656 - INFO - 🌤️ Applying enhanced weather and park effects...
+2025-05-03 20:00:31,663 - INFO - ✅ Loaded 10 weather cache entries
+2025-05-03 20:00:31,677 - INFO - 🌤️ Fetching weather for Cleveland,US (attempt 1/3)
+2025-05-03 20:00:32,279 - INFO - ✅ Saved 11 weather cache entries
+2025-05-03 20:00:32,280 - INFO - ✅ Weather data fetched for Cleveland,US
+2025-05-03 20:00:32,282 - INFO - 🌡️ Rogers Centre: 8.11°C, Wind: 6.17m/s at 30°
+2025-05-03 20:00:32,282 - INFO - ⚾ Applied park factor 1.0 for Rogers Centre
+2025-05-03 20:00:32,282 - INFO - ⚾ Applied park factor 1.0 for loanDepot park
+2025-05-03 20:00:32,282 - INFO - ✅ Using cached weather data for Arlington,US
+2025-05-03 20:00:32,283 - INFO - 🌡️ Globe Life Field: 22.59°C, Wind: 4.12m/s at 360°
+2025-05-03 20:00:32,283 - INFO - ⚾ Applied park factor 0.97 for Globe Life Field
+2025-05-03 20:00:32,283 - INFO - ✅ Using cached weather data for Atlanta,US
+2025-05-03 20:00:32,284 - INFO - 🌡️ Truist Park: 20.19°C, Wind: 5.66m/s at 230°
+2025-05-03 20:00:32,284 - INFO - ⚾ Applied park factor 1.0 for Truist Park
+2025-05-03 20:00:32,284 - INFO - ✅ Using cached weather data for Arlington,US
+2025-05-03 20:00:32,284 - INFO - 🌡️ Globe Life Field: 22.59°C, Wind: 4.12m/s at 360°
+2025-05-03 20:00:32,285 - INFO - ⚾ Applied park factor 0.97 for Globe Life Field
+2025-05-03 20:00:32,285 - INFO - 🌤️ Fetching weather for Milwaukee,US (attempt 1/3)
+2025-05-03 20:00:32,345 - INFO - ✅ Saved 12 weather cache entries
+2025-05-03 20:00:32,345 - INFO - ✅ Weather data fetched for Milwaukee,US
+2025-05-03 20:00:32,346 - INFO - 🌡️ American Family Field: 8.63°C, Wind: 2.24m/s at 69°
+2025-05-03 20:00:32,346 - INFO - ⚾ Applied park factor 1.06 for American Family Field
+2025-05-03 20:00:32,346 - INFO - 🌤️ Fetching weather for Minneapolis,US (attempt 1/3)
+2025-05-03 20:00:32,418 - INFO - ✅ Saved 13 weather cache entries
+2025-05-03 20:00:32,418 - INFO - ✅ Weather data fetched for Minneapolis,US
+2025-05-03 20:00:32,419 - INFO - 🌡️ Fenway Park: 18.66°C, Wind: 2.57m/s at 260°
+2025-05-03 20:00:32,420 - INFO - ⚾ Applied park factor 0.98 for Fenway Park
+2025-05-03 20:00:32,420 - INFO - 🌤️ Fetching weather for St. Petersburg,US (attempt 1/3)
+2025-05-03 20:00:32,486 - INFO - ✅ Saved 14 weather cache entries
+2025-05-03 20:00:32,486 - INFO - ✅ Weather data fetched for St. Petersburg,US
+2025-05-03 20:00:32,487 - INFO - 🌡️ Yankee Stadium: 25.38°C, Wind: 4.12m/s at 240°
+2025-05-03 20:00:32,488 - INFO - ⚾ Applied park factor 0.97 for Yankee Stadium
+2025-05-03 20:00:32,488 - INFO - 🌤️ Fetching weather for Philadelphia,US (attempt 1/3)
+2025-05-03 20:00:32,552 - INFO - ✅ Saved 15 weather cache entries
+2025-05-03 20:00:32,553 - INFO - ✅ Weather data fetched for Philadelphia,US
+2025-05-03 20:00:32,554 - INFO - 🌡️ Citizens Bank Park: 24.56°C, Wind: 2.06m/s at 180°
+2025-05-03 20:00:32,554 - INFO - ⚾ Applied park factor 1.05 for Citizens Bank Park
+2025-05-03 20:00:32,555 - INFO - ✅ Using cached weather data for Philadelphia,US
+2025-05-03 20:00:32,555 - INFO - 🌡️ Citizens Bank Park: 24.56°C, Wind: 2.06m/s at 180°
+2025-05-03 20:00:32,556 - INFO - ⚾ Applied park factor 1.05 for Citizens Bank Park
+2025-05-03 20:00:32,556 - INFO - 🌤️ Fetching weather for Pittsburgh,US (attempt 1/3)
+2025-05-03 20:00:32,629 - INFO - ✅ Saved 16 weather cache entries
+2025-05-03 20:00:32,629 - INFO - ✅ Weather data fetched for Pittsburgh,US
+2025-05-03 20:00:32,630 - INFO - 🌡️ PNC Park: 16.24°C, Wind: 1.54m/s at 310°
+2025-05-03 20:00:32,630 - INFO - ⚾ Applied park factor 0.97 for PNC Park
+2025-05-03 20:00:32,630 - INFO - 🌤️ Fetching weather for San Francisco,US (attempt 1/3)
+2025-05-03 20:00:32,697 - INFO - ✅ Saved 17 weather cache entries
+2025-05-03 20:00:32,697 - INFO - ✅ Weather data fetched for San Francisco,US
+2025-05-03 20:00:32,697 - INFO - 🌡️ Oracle Park: 15.43°C, Wind: 12.35m/s at 280°
+2025-05-03 20:00:32,698 - INFO - ⚾ Applied park factor 0.85 for Oracle Park
+2025-05-03 20:00:32,698 - INFO - ✅ Using cached weather data for St. Petersburg,US
+2025-05-03 20:00:32,698 - INFO - 🌡️ Yankee Stadium: 25.38°C, Wind: 4.12m/s at 240°
+2025-05-03 20:00:32,699 - INFO - ⚾ Applied park factor 0.97 for Yankee Stadium
+2025-05-03 20:00:32,699 - INFO - 🌤️ Fetching weather for Cincinnati,US (attempt 1/3)
+2025-05-03 20:00:32,764 - INFO - ✅ Saved 18 weather cache entries
+2025-05-03 20:00:32,764 - INFO - ✅ Weather data fetched for Cincinnati,US
+2025-05-03 20:00:32,765 - INFO - 🌡️ Great American Ball Park: 12.15°C, Wind: 7.2m/s at 60°
+2025-05-03 20:00:32,765 - INFO - ⚾ Applied park factor 1.1 for Great American Ball Park
+2025-05-03 20:00:32,765 - INFO - 🌤️ Fetching weather for Miami,US (attempt 1/3)
+2025-05-03 20:00:32,854 - INFO - ✅ Saved 19 weather cache entries
+2025-05-03 20:00:32,854 - INFO - ✅ Weather data fetched for Miami,US
+2025-05-03 20:00:32,855 - INFO - 🌡️ loanDepot park: 25.46°C, Wind: 1.34m/s at 133°
+2025-05-03 20:00:32,855 - INFO - ⚾ Applied park factor 0.96 for loanDepot park
+2025-05-03 20:00:32,855 - INFO - ✅ Using cached weather data for Denver,US
+2025-05-03 20:00:32,855 - INFO - 🌡️ Oracle Park: 24.58°C, Wind: 2.24m/s at 118°
+2025-05-03 20:00:32,856 - INFO - ⚾ Applied park factor 1.15 for Oracle Park
+2025-05-03 20:00:32,856 - INFO - 🌤️ Fetching weather for Chicago,US (attempt 1/3)
+2025-05-03 20:00:32,922 - INFO - ✅ Saved 20 weather cache entries
+2025-05-03 20:00:32,922 - INFO - ✅ Weather data fetched for Chicago,US
+2025-05-03 20:00:32,922 - INFO - 🌡️ American Family Field: 9.36°C, Wind: 1.34m/s at 39°
+2025-05-03 20:00:32,923 - INFO - ⚾ Applied park factor 1.02 for American Family Field
+2025-05-03 20:00:32,923 - INFO - ✅ Using cached weather data for St. Petersburg,US
+2025-05-03 20:00:32,923 - INFO - 🌡️ Yankee Stadium: 25.38°C, Wind: 4.12m/s at 240°
+2025-05-03 20:00:32,923 - INFO - ⚾ Applied park factor 0.97 for Yankee Stadium
+2025-05-03 20:00:32,924 - INFO - ⚾ Applied park factor 1.0 for Citizens Bank Park
+2025-05-03 20:00:32,924 - INFO - 🌤️ Fetching weather for Detroit,US (attempt 1/3)
+2025-05-03 20:00:33,005 - INFO - ✅ Saved 21 weather cache entries
+2025-05-03 20:00:33,006 - INFO - ✅ Weather data fetched for Detroit,US
+2025-05-03 20:00:33,006 - INFO - 🌡️ Angel Stadium: 9.59°C, Wind: 5.66m/s at 40°
+2025-05-03 20:00:33,007 - INFO - ⚾ Applied park factor 1.0 for Angel Stadium
+2025-05-03 20:00:33,007 - INFO - ✅ Using cached weather data for St. Petersburg,US
+2025-05-03 20:00:33,008 - INFO - 🌡️ Yankee Stadium: 25.38°C, Wind: 4.12m/s at 240°
+2025-05-03 20:00:33,008 - INFO - ⚾ Applied park factor 0.97 for Yankee Stadium
+2025-05-03 20:00:33,008 - INFO - ✅ Using cached weather data for San Francisco,US
+2025-05-03 20:00:33,009 - INFO - 🌡️ Oracle Park: 15.43°C, Wind: 12.35m/s at 280°
+2025-05-03 20:00:33,009 - INFO - ⚾ Applied park factor 0.85 for Oracle Park
+2025-05-03 20:00:33,010 - INFO - 🌤️ Fetching weather for Washington,US (attempt 1/3)
+2025-05-03 20:00:33,072 - INFO - ✅ Saved 22 weather cache entries
+2025-05-03 20:00:33,072 - INFO - ✅ Weather data fetched for Washington,US
+2025-05-03 20:00:33,073 - INFO - 🌡️ Great American Ball Park: 16.1°C, Wind: 4.46m/s at 316°
+2025-05-03 20:00:33,074 - INFO - ⚾ Applied park factor 0.97 for Great American Ball Park
+2025-05-03 20:00:33,074 - INFO - ✅ Using cached weather data for Washington,US
+2025-05-03 20:00:33,074 - INFO - 🌡️ Great American Ball Park: 16.1°C, Wind: 4.46m/s at 316°
+2025-05-03 20:00:33,075 - INFO - ⚾ Applied park factor 0.97 for Great American Ball Park
+2025-05-03 20:00:33,075 - INFO - ✅ Using cached weather data for Boston,US
+2025-05-03 20:00:33,075 - INFO - 🌡️ Fenway Park: 19.55°C, Wind: 0.89m/s at 285°
+2025-05-03 20:00:33,076 - INFO - ⚾ Applied park factor 1.07 for Fenway Park
+2025-05-03 20:00:33,076 - INFO - ✅ Using cached weather data for Denver,US
+2025-05-03 20:00:33,077 - INFO - 🌡️ Oracle Park: 24.58°C, Wind: 2.24m/s at 118°
+2025-05-03 20:00:33,078 - INFO - ⚾ Applied park factor 1.15 for Oracle Park
+2025-05-03 20:00:33,078 - INFO - ✅ Using cached weather data for Detroit,US
+2025-05-03 20:00:33,078 - INFO - 🌡️ Angel Stadium: 9.59°C, Wind: 5.66m/s at 40°
+2025-05-03 20:00:33,079 - INFO - ⚾ Applied park factor 1.0 for Angel Stadium
+2025-05-03 20:00:33,079 - INFO - 🌤️ Fetching weather for Bronx,US (attempt 1/3)
+2025-05-03 20:00:33,149 - INFO - ✅ Saved 23 weather cache entries
+2025-05-03 20:00:33,150 - INFO - ✅ Weather data fetched for Bronx,US
+2025-05-03 20:00:33,150 - INFO - 🌡️ Yankee Stadium: 22.33°C, Wind: 4.12m/s at 60°
+2025-05-03 20:00:33,150 - INFO - ⚾ Applied park factor 1.12 for Yankee Stadium
+2025-05-03 20:00:33,151 - INFO - ✅ Using cached weather data for Los Angeles,US
+2025-05-03 20:00:33,151 - INFO - 🌡️ Truist Park: 15.71°C, Wind: 4.12m/s at 270°
+2025-05-03 20:00:33,151 - INFO - ⚾ Applied park factor 0.99 for Truist Park
+2025-05-03 20:00:33,151 - INFO - ✅ Using cached weather data for Minneapolis,US
+2025-05-03 20:00:33,152 - INFO - 🌡️ Fenway Park: 18.66°C, Wind: 2.57m/s at 260°
+2025-05-03 20:00:33,152 - INFO - ⚾ Applied park factor 0.98 for Fenway Park
+2025-05-03 20:00:33,152 - INFO - ✅ Using cached weather data for Milwaukee,US
+2025-05-03 20:00:33,152 - INFO - 🌡️ American Family Field: 8.63°C, Wind: 2.24m/s at 69°
+2025-05-03 20:00:33,152 - INFO - ⚾ Applied park factor 1.06 for American Family Field
+2025-05-03 20:00:33,153 - INFO - ✅ Using cached weather data for Detroit,US
+2025-05-03 20:00:33,153 - INFO - 🌡️ Angel Stadium: 9.59°C, Wind: 5.66m/s at 40°
+2025-05-03 20:00:33,153 - INFO - ⚾ Applied park factor 1.0 for Angel Stadium
+2025-05-03 20:00:33,154 - INFO - 🌤️ Fetching weather for Seattle,US (attempt 1/3)
+2025-05-03 20:00:33,205 - INFO - ✅ Saved 24 weather cache entries
+2025-05-03 20:00:33,205 - INFO - ✅ Weather data fetched for Seattle,US
+2025-05-03 20:00:33,206 - INFO - 🌡️ Globe Life Field: 12.69°C, Wind: 3.13m/s at 293°
+2025-05-03 20:00:33,206 - INFO - ⚾ Applied park factor 0.95 for Globe Life Field
+2025-05-03 20:00:33,206 - INFO - ✅ Using cached weather data for St. Petersburg,US
+2025-05-03 20:00:33,207 - INFO - 🌡️ Yankee Stadium: 25.38°C, Wind: 4.12m/s at 240°
+2025-05-03 20:00:33,207 - INFO - ⚾ Applied park factor 0.97 for Yankee Stadium
+2025-05-03 20:00:33,207 - INFO - ✅ Using cached weather data for Cincinnati,US
+2025-05-03 20:00:33,207 - INFO - 🌡️ Great American Ball Park: 12.15°C, Wind: 7.2m/s at 60°
+2025-05-03 20:00:33,208 - INFO - ⚾ Applied park factor 1.1 for Great American Ball Park
+2025-05-03 20:00:33,208 - INFO - ⚾ Applied park factor 1.0 for Citizens Bank Park
+2025-05-03 20:00:33,208 - INFO - 🌤️ Fetching weather for Anaheim,US (attempt 1/3)
+2025-05-03 20:00:33,279 - INFO - ✅ Saved 25 weather cache entries
+2025-05-03 20:00:33,279 - INFO - ✅ Weather data fetched for Anaheim,US
+2025-05-03 20:00:33,281 - INFO - 🌡️ Angel Stadium: 16.87°C, Wind: 3.09m/s at 180°
+2025-05-03 20:00:33,281 - INFO - ⚾ Applied park factor 1.02 for Angel Stadium
+2025-05-03 20:00:33,281 - INFO - ✅ Using cached weather data for Atlanta,US
+2025-05-03 20:00:33,281 - INFO - 🌡️ Truist Park: 20.19°C, Wind: 5.66m/s at 230°
+2025-05-03 20:00:33,282 - INFO - ⚾ Applied park factor 1.0 for Truist Park
+2025-05-03 20:00:33,282 - INFO - ✅ Using cached weather data for Bronx,US
+2025-05-03 20:00:33,282 - INFO - 🌡️ Yankee Stadium: 22.33°C, Wind: 4.12m/s at 60°
+2025-05-03 20:00:33,285 - INFO - ⚾ Applied park factor 1.08 for Yankee Stadium
+2025-05-03 20:00:33,285 - INFO - ✅ Using cached weather data for Miami,US
+2025-05-03 20:00:33,286 - INFO - 🌡️ loanDepot park: 25.46°C, Wind: 1.34m/s at 133°
+2025-05-03 20:00:33,286 - INFO - ⚾ Applied park factor 0.96 for loanDepot park
+2025-05-03 20:00:33,286 - INFO - ✅ Using cached weather data for Baltimore,US
+2025-05-03 20:00:33,287 - INFO - 🌡️ Oriole Park at Camden Yards: 23.45°C, Wind: 2.06m/s at 130°
+2025-05-03 20:00:33,287 - INFO - ⚾ Applied park factor 1.04 for Oriole Park at Camden Yards
+2025-05-03 20:00:33,287 - INFO - ✅ Using cached weather data for St. Louis,US
+2025-05-03 20:00:33,288 - INFO - 🌡️ Busch Stadium: 10.96°C, Wind: 5.66m/s at 330°
+2025-05-03 20:00:33,288 - INFO - ⚾ Applied park factor 0.99 for Busch Stadium
+2025-05-03 20:00:33,288 - INFO - ✅ Using cached weather data for St. Louis,US
+2025-05-03 20:00:33,288 - INFO - 🌡️ Busch Stadium: 10.96°C, Wind: 5.66m/s at 330°
+2025-05-03 20:00:33,289 - INFO - ⚾ Applied park factor 0.99 for Busch Stadium
+2025-05-03 20:00:33,289 - INFO - ✅ Using cached weather data for St. Louis,US
+2025-05-03 20:00:33,289 - INFO - 🌡️ Busch Stadium: 10.96°C, Wind: 5.66m/s at 330°
+2025-05-03 20:00:33,289 - INFO - ⚾ Applied park factor 0.99 for Busch Stadium
+2025-05-03 20:00:33,290 - INFO - ✅ Using cached weather data for Chicago,US
+2025-05-03 20:00:33,290 - INFO - 🌡️ Rate Field: 9.36°C, Wind: 1.34m/s at 39°
+2025-05-03 20:00:33,290 - INFO - ⚾ Applied park factor 1.0 for Rate Field
+2025-05-03 20:00:33,291 - INFO - ✅ Using cached weather data for Milwaukee,US
+2025-05-03 20:00:33,291 - INFO - 🌡️ American Family Field: 8.63°C, Wind: 2.24m/s at 69°
+2025-05-03 20:00:33,292 - INFO - ⚾ Applied park factor 1.06 for American Family Field
+2025-05-03 20:00:33,292 - INFO - ✅ Using cached weather data for Milwaukee,US
+2025-05-03 20:00:33,292 - INFO - 🌡️ American Family Field: 8.63°C, Wind: 2.24m/s at 69°
+2025-05-03 20:00:33,292 - INFO - ⚾ Applied park factor 1.06 for American Family Field
+2025-05-03 20:00:33,298 - INFO - ✅ Using cached weather data for Anaheim,US
+2025-05-03 20:00:33,298 - INFO - 🌡️ Angel Stadium: 16.87°C, Wind: 3.09m/s at 180°
+2025-05-03 20:00:33,298 - INFO - ⚾ Applied park factor 1.02 for Angel Stadium
+2025-05-03 20:00:33,299 - INFO - ✅ Using cached weather data for Cleveland,US
+2025-05-03 20:00:33,299 - INFO - 🌡️ Rogers Centre: 8.11°C, Wind: 6.17m/s at 30°
+2025-05-03 20:00:33,300 - INFO - ⚾ Applied park factor 1.0 for Rogers Centre
+2025-05-03 20:00:33,300 - INFO - 🌤️ Fetching weather for Kansas City,US (attempt 1/3)
+2025-05-03 20:00:33,352 - INFO - ✅ Saved 26 weather cache entries
+2025-05-03 20:00:33,352 - INFO - ✅ Weather data fetched for Kansas City,US
+2025-05-03 20:00:33,354 - INFO - 🌡️ Oriole Park at Camden Yards: 16.96°C, Wind: 5.14m/s at 30°
+2025-05-03 20:00:33,354 - INFO - ⚾ Applied park factor 0.97 for Oriole Park at Camden Yards
+2025-05-03 20:00:33,355 - INFO - ✅ Using cached weather data for Arlington,US
+2025-05-03 20:00:33,355 - INFO - 🌡️ Globe Life Field: 22.59°C, Wind: 4.12m/s at 360°
+2025-05-03 20:00:33,356 - INFO - ⚾ Applied park factor 0.97 for Globe Life Field
+2025-05-03 20:00:33,357 - INFO - ✅ Using cached weather data for Toronto,CA
+2025-05-03 20:00:33,357 - INFO - 🌡️ Rogers Centre: 9.52°C, Wind: 4.47m/s at 100°
+2025-05-03 20:00:33,357 - INFO - ⚾ Applied park factor 1.01 for Rogers Centre
+2025-05-03 20:00:33,357 - INFO - ✅ Using cached weather data for Los Angeles,US
+2025-05-03 20:00:33,358 - INFO - 🌡️ Truist Park: 15.71°C, Wind: 4.12m/s at 270°
+2025-05-03 20:00:33,358 - INFO - ⚾ Applied park factor 0.99 for Truist Park
+2025-05-03 20:00:33,358 - INFO - ✅ Using cached weather data for Seattle,US
+2025-05-03 20:00:33,358 - INFO - 🌡️ Globe Life Field: 12.69°C, Wind: 3.13m/s at 293°
+2025-05-03 20:00:33,358 - INFO - ⚾ Applied park factor 0.95 for Globe Life Field
+2025-05-03 20:00:33,358 - INFO - ✅ Using cached weather data for Pittsburgh,US
+2025-05-03 20:00:33,359 - INFO - 🌡️ PNC Park: 16.24°C, Wind: 1.54m/s at 310°
+2025-05-03 20:00:33,359 - INFO - ⚾ Applied park factor 0.97 for PNC Park
+2025-05-03 20:00:33,359 - INFO - ✅ Using cached weather data for Chicago,US
+2025-05-03 20:00:33,359 - INFO - 🌡️ American Family Field: 9.36°C, Wind: 1.34m/s at 39°
+2025-05-03 20:00:33,360 - INFO - ⚾ Applied park factor 1.02 for American Family Field
+2025-05-03 20:00:33,360 - INFO - ✅ Using cached weather data for Seattle,US
+2025-05-03 20:00:33,360 - INFO - 🌡️ Globe Life Field: 12.69°C, Wind: 3.13m/s at 293°
+2025-05-03 20:00:33,361 - INFO - ⚾ Applied park factor 0.95 for Globe Life Field
+2025-05-03 20:00:33,361 - INFO - ✅ Using cached weather data for Toronto,CA
+2025-05-03 20:00:33,363 - INFO - 🌡️ Rogers Centre: 9.52°C, Wind: 4.47m/s at 100°
+2025-05-03 20:00:33,363 - INFO - ⚾ Applied park factor 1.01 for Rogers Centre
+2025-05-03 20:00:33,364 - INFO - ✅ Using cached weather data for Los Angeles,US
+2025-05-03 20:00:33,366 - INFO - 🌡️ Truist Park: 15.71°C, Wind: 4.12m/s at 270°
+2025-05-03 20:00:33,366 - INFO - ⚾ Applied park factor 0.99 for Truist Park
+2025-05-03 20:00:33,366 - INFO - ✅ Using cached weather data for Seattle,US
+2025-05-03 20:00:33,366 - INFO - 🌡️ Globe Life Field: 12.69°C, Wind: 3.13m/s at 293°
+2025-05-03 20:00:33,367 - INFO - ⚾ Applied park factor 0.95 for Globe Life Field
+2025-05-03 20:00:33,367 - INFO - ✅ Using cached weather data for Chicago,US
+2025-05-03 20:00:33,367 - INFO - 🌡️ American Family Field: 9.36°C, Wind: 1.34m/s at 39°
+2025-05-03 20:00:33,367 - INFO - ⚾ Applied park factor 1.02 for American Family Field
+2025-05-03 20:00:33,367 - INFO - ✅ Using cached weather data for Toronto,CA
+2025-05-03 20:00:33,368 - INFO - 🌡️ Rogers Centre: 9.52°C, Wind: 4.47m/s at 100°
+2025-05-03 20:00:33,368 - INFO - ⚾ Applied park factor 1.01 for Rogers Centre
+2025-05-03 20:00:33,368 - INFO - ✅ Using cached weather data for Chicago,US
+2025-05-03 20:00:33,368 - INFO - 🌡️ American Family Field: 9.36°C, Wind: 1.34m/s at 39°
+2025-05-03 20:00:33,368 - INFO - ⚾ Applied park factor 1.02 for American Family Field
+2025-05-03 20:00:33,369 - INFO - ✅ Using cached weather data for Anaheim,US
+2025-05-03 20:00:33,369 - INFO - 🌡️ Angel Stadium: 16.87°C, Wind: 3.09m/s at 180°
+2025-05-03 20:00:33,369 - INFO - ⚾ Applied park factor 1.02 for Angel Stadium
+2025-05-03 20:00:33,370 - INFO - ✅ Using cached weather data for San Diego,US
+2025-05-03 20:00:33,371 - INFO - 🌡️ PNC Park: 17.59°C, Wind: 4.12m/s at 210°
+2025-05-03 20:00:33,371 - INFO - ⚾ Applied park factor 0.92 for PNC Park
+2025-05-03 20:00:33,371 - INFO - ✅ Using cached weather data for Denver,US
+2025-05-03 20:00:33,373 - INFO - 🌡️ Oracle Park: 24.58°C, Wind: 2.24m/s at 118°
+2025-05-03 20:00:33,373 - INFO - ⚾ Applied park factor 1.15 for Oracle Park
+2025-05-03 20:00:33,373 - INFO - ✅ Using cached weather data for Los Angeles,US
+2025-05-03 20:00:33,374 - INFO - 🌡️ Truist Park: 15.71°C, Wind: 4.12m/s at 270°
+2025-05-03 20:00:33,374 - INFO - ⚾ Applied park factor 0.99 for Truist Park
+2025-05-03 20:00:33,375 - INFO - ✅ Using cached weather data for St. Petersburg,US
+2025-05-03 20:00:33,375 - INFO - 🌡️ Yankee Stadium: 25.38°C, Wind: 4.12m/s at 240°
+2025-05-03 20:00:33,376 - INFO - ⚾ Applied park factor 0.97 for Yankee Stadium
+2025-05-03 20:00:33,378 - INFO - ✅ Using cached weather data for St. Petersburg,US
+2025-05-03 20:00:33,379 - INFO - 🌡️ Yankee Stadium: 25.38°C, Wind: 4.12m/s at 240°
+2025-05-03 20:00:33,379 - INFO - ⚾ Applied park factor 0.97 for Yankee Stadium
+2025-05-03 20:00:33,379 - INFO - ✅ Using cached weather data for Baltimore,US
+2025-05-03 20:00:33,380 - INFO - 🌡️ Oriole Park at Camden Yards: 23.45°C, Wind: 2.06m/s at 130°
+2025-05-03 20:00:33,380 - INFO - ⚾ Applied park factor 1.04 for Oriole Park at Camden Yards
+2025-05-03 20:00:33,380 - INFO - ✅ Using cached weather data for Philadelphia,US
+2025-05-03 20:00:33,380 - INFO - 🌡️ Citizens Bank Park: 24.56°C, Wind: 2.06m/s at 180°
+2025-05-03 20:00:33,381 - INFO - ⚾ Applied park factor 1.05 for Citizens Bank Park
+2025-05-03 20:00:33,381 - INFO - ✅ Using cached weather data for Denver,US
+2025-05-03 20:00:33,381 - INFO - 🌡️ Oracle Park: 24.58°C, Wind: 2.24m/s at 118°
+2025-05-03 20:00:33,382 - INFO - ⚾ Applied park factor 1.15 for Oracle Park
+2025-05-03 20:00:33,384 - INFO - ✅ Using cached weather data for Boston,US
+2025-05-03 20:00:33,384 - INFO - 🌡️ Fenway Park: 19.55°C, Wind: 0.89m/s at 285°
+2025-05-03 20:00:33,385 - INFO - ⚾ Applied park factor 1.07 for Fenway Park
+2025-05-03 20:00:33,385 - INFO - ✅ Using cached weather data for Miami,US
+2025-05-03 20:00:33,385 - INFO - 🌡️ loanDepot park: 25.46°C, Wind: 1.34m/s at 133°
+2025-05-03 20:00:33,385 - INFO - ⚾ Applied park factor 0.96 for loanDepot park
+2025-05-03 20:00:33,386 - INFO - ✅ Using cached weather data for Anaheim,US
+2025-05-03 20:00:33,386 - INFO - 🌡️ Angel Stadium: 16.87°C, Wind: 3.09m/s at 180°
+2025-05-03 20:00:33,386 - INFO - ⚾ Applied park factor 1.02 for Angel Stadium
+2025-05-03 20:00:33,386 - INFO - ✅ Using cached weather data for Toronto,CA
+2025-05-03 20:00:33,387 - INFO - 🌡️ Rogers Centre: 9.52°C, Wind: 4.47m/s at 100°
+2025-05-03 20:00:33,389 - INFO - ⚾ Applied park factor 1.01 for Rogers Centre
+2025-05-03 20:00:33,390 - INFO - ✅ Using cached weather data for Chicago,US
+2025-05-03 20:00:33,390 - INFO - 🌡️ Rate Field: 9.36°C, Wind: 1.34m/s at 39°
+2025-05-03 20:00:33,390 - INFO - ⚾ Applied park factor 1.0 for Rate Field
+2025-05-03 20:00:33,390 - INFO - ✅ Using cached weather data for San Francisco,US
+2025-05-03 20:00:33,391 - INFO - 🌡️ Oracle Park: 15.43°C, Wind: 12.35m/s at 280°
+2025-05-03 20:00:33,391 - INFO - ⚾ Applied park factor 0.9 for Oracle Park
+2025-05-03 20:00:33,391 - INFO - ✅ Using cached weather data for Minneapolis,US
+2025-05-03 20:00:33,391 - INFO - 🌡️ Fenway Park: 18.66°C, Wind: 2.57m/s at 260°
+2025-05-03 20:00:33,392 - INFO - ⚾ Applied park factor 0.98 for Fenway Park
+2025-05-03 20:00:33,392 - INFO - ⚾ Applied park factor 1.0 for Citizens Bank Park
+2025-05-03 20:00:33,393 - INFO - ✅ Using cached weather data for Chicago,US
+2025-05-03 20:00:33,393 - INFO - 🌡️ Rate Field: 9.36°C, Wind: 1.34m/s at 39°
+2025-05-03 20:00:33,393 - INFO - ⚾ Applied park factor 1.0 for Rate Field
+2025-05-03 20:00:33,393 - INFO - ✅ Using cached weather data for Cleveland,US
+2025-05-03 20:00:33,394 - INFO - 🌡️ Rogers Centre: 8.11°C, Wind: 6.17m/s at 30°
+2025-05-03 20:00:33,395 - INFO - ⚾ Applied park factor 1.0 for Rogers Centre
+2025-05-03 20:00:33,395 - INFO - ✅ Using cached weather data for Minneapolis,US
+2025-05-03 20:00:33,396 - INFO - 🌡️ Fenway Park: 18.66°C, Wind: 2.57m/s at 260°
+2025-05-03 20:00:33,396 - INFO - ⚾ Applied park factor 0.98 for Fenway Park
+2025-05-03 20:00:33,397 - INFO - ✅ Using cached weather data for Milwaukee,US
+2025-05-03 20:00:33,398 - INFO - 🌡️ American Family Field: 8.63°C, Wind: 2.24m/s at 69°
+2025-05-03 20:00:33,398 - INFO - ⚾ Applied park factor 1.06 for American Family Field
+2025-05-03 20:00:33,398 - INFO - ✅ Using cached weather data for Miami,US
+2025-05-03 20:00:33,399 - INFO - 🌡️ loanDepot park: 25.46°C, Wind: 1.34m/s at 133°
+2025-05-03 20:00:33,399 - INFO - ⚾ Applied park factor 0.96 for loanDepot park
+2025-05-03 20:00:33,400 - INFO - ✅ Using cached weather data for Kansas City,US
+2025-05-03 20:00:33,400 - INFO - 🌡️ Oriole Park at Camden Yards: 16.96°C, Wind: 5.14m/s at 30°
+2025-05-03 20:00:33,401 - INFO - ⚾ Applied park factor 0.97 for Oriole Park at Camden Yards
+2025-05-03 20:00:33,401 - INFO - ✅ Using cached weather data for Miami,US
+2025-05-03 20:00:33,402 - INFO - 🌡️ loanDepot park: 25.46°C, Wind: 1.34m/s at 133°
+2025-05-03 20:00:33,402 - INFO - ⚾ Applied park factor 0.96 for loanDepot park
+2025-05-03 20:00:33,402 - INFO - ✅ Using cached weather data for Cleveland,US
+2025-05-03 20:00:33,403 - INFO - 🌡️ Rogers Centre: 8.11°C, Wind: 6.17m/s at 30°
+2025-05-03 20:00:33,403 - INFO - ⚾ Applied park factor 1.0 for Rogers Centre
+2025-05-03 20:00:33,403 - INFO - ✅ Using cached weather data for Washington,US
+2025-05-03 20:00:33,403 - INFO - 🌡️ Great American Ball Park: 16.1°C, Wind: 4.46m/s at 316°
+2025-05-03 20:00:33,405 - INFO - ⚾ Applied park factor 0.97 for Great American Ball Park
+2025-05-03 20:00:33,405 - INFO - ✅ Using cached weather data for Queens,US
+2025-05-03 20:00:33,405 - INFO - 🌡️ Busch Stadium: 19.54°C, Wind: 8.23m/s at 190°
+2025-05-03 20:00:33,406 - INFO - ⚾ Applied park factor 0.97 for Busch Stadium
+2025-05-03 20:00:33,406 - INFO - ✅ Using cached weather data for Denver,US
+2025-05-03 20:00:33,406 - INFO - 🌡️ Oracle Park: 24.58°C, Wind: 2.24m/s at 118°
+2025-05-03 20:00:33,406 - INFO - ⚾ Applied park factor 1.15 for Oracle Park
+2025-05-03 20:00:33,406 - INFO - ✅ Using cached weather data for Miami,US
+2025-05-03 20:00:33,407 - INFO - 🌡️ loanDepot park: 25.46°C, Wind: 1.34m/s at 133°
+2025-05-03 20:00:33,407 - INFO - ⚾ Applied park factor 0.96 for loanDepot park
+2025-05-03 20:00:33,407 - INFO - ✅ Using cached weather data for Anaheim,US
+2025-05-03 20:00:33,407 - INFO - 🌡️ Angel Stadium: 16.87°C, Wind: 3.09m/s at 180°
+2025-05-03 20:00:33,408 - INFO - ⚾ Applied park factor 1.02 for Angel Stadium
+2025-05-03 20:00:33,408 - INFO - ✅ Using cached weather data for San Francisco,US
+2025-05-03 20:00:33,409 - INFO - 🌡️ Oracle Park: 15.43°C, Wind: 12.35m/s at 280°
+2025-05-03 20:00:33,409 - INFO - ⚾ Applied park factor 0.85 for Oracle Park
+2025-05-03 20:00:33,410 - INFO - ✅ Using cached weather data for Denver,US
+2025-05-03 20:00:33,410 - INFO - 🌡️ Oracle Park: 24.58°C, Wind: 2.24m/s at 118°
+2025-05-03 20:00:33,411 - INFO - ⚾ Applied park factor 1.15 for Oracle Park
+2025-05-03 20:00:33,411 - INFO - ✅ Using cached weather data for St. Louis,US
+2025-05-03 20:00:33,411 - INFO - 🌡️ Busch Stadium: 10.96°C, Wind: 5.66m/s at 330°
+2025-05-03 20:00:33,411 - INFO - ⚾ Applied park factor 0.99 for Busch Stadium
+2025-05-03 20:00:33,412 - INFO - ✅ Using cached weather data for Washington,US
+2025-05-03 20:00:33,412 - INFO - 🌡️ Great American Ball Park: 16.1°C, Wind: 4.46m/s at 316°
+2025-05-03 20:00:33,412 - INFO - ⚾ Applied park factor 0.97 for Great American Ball Park
+2025-05-03 20:00:33,413 - INFO - ⚾ Applied park factor 1.0 for loanDepot park
+2025-05-03 20:00:33,413 - INFO - ✅ Using cached weather data for Washington,US
+2025-05-03 20:00:33,413 - INFO - 🌡️ Great American Ball Park: 16.1°C, Wind: 4.46m/s at 316°
+2025-05-03 20:00:33,417 - INFO - ⚾ Applied park factor 0.97 for Great American Ball Park
+2025-05-03 20:00:33,417 - INFO - ✅ Using cached weather data for Atlanta,US
+2025-05-03 20:00:33,417 - INFO - 🌡️ Truist Park: 20.19°C, Wind: 5.66m/s at 230°
+2025-05-03 20:00:33,418 - INFO - ⚾ Applied park factor 1.0 for Truist Park
+2025-05-03 20:00:33,418 - INFO - ✅ Using cached weather data for San Diego,US
+2025-05-03 20:00:33,418 - INFO - 🌡️ PNC Park: 17.59°C, Wind: 4.12m/s at 210°
+2025-05-03 20:00:33,419 - INFO - ⚾ Applied park factor 0.92 for PNC Park
+2025-05-03 20:00:33,419 - INFO - ✅ Using cached weather data for Queens,US
+2025-05-03 20:00:33,419 - INFO - 🌡️ Busch Stadium: 19.54°C, Wind: 8.23m/s at 190°
+2025-05-03 20:00:33,419 - INFO - ⚾ Applied park factor 0.97 for Busch Stadium
+2025-05-03 20:00:33,419 - INFO - ✅ Using cached weather data for Bronx,US
+2025-05-03 20:00:33,419 - INFO - 🌡️ Yankee Stadium: 22.33°C, Wind: 4.12m/s at 60°
+2025-05-03 20:00:33,420 - INFO - ⚾ Applied park factor 1.08 for Yankee Stadium
+2025-05-03 20:00:33,420 - INFO - ✅ Using cached weather data for San Diego,US
+2025-05-03 20:00:33,420 - INFO - 🌡️ PNC Park: 17.59°C, Wind: 4.12m/s at 210°
+2025-05-03 20:00:33,421 - INFO - ⚾ Applied park factor 0.92 for PNC Park
+2025-05-03 20:00:33,422 - INFO - ✅ Using cached weather data for Bronx,US
+2025-05-03 20:00:33,422 - INFO - 🌡️ Yankee Stadium: 22.33°C, Wind: 4.12m/s at 60°
+2025-05-03 20:00:33,422 - INFO - ⚾ Applied park factor 1.12 for Yankee Stadium
+2025-05-03 20:00:33,423 - INFO - ✅ Using cached weather data for Anaheim,US
+2025-05-03 20:00:33,423 - INFO - 🌡️ Angel Stadium: 16.87°C, Wind: 3.09m/s at 180°
+2025-05-03 20:00:33,423 - INFO - ⚾ Applied park factor 1.02 for Angel Stadium
+2025-05-03 20:00:33,424 - INFO - ✅ Using cached weather data for Kansas City,US
+2025-05-03 20:00:33,424 - INFO - 🌡️ Oriole Park at Camden Yards: 16.96°C, Wind: 5.14m/s at 30°
+2025-05-03 20:00:33,425 - INFO - ⚾ Applied park factor 0.97 for Oriole Park at Camden Yards
+2025-05-03 20:00:33,425 - INFO - ✅ Using cached weather data for Baltimore,US
+2025-05-03 20:00:33,426 - INFO - 🌡️ Oriole Park at Camden Yards: 23.45°C, Wind: 2.06m/s at 130°
+2025-05-03 20:00:33,427 - INFO - ⚾ Applied park factor 1.04 for Oriole Park at Camden Yards
+2025-05-03 20:00:33,427 - INFO - ✅ Using cached weather data for Toronto,CA
+2025-05-03 20:00:33,427 - INFO - 🌡️ Rogers Centre: 9.52°C, Wind: 4.47m/s at 100°
+2025-05-03 20:00:33,430 - INFO - ⚾ Applied park factor 1.01 for Rogers Centre
+2025-05-03 20:00:33,431 - INFO - ✅ Using cached weather data for Anaheim,US
+2025-05-03 20:00:33,431 - INFO - 🌡️ Angel Stadium: 16.87°C, Wind: 3.09m/s at 180°
+2025-05-03 20:00:33,431 - INFO - ⚾ Applied park factor 1.02 for Angel Stadium
+2025-05-03 20:00:33,432 - INFO - ✅ Using cached weather data for Boston,US
+2025-05-03 20:00:33,432 - INFO - 🌡️ Fenway Park: 19.55°C, Wind: 0.89m/s at 285°
+2025-05-03 20:00:33,432 - INFO - ⚾ Applied park factor 1.07 for Fenway Park
+2025-05-03 20:00:33,432 - INFO - ✅ Using cached weather data for Queens,US
+2025-05-03 20:00:33,433 - INFO - 🌡️ Busch Stadium: 19.54°C, Wind: 8.23m/s at 190°
+2025-05-03 20:00:33,433 - INFO - ⚾ Applied park factor 0.97 for Busch Stadium
+2025-05-03 20:00:33,433 - INFO - ✅ Using cached weather data for San Diego,US
+2025-05-03 20:00:33,434 - INFO - 🌡️ PNC Park: 17.59°C, Wind: 4.12m/s at 210°
+2025-05-03 20:00:33,435 - INFO - ⚾ Applied park factor 0.92 for PNC Park
+2025-05-03 20:00:33,435 - INFO - ✅ Using cached weather data for Cleveland,US
+2025-05-03 20:00:33,436 - INFO - 🌡️ Rogers Centre: 8.11°C, Wind: 6.17m/s at 30°
+2025-05-03 20:00:33,436 - INFO - ⚾ Applied park factor 1.0 for Rogers Centre
+2025-05-03 20:00:33,437 - INFO - ✅ Using cached weather data for Cleveland,US
+2025-05-03 20:00:33,437 - INFO - 🌡️ Rogers Centre: 8.11°C, Wind: 6.17m/s at 30°
+2025-05-03 20:00:33,437 - INFO - ⚾ Applied park factor 1.0 for Rogers Centre
+2025-05-03 20:00:33,438 - INFO - ⚾ Applied park factor 1.0 for Citizens Bank Park
+2025-05-03 20:00:33,438 - INFO - ✅ Using cached weather data for St. Louis,US
+2025-05-03 20:00:33,439 - INFO - 🌡️ Busch Stadium: 10.96°C, Wind: 5.66m/s at 330°
+2025-05-03 20:00:33,439 - INFO - ⚾ Applied park factor 0.99 for Busch Stadium
+2025-05-03 20:00:33,439 - INFO - ✅ Using cached weather data for Arlington,US
+2025-05-03 20:00:33,440 - INFO - 🌡️ Globe Life Field: 22.59°C, Wind: 4.12m/s at 360°
+2025-05-03 20:00:33,440 - INFO - ⚾ Applied park factor 0.97 for Globe Life Field
+2025-05-03 20:00:33,440 - INFO - ✅ Using cached weather data for Chicago,US
+2025-05-03 20:00:33,441 - INFO - 🌡️ Rate Field: 9.36°C, Wind: 1.34m/s at 39°
+2025-05-03 20:00:33,441 - INFO - ⚾ Applied park factor 1.0 for Rate Field
+2025-05-03 20:00:33,441 - INFO - ✅ Using cached weather data for Miami,US
+2025-05-03 20:00:33,441 - INFO - 🌡️ loanDepot park: 25.46°C, Wind: 1.34m/s at 133°
+2025-05-03 20:00:33,442 - INFO - ⚾ Applied park factor 0.96 for loanDepot park
+2025-05-03 20:00:33,442 - INFO - ✅ Using cached weather data for Seattle,US
+2025-05-03 20:00:33,442 - INFO - 🌡️ Globe Life Field: 12.69°C, Wind: 3.13m/s at 293°
+2025-05-03 20:00:33,442 - INFO - ⚾ Applied park factor 0.95 for Globe Life Field
+2025-05-03 20:00:33,442 - INFO - ✅ Using cached weather data for Cincinnati,US
+2025-05-03 20:00:33,443 - INFO - 🌡️ Great American Ball Park: 12.15°C, Wind: 7.2m/s at 60°
+2025-05-03 20:00:33,444 - INFO - ⚾ Applied park factor 1.1 for Great American Ball Park
+2025-05-03 20:00:33,447 - INFO - ✅ Using cached weather data for Toronto,CA
+2025-05-03 20:00:33,447 - INFO - 🌡️ Rogers Centre: 9.52°C, Wind: 4.47m/s at 100°
+2025-05-03 20:00:33,448 - INFO - ⚾ Applied park factor 1.01 for Rogers Centre
+2025-05-03 20:00:33,448 - INFO - ✅ Using cached weather data for Atlanta,US
+2025-05-03 20:00:33,448 - INFO - 🌡️ Truist Park: 20.19°C, Wind: 5.66m/s at 230°
+2025-05-03 20:00:33,449 - INFO - ⚾ Applied park factor 1.0 for Truist Park
+2025-05-03 20:00:33,449 - INFO - ✅ Using cached weather data for Pittsburgh,US
+2025-05-03 20:00:33,450 - INFO - 🌡️ PNC Park: 16.24°C, Wind: 1.54m/s at 310°
+2025-05-03 20:00:33,450 - INFO - ⚾ Applied park factor 0.97 for PNC Park
+2025-05-03 20:00:33,451 - INFO - ✅ Using cached weather data for Atlanta,US
+2025-05-03 20:00:33,451 - INFO - 🌡️ Truist Park: 20.19°C, Wind: 5.66m/s at 230°
+2025-05-03 20:00:33,451 - INFO - ⚾ Applied park factor 1.0 for Truist Park
+2025-05-03 20:00:33,451 - INFO - ✅ Using cached weather data for Queens,US
+2025-05-03 20:00:33,451 - INFO - 🌡️ Busch Stadium: 19.54°C, Wind: 8.23m/s at 190°
+2025-05-03 20:00:33,452 - INFO - ⚾ Applied park factor 0.97 for Busch Stadium
+2025-05-03 20:00:33,452 - INFO - 🌤️ Fetching weather for Houston,US (attempt 1/3)
+2025-05-03 20:00:33,521 - INFO - ✅ Saved 27 weather cache entries
+2025-05-03 20:00:33,521 - INFO - ✅ Weather data fetched for Houston,US
+2025-05-03 20:00:33,522 - INFO - 🌡️ Rate Field: 25.59°C, Wind: 4.12m/s at 330°
+2025-05-03 20:00:33,522 - INFO - ⚾ Applied park factor 0.98 for Rate Field
+2025-05-03 20:00:33,522 - INFO - ✅ Using cached weather data for Houston,US
+2025-05-03 20:00:33,523 - INFO - 🌡️ Rate Field: 25.59°C, Wind: 4.12m/s at 330°
+2025-05-03 20:00:33,523 - INFO - ⚾ Applied park factor 0.98 for Rate Field
+2025-05-03 20:00:33,523 - INFO - ✅ Using cached weather data for Queens,US
+2025-05-03 20:00:33,523 - INFO - 🌡️ Busch Stadium: 19.54°C, Wind: 8.23m/s at 190°
+2025-05-03 20:00:33,524 - INFO - ⚾ Applied park factor 0.97 for Busch Stadium
+2025-05-03 20:00:33,524 - INFO - ✅ Using cached weather data for Philadelphia,US
+2025-05-03 20:00:33,524 - INFO - 🌡️ Citizens Bank Park: 24.56°C, Wind: 2.06m/s at 180°
+2025-05-03 20:00:33,524 - INFO - ⚾ Applied park factor 1.05 for Citizens Bank Park
+2025-05-03 20:00:33,525 - INFO - ✅ Using cached weather data for Minneapolis,US
+2025-05-03 20:00:33,525 - INFO - 🌡️ Fenway Park: 18.66°C, Wind: 2.57m/s at 260°
+2025-05-03 20:00:33,525 - INFO - ⚾ Applied park factor 0.98 for Fenway Park
+2025-05-03 20:00:33,526 - INFO - ✅ Using cached weather data for Minneapolis,US
+2025-05-03 20:00:33,526 - INFO - 🌡️ Fenway Park: 18.66°C, Wind: 2.57m/s at 260°
+2025-05-03 20:00:33,526 - INFO - ⚾ Applied park factor 0.98 for Fenway Park
+2025-05-03 20:00:33,526 - INFO - ✅ Using cached weather data for Los Angeles,US
+2025-05-03 20:00:33,527 - INFO - 🌡️ Truist Park: 15.71°C, Wind: 4.12m/s at 270°
+2025-05-03 20:00:33,527 - INFO - ⚾ Applied park factor 0.99 for Truist Park
+2025-05-03 20:00:33,527 - INFO - ✅ Using cached weather data for San Francisco,US
+2025-05-03 20:00:33,527 - INFO - 🌡️ Oracle Park: 15.43°C, Wind: 12.35m/s at 280°
+2025-05-03 20:00:33,528 - INFO - ⚾ Applied park factor 0.9 for Oracle Park
+2025-05-03 20:00:33,528 - INFO - ✅ Using cached weather data for Philadelphia,US
+2025-05-03 20:00:33,528 - INFO - 🌡️ Citizens Bank Park: 24.56°C, Wind: 2.06m/s at 180°
+2025-05-03 20:00:33,528 - INFO - ⚾ Applied park factor 1.05 for Citizens Bank Park
+2025-05-03 20:00:33,528 - INFO - ✅ Using cached weather data for Miami,US
+2025-05-03 20:00:33,528 - INFO - 🌡️ loanDepot park: 25.46°C, Wind: 1.34m/s at 133°
+2025-05-03 20:00:33,529 - INFO - ⚾ Applied park factor 0.96 for loanDepot park
+2025-05-03 20:00:33,529 - INFO - ✅ Using cached weather data for Baltimore,US
+2025-05-03 20:00:33,529 - INFO - 🌡️ Oriole Park at Camden Yards: 23.45°C, Wind: 2.06m/s at 130°
+2025-05-03 20:00:33,530 - INFO - ⚾ Applied park factor 1.04 for Oriole Park at Camden Yards
+2025-05-03 20:00:33,530 - INFO - ⚾ Applied park factor 1.0 for loanDepot park
+2025-05-03 20:00:33,531 - INFO - ✅ Using cached weather data for Seattle,US
+2025-05-03 20:00:33,531 - INFO - 🌡️ Globe Life Field: 12.69°C, Wind: 3.13m/s at 293°
+2025-05-03 20:00:33,531 - INFO - ⚾ Applied park factor 0.95 for Globe Life Field
+2025-05-03 20:00:33,532 - INFO - ✅ Using cached weather data for San Francisco,US
+2025-05-03 20:00:33,532 - INFO - 🌡️ Oracle Park: 15.43°C, Wind: 12.35m/s at 280°
+2025-05-03 20:00:33,532 - INFO - ⚾ Applied park factor 0.9 for Oracle Park
+2025-05-03 20:00:33,533 - INFO - ✅ Using cached weather data for Washington,US
+2025-05-03 20:00:33,533 - INFO - 🌡️ Great American Ball Park: 16.1°C, Wind: 4.46m/s at 316°
+2025-05-03 20:00:33,533 - INFO - ⚾ Applied park factor 0.97 for Great American Ball Park
+2025-05-03 20:00:33,534 - INFO - ✅ Using cached weather data for Los Angeles,US
+2025-05-03 20:00:33,534 - INFO - 🌡️ Truist Park: 15.71°C, Wind: 4.12m/s at 270°
+2025-05-03 20:00:33,534 - INFO - ⚾ Applied park factor 0.99 for Truist Park
+2025-05-03 20:00:33,534 - INFO - ✅ Using cached weather data for Pittsburgh,US
+2025-05-03 20:00:33,534 - INFO - 🌡️ PNC Park: 16.24°C, Wind: 1.54m/s at 310°
+2025-05-03 20:00:33,535 - INFO - ⚾ Applied park factor 0.97 for PNC Park
+2025-05-03 20:00:33,535 - INFO - ✅ Using cached weather data for Washington,US
+2025-05-03 20:00:33,535 - INFO - 🌡️ Great American Ball Park: 16.1°C, Wind: 4.46m/s at 316°
+2025-05-03 20:00:33,535 - INFO - ⚾ Applied park factor 0.97 for Great American Ball Park
+2025-05-03 20:00:33,535 - INFO - ✅ Using cached weather data for Los Angeles,US
+2025-05-03 20:00:33,535 - INFO - 🌡️ Truist Park: 15.71°C, Wind: 4.12m/s at 270°
+2025-05-03 20:00:33,536 - INFO - ⚾ Applied park factor 0.99 for Truist Park
+2025-05-03 20:00:33,536 - INFO - ⚾ Applied park factor 1.0 for loanDepot park
+2025-05-03 20:00:33,536 - INFO - ✅ Using cached weather data for St. Louis,US
+2025-05-03 20:00:33,536 - INFO - 🌡️ Busch Stadium: 10.96°C, Wind: 5.66m/s at 330°
+2025-05-03 20:00:33,536 - INFO - ⚾ Applied park factor 0.99 for Busch Stadium
+2025-05-03 20:00:33,537 - INFO - ⚾ Applied park factor 1.0 for Citizens Bank Park
+2025-05-03 20:00:33,537 - INFO - ✅ Using cached weather data for Seattle,US
+2025-05-03 20:00:33,537 - INFO - 🌡️ Globe Life Field: 12.69°C, Wind: 3.13m/s at 293°
+2025-05-03 20:00:33,537 - INFO - ⚾ Applied park factor 0.95 for Globe Life Field
+2025-05-03 20:00:33,537 - INFO - ✅ Using cached weather data for Detroit,US
+2025-05-03 20:00:33,538 - INFO - 🌡️ Angel Stadium: 9.59°C, Wind: 5.66m/s at 40°
+2025-05-03 20:00:33,538 - INFO - ⚾ Applied park factor 1.0 for Angel Stadium
+2025-05-03 20:00:33,539 - INFO - ✅ Using cached weather data for San Diego,US
+2025-05-03 20:00:33,539 - INFO - 🌡️ PNC Park: 17.59°C, Wind: 4.12m/s at 210°
+2025-05-03 20:00:33,539 - INFO - ⚾ Applied park factor 0.92 for PNC Park
+2025-05-03 20:00:33,540 - INFO - ✅ Using cached weather data for Toronto,CA
+2025-05-03 20:00:33,540 - INFO - 🌡️ Rogers Centre: 9.52°C, Wind: 4.47m/s at 100°
+2025-05-03 20:00:33,540 - INFO - ⚾ Applied park factor 1.01 for Rogers Centre
+2025-05-03 20:00:33,540 - INFO - ✅ Using cached weather data for Miami,US
+2025-05-03 20:00:33,541 - INFO - 🌡️ loanDepot park: 25.46°C, Wind: 1.34m/s at 133°
+2025-05-03 20:00:33,541 - INFO - ⚾ Applied park factor 0.96 for loanDepot park
+2025-05-03 20:00:33,541 - INFO - ✅ Using cached weather data for Denver,US
+2025-05-03 20:00:33,542 - INFO - 🌡️ Oracle Park: 24.58°C, Wind: 2.24m/s at 118°
+2025-05-03 20:00:33,542 - INFO - ⚾ Applied park factor 1.15 for Oracle Park
+2025-05-03 20:00:33,542 - INFO - ✅ Using cached weather data for Kansas City,US
+2025-05-03 20:00:33,543 - INFO - 🌡️ Oriole Park at Camden Yards: 16.96°C, Wind: 5.14m/s at 30°
+2025-05-03 20:00:33,543 - INFO - ⚾ Applied park factor 0.97 for Oriole Park at Camden Yards
+2025-05-03 20:00:33,543 - INFO - ✅ Using cached weather data for Baltimore,US
+2025-05-03 20:00:33,543 - INFO - 🌡️ Oriole Park at Camden Yards: 23.45°C, Wind: 2.06m/s at 130°
+2025-05-03 20:00:33,544 - INFO - ⚾ Applied park factor 1.04 for Oriole Park at Camden Yards
+2025-05-03 20:00:33,544 - INFO - ✅ Using cached weather data for Queens,US
+2025-05-03 20:00:33,544 - INFO - 🌡️ Busch Stadium: 19.54°C, Wind: 8.23m/s at 190°
+2025-05-03 20:00:33,544 - INFO - ⚾ Applied park factor 0.97 for Busch Stadium
+2025-05-03 20:00:33,544 - INFO - ✅ Using cached weather data for San Francisco,US
+2025-05-03 20:00:33,544 - INFO - 🌡️ Oracle Park: 15.43°C, Wind: 12.35m/s at 280°
+2025-05-03 20:00:33,545 - INFO - ⚾ Applied park factor 0.9 for Oracle Park
+2025-05-03 20:00:33,545 - INFO - ✅ Using cached weather data for Seattle,US
+2025-05-03 20:00:33,545 - INFO - 🌡️ Globe Life Field: 12.69°C, Wind: 3.13m/s at 293°
+2025-05-03 20:00:33,545 - INFO - ⚾ Applied park factor 0.95 for Globe Life Field
+2025-05-03 20:00:33,545 - INFO - ✅ Using cached weather data for Baltimore,US
+2025-05-03 20:00:33,546 - INFO - 🌡️ Oriole Park at Camden Yards: 23.45°C, Wind: 2.06m/s at 130°
+2025-05-03 20:00:33,546 - INFO - ⚾ Applied park factor 1.04 for Oriole Park at Camden Yards
+2025-05-03 20:00:33,546 - INFO - ✅ Using cached weather data for Chicago,US
+2025-05-03 20:00:33,546 - INFO - 🌡️ Rate Field: 9.36°C, Wind: 1.34m/s at 39°
+2025-05-03 20:00:33,546 - INFO - ⚾ Applied park factor 1.0 for Rate Field
+2025-05-03 20:00:33,546 - INFO - ✅ Using cached weather data for Pittsburgh,US
+2025-05-03 20:00:33,547 - INFO - 🌡️ PNC Park: 16.24°C, Wind: 1.54m/s at 310°
+2025-05-03 20:00:33,547 - INFO - ⚾ Applied park factor 0.97 for PNC Park
+2025-05-03 20:00:33,547 - INFO - ✅ Using cached weather data for Seattle,US
+2025-05-03 20:00:33,548 - INFO - 🌡️ Globe Life Field: 12.69°C, Wind: 3.13m/s at 293°
+2025-05-03 20:00:33,548 - INFO - ⚾ Applied park factor 0.95 for Globe Life Field
+2025-05-03 20:00:33,548 - INFO - ✅ Using cached weather data for Queens,US
+2025-05-03 20:00:33,549 - INFO - 🌡️ Busch Stadium: 19.54°C, Wind: 8.23m/s at 190°
+2025-05-03 20:00:33,549 - INFO - ⚾ Applied park factor 0.97 for Busch Stadium
+2025-05-03 20:00:33,549 - INFO - ⚾ Applied park factor 1.0 for loanDepot park
+2025-05-03 20:00:33,550 - INFO - ✅ Using cached weather data for Chicago,US
+2025-05-03 20:00:33,550 - INFO - 🌡️ American Family Field: 9.36°C, Wind: 1.34m/s at 39°
+2025-05-03 20:00:33,550 - INFO - ⚾ Applied park factor 1.02 for American Family Field
+2025-05-03 20:00:33,551 - INFO - ⚾ Applied park factor 1.0 for loanDepot park
+2025-05-03 20:00:33,551 - INFO - ✅ Using cached weather data for Cincinnati,US
+2025-05-03 20:00:33,551 - INFO - 🌡️ Great American Ball Park: 12.15°C, Wind: 7.2m/s at 60°
+2025-05-03 20:00:33,552 - INFO - ⚾ Applied park factor 1.1 for Great American Ball Park
+2025-05-03 20:00:33,552 - INFO - ✅ Using cached weather data for Denver,US
+2025-05-03 20:00:33,552 - INFO - 🌡️ Oracle Park: 24.58°C, Wind: 2.24m/s at 118°
+2025-05-03 20:00:33,552 - INFO - ⚾ Applied park factor 1.15 for Oracle Park
+2025-05-03 20:00:33,552 - INFO - ✅ Using cached weather data for Atlanta,US
+2025-05-03 20:00:33,552 - INFO - 🌡️ Truist Park: 20.19°C, Wind: 5.66m/s at 230°
+2025-05-03 20:00:33,553 - INFO - ⚾ Applied park factor 1.0 for Truist Park
+2025-05-03 20:00:33,553 - INFO - ✅ Using cached weather data for Kansas City,US
+2025-05-03 20:00:33,553 - INFO - 🌡️ Oriole Park at Camden Yards: 16.96°C, Wind: 5.14m/s at 30°
+2025-05-03 20:00:33,553 - INFO - ⚾ Applied park factor 0.97 for Oriole Park at Camden Yards
+2025-05-03 20:00:33,553 - INFO - ✅ Using cached weather data for Arlington,US
+2025-05-03 20:00:33,553 - INFO - 🌡️ Globe Life Field: 22.59°C, Wind: 4.12m/s at 360°
+2025-05-03 20:00:33,554 - INFO - ⚾ Applied park factor 0.97 for Globe Life Field
+2025-05-03 20:00:33,554 - INFO - ✅ Using cached weather data for Philadelphia,US
+2025-05-03 20:00:33,554 - INFO - 🌡️ Citizens Bank Park: 24.56°C, Wind: 2.06m/s at 180°
+2025-05-03 20:00:33,554 - INFO - ⚾ Applied park factor 1.05 for Citizens Bank Park
+2025-05-03 20:00:33,554 - INFO - ✅ Using cached weather data for Milwaukee,US
+2025-05-03 20:00:33,554 - INFO - 🌡️ American Family Field: 8.63°C, Wind: 2.24m/s at 69°
+2025-05-03 20:00:33,555 - INFO - ⚾ Applied park factor 1.06 for American Family Field
+2025-05-03 20:00:33,555 - INFO - ⚾ Applied park factor 1.0 for Citizens Bank Park
+2025-05-03 20:00:33,555 - INFO - ✅ Using cached weather data for San Diego,US
+2025-05-03 20:00:33,555 - INFO - 🌡️ PNC Park: 17.59°C, Wind: 4.12m/s at 210°
+2025-05-03 20:00:33,555 - INFO - ⚾ Applied park factor 0.92 for PNC Park
+2025-05-03 20:00:33,556 - INFO - ⚾ Applied park factor 1.0 for loanDepot park
+2025-05-03 20:00:33,556 - INFO - ✅ Using cached weather data for St. Louis,US
+2025-05-03 20:00:33,556 - INFO - 🌡️ Busch Stadium: 10.96°C, Wind: 5.66m/s at 330°
+2025-05-03 20:00:33,556 - INFO - ⚾ Applied park factor 0.99 for Busch Stadium
+2025-05-03 20:00:33,557 - INFO - ✅ Using cached weather data for Houston,US
+2025-05-03 20:00:33,557 - INFO - 🌡️ Rate Field: 25.59°C, Wind: 4.12m/s at 330°
+2025-05-03 20:00:33,557 - INFO - ⚾ Applied park factor 0.98 for Rate Field
+2025-05-03 20:00:33,558 - INFO - ✅ Using cached weather data for Boston,US
+2025-05-03 20:00:33,558 - INFO - 🌡️ Fenway Park: 19.55°C, Wind: 0.89m/s at 285°
+2025-05-03 20:00:33,559 - INFO - ⚾ Applied park factor 1.07 for Fenway Park
+2025-05-03 20:00:33,560 - INFO - ✅ Using cached weather data for Minneapolis,US
+2025-05-03 20:00:33,561 - INFO - 🌡️ Fenway Park: 18.66°C, Wind: 2.57m/s at 260°
+2025-05-03 20:00:33,561 - INFO - ⚾ Applied park factor 0.98 for Fenway Park
+2025-05-03 20:00:33,561 - INFO - ✅ Using cached weather data for Cleveland,US
+2025-05-03 20:00:33,562 - INFO - 🌡️ Rogers Centre: 8.11°C, Wind: 6.17m/s at 30°
+2025-05-03 20:00:33,562 - INFO - ⚾ Applied park factor 1.0 for Rogers Centre
+2025-05-03 20:00:33,562 - INFO - ✅ Using cached weather data for San Francisco,US
+2025-05-03 20:00:33,563 - INFO - 🌡️ Oracle Park: 15.43°C, Wind: 12.35m/s at 280°
+2025-05-03 20:00:33,563 - INFO - ⚾ Applied park factor 0.9 for Oracle Park
+2025-05-03 20:00:33,564 - INFO - ⚾ Applied park factor 1.0 for Citizens Bank Park
+2025-05-03 20:00:33,564 - INFO - ⚾ Applied park factor 1.0 for Citizens Bank Park
+2025-05-03 20:00:33,564 - INFO - ✅ Using cached weather data for Milwaukee,US
+2025-05-03 20:00:33,564 - INFO - 🌡️ American Family Field: 8.63°C, Wind: 2.24m/s at 69°
+2025-05-03 20:00:33,564 - INFO - ⚾ Applied park factor 1.06 for American Family Field
+2025-05-03 20:00:33,565 - INFO - ✅ Using cached weather data for Pittsburgh,US
+2025-05-03 20:00:33,565 - INFO - 🌡️ PNC Park: 16.24°C, Wind: 1.54m/s at 310°
+2025-05-03 20:00:33,565 - INFO - ⚾ Applied park factor 0.97 for PNC Park
+2025-05-03 20:00:33,565 - INFO - ✅ Using cached weather data for Los Angeles,US
+2025-05-03 20:00:33,566 - INFO - 🌡️ Truist Park: 15.71°C, Wind: 4.12m/s at 270°
+2025-05-03 20:00:33,566 - INFO - ⚾ Applied park factor 0.99 for Truist Park
+2025-05-03 20:00:33,567 - INFO - ✅ Using cached weather data for San Diego,US
+2025-05-03 20:00:33,567 - INFO - 🌡️ PNC Park: 17.59°C, Wind: 4.12m/s at 210°
+2025-05-03 20:00:33,567 - INFO - ⚾ Applied park factor 0.92 for PNC Park
+2025-05-03 20:00:33,568 - INFO - ✅ Using cached weather data for Houston,US
+2025-05-03 20:00:33,568 - INFO - 🌡️ Rate Field: 25.59°C, Wind: 4.12m/s at 330°
+2025-05-03 20:00:33,568 - INFO - ⚾ Applied park factor 0.98 for Rate Field
+2025-05-03 20:00:33,569 - INFO - ✅ Using cached weather data for Boston,US
+2025-05-03 20:00:33,569 - INFO - 🌡️ Fenway Park: 19.55°C, Wind: 0.89m/s at 285°
+2025-05-03 20:00:33,569 - INFO - ⚾ Applied park factor 1.07 for Fenway Park
+2025-05-03 20:00:33,569 - INFO - ✅ Using cached weather data for Pittsburgh,US
+2025-05-03 20:00:33,569 - INFO - 🌡️ PNC Park: 16.24°C, Wind: 1.54m/s at 310°
+2025-05-03 20:00:33,570 - INFO - ⚾ Applied park factor 0.97 for PNC Park
+2025-05-03 20:00:33,570 - INFO - ✅ Using cached weather data for San Diego,US
+2025-05-03 20:00:33,570 - INFO - 🌡️ PNC Park: 17.59°C, Wind: 4.12m/s at 210°
+2025-05-03 20:00:33,570 - INFO - ⚾ Applied park factor 0.92 for PNC Park
+2025-05-03 20:00:33,570 - INFO - ✅ Using cached weather data for Chicago,US
+2025-05-03 20:00:33,570 - INFO - 🌡️ American Family Field: 9.36°C, Wind: 1.34m/s at 39°
+2025-05-03 20:00:33,571 - INFO - ⚾ Applied park factor 1.02 for American Family Field
+2025-05-03 20:00:33,571 - INFO - ✅ Using cached weather data for Bronx,US
+2025-05-03 20:00:33,571 - INFO - 🌡️ Yankee Stadium: 22.33°C, Wind: 4.12m/s at 60°
+2025-05-03 20:00:33,571 - INFO - ⚾ Applied park factor 1.08 for Yankee Stadium
+2025-05-03 20:00:33,571 - INFO - ✅ Using cached weather data for Detroit,US
+2025-05-03 20:00:33,571 - INFO - 🌡️ Angel Stadium: 9.59°C, Wind: 5.66m/s at 40°
+2025-05-03 20:00:33,572 - INFO - ⚾ Applied park factor 1.0 for Angel Stadium
+2025-05-03 20:00:33,572 - INFO - ✅ Using cached weather data for Cleveland,US
+2025-05-03 20:00:33,572 - INFO - 🌡️ Rogers Centre: 8.11°C, Wind: 6.17m/s at 30°
+2025-05-03 20:00:33,573 - INFO - ⚾ Applied park factor 1.0 for Rogers Centre
+2025-05-03 20:00:33,573 - INFO - ✅ Using cached weather data for Philadelphia,US
+2025-05-03 20:00:33,573 - INFO - 🌡️ Citizens Bank Park: 24.56°C, Wind: 2.06m/s at 180°
+2025-05-03 20:00:33,574 - INFO - ⚾ Applied park factor 1.05 for Citizens Bank Park
+2025-05-03 20:00:33,574 - INFO - ✅ Using cached weather data for Arlington,US
+2025-05-03 20:00:33,574 - INFO - 🌡️ Globe Life Field: 22.59°C, Wind: 4.12m/s at 360°
+2025-05-03 20:00:33,574 - INFO - ⚾ Applied park factor 0.97 for Globe Life Field
+2025-05-03 20:00:33,575 - INFO - ✅ Using cached weather data for Queens,US
+2025-05-03 20:00:33,575 - INFO - 🌡️ Busch Stadium: 19.54°C, Wind: 8.23m/s at 190°
+2025-05-03 20:00:33,575 - INFO - ⚾ Applied park factor 0.97 for Busch Stadium
+2025-05-03 20:00:33,576 - INFO - ✅ Using cached weather data for San Francisco,US
+2025-05-03 20:00:33,576 - INFO - 🌡️ Oracle Park: 15.43°C, Wind: 12.35m/s at 280°
+2025-05-03 20:00:33,576 - INFO - ⚾ Applied park factor 0.85 for Oracle Park
+2025-05-03 20:00:33,577 - INFO - ✅ Using cached weather data for Kansas City,US
+2025-05-03 20:00:33,577 - INFO - 🌡️ Oriole Park at Camden Yards: 16.96°C, Wind: 5.14m/s at 30°
+2025-05-03 20:00:33,577 - INFO - ⚾ Applied park factor 0.97 for Oriole Park at Camden Yards
+2025-05-03 20:00:33,577 - INFO - ✅ Using cached weather data for Minneapolis,US
+2025-05-03 20:00:33,578 - INFO - 🌡️ Fenway Park: 18.66°C, Wind: 2.57m/s at 260°
+2025-05-03 20:00:33,578 - INFO - ⚾ Applied park factor 0.98 for Fenway Park
+2025-05-03 20:00:33,578 - INFO - ✅ Using cached weather data for Washington,US
+2025-05-03 20:00:33,578 - INFO - 🌡️ Great American Ball Park: 16.1°C, Wind: 4.46m/s at 316°
+2025-05-03 20:00:33,578 - INFO - ⚾ Applied park factor 0.97 for Great American Ball Park
+2025-05-03 20:00:33,578 - INFO - ✅ Using cached weather data for Bronx,US
+2025-05-03 20:00:33,579 - INFO - 🌡️ Yankee Stadium: 22.33°C, Wind: 4.12m/s at 60°
+2025-05-03 20:00:33,579 - INFO - ⚾ Applied park factor 1.08 for Yankee Stadium
+2025-05-03 20:00:33,579 - INFO - ✅ Using cached weather data for Chicago,US
+2025-05-03 20:00:33,579 - INFO - 🌡️ Rate Field: 9.36°C, Wind: 1.34m/s at 39°
+2025-05-03 20:00:33,579 - INFO - ⚾ Applied park factor 1.0 for Rate Field
+2025-05-03 20:00:33,580 - INFO - ✅ Using cached weather data for Queens,US
+2025-05-03 20:00:33,580 - INFO - 🌡️ Busch Stadium: 19.54°C, Wind: 8.23m/s at 190°
+2025-05-03 20:00:33,580 - INFO - ⚾ Applied park factor 0.97 for Busch Stadium
+2025-05-03 20:00:33,580 - INFO - ✅ Using cached weather data for Washington,US
+2025-05-03 20:00:33,580 - INFO - 🌡️ Great American Ball Park: 16.1°C, Wind: 4.46m/s at 316°
+2025-05-03 20:00:33,580 - INFO - ⚾ Applied park factor 0.97 for Great American Ball Park
+2025-05-03 20:00:33,581 - INFO - ✅ Using cached weather data for Minneapolis,US
+2025-05-03 20:00:33,581 - INFO - 🌡️ Fenway Park: 18.66°C, Wind: 2.57m/s at 260°
+2025-05-03 20:00:33,581 - INFO - ⚾ Applied park factor 0.98 for Fenway Park
+2025-05-03 20:00:33,581 - INFO - ✅ Using cached weather data for Chicago,US
+2025-05-03 20:00:33,582 - INFO - 🌡️ Rate Field: 9.36°C, Wind: 1.34m/s at 39°
+2025-05-03 20:00:33,582 - INFO - ⚾ Applied park factor 1.0 for Rate Field
+2025-05-03 20:00:33,582 - INFO - ✅ Using cached weather data for Boston,US
+2025-05-03 20:00:33,583 - INFO - 🌡️ Fenway Park: 19.55°C, Wind: 0.89m/s at 285°
+2025-05-03 20:00:33,583 - INFO - ⚾ Applied park factor 0.99 for Fenway Park
+2025-05-03 20:00:33,584 - INFO - ✅ Using cached weather data for Cincinnati,US
+2025-05-03 20:00:33,584 - INFO - 🌡️ Great American Ball Park: 12.15°C, Wind: 7.2m/s at 60°
+2025-05-03 20:00:33,584 - INFO - ⚾ Applied park factor 1.1 for Great American Ball Park
+2025-05-03 20:00:33,584 - INFO - ✅ Using cached weather data for Baltimore,US
+2025-05-03 20:00:33,585 - INFO - 🌡️ Oriole Park at Camden Yards: 23.45°C, Wind: 2.06m/s at 130°
+2025-05-03 20:00:33,585 - INFO - ⚾ Applied park factor 1.04 for Oriole Park at Camden Yards
+2025-05-03 20:00:33,585 - INFO - ✅ Using cached weather data for Boston,US
+2025-05-03 20:00:33,586 - INFO - 🌡️ Fenway Park: 19.55°C, Wind: 0.89m/s at 285°
+2025-05-03 20:00:33,586 - INFO - ⚾ Applied park factor 1.07 for Fenway Park
+2025-05-03 20:00:33,586 - INFO - ✅ Using cached weather data for Anaheim,US
+2025-05-03 20:00:33,587 - INFO - 🌡️ Angel Stadium: 16.87°C, Wind: 3.09m/s at 180°
+2025-05-03 20:00:33,587 - INFO - ⚾ Applied park factor 1.02 for Angel Stadium
+2025-05-03 20:00:33,587 - INFO - ✅ Using cached weather data for Philadelphia,US
+2025-05-03 20:00:33,587 - INFO - 🌡️ Citizens Bank Park: 24.56°C, Wind: 2.06m/s at 180°
+2025-05-03 20:00:33,587 - INFO - ⚾ Applied park factor 1.05 for Citizens Bank Park
+2025-05-03 20:00:33,588 - INFO - ✅ Using cached weather data for Cincinnati,US
+2025-05-03 20:00:33,588 - INFO - 🌡️ Great American Ball Park: 12.15°C, Wind: 7.2m/s at 60°
+2025-05-03 20:00:33,588 - INFO - ⚾ Applied park factor 1.1 for Great American Ball Park
+2025-05-03 20:00:33,588 - INFO - ✅ Using cached weather data for Detroit,US
+2025-05-03 20:00:33,588 - INFO - 🌡️ Angel Stadium: 9.59°C, Wind: 5.66m/s at 40°
+2025-05-03 20:00:33,589 - INFO - ⚾ Applied park factor 1.0 for Angel Stadium
+2025-05-03 20:00:33,589 - INFO - ✅ Using cached weather data for Baltimore,US
+2025-05-03 20:00:33,589 - INFO - 🌡️ Oriole Park at Camden Yards: 23.45°C, Wind: 2.06m/s at 130°
+2025-05-03 20:00:33,589 - INFO - ⚾ Applied park factor 1.04 for Oriole Park at Camden Yards
+2025-05-03 20:00:33,589 - INFO - ✅ Using cached weather data for Chicago,US
+2025-05-03 20:00:33,590 - INFO - 🌡️ American Family Field: 9.36°C, Wind: 1.34m/s at 39°
+2025-05-03 20:00:33,590 - INFO - ⚾ Applied park factor 1.02 for American Family Field
+2025-05-03 20:00:33,590 - INFO - ✅ Using cached weather data for Cleveland,US
+2025-05-03 20:00:33,591 - INFO - 🌡️ Rogers Centre: 8.11°C, Wind: 6.17m/s at 30°
+2025-05-03 20:00:33,591 - INFO - ⚾ Applied park factor 1.0 for Rogers Centre
+2025-05-03 20:00:33,591 - INFO - ✅ Using cached weather data for Boston,US
+2025-05-03 20:00:33,592 - INFO - 🌡️ Fenway Park: 19.55°C, Wind: 0.89m/s at 285°
+2025-05-03 20:00:33,592 - INFO - ⚾ Applied park factor 0.99 for Fenway Park
+2025-05-03 20:00:33,593 - INFO - ✅ Using cached weather data for Kansas City,US
+2025-05-03 20:00:33,593 - INFO - 🌡️ Oriole Park at Camden Yards: 16.96°C, Wind: 5.14m/s at 30°
+2025-05-03 20:00:33,593 - INFO - ⚾ Applied park factor 0.97 for Oriole Park at Camden Yards
+2025-05-03 20:00:33,593 - INFO - ✅ Using cached weather data for Houston,US
+2025-05-03 20:00:33,594 - INFO - 🌡️ Rate Field: 25.59°C, Wind: 4.12m/s at 330°
+2025-05-03 20:00:33,594 - INFO - ⚾ Applied park factor 0.98 for Rate Field
+2025-05-03 20:00:33,594 - INFO - ✅ Using cached weather data for Toronto,CA
+2025-05-03 20:00:33,594 - INFO - 🌡️ Rogers Centre: 9.52°C, Wind: 4.47m/s at 100°
+2025-05-03 20:00:33,594 - INFO - ⚾ Applied park factor 1.01 for Rogers Centre
+2025-05-03 20:00:33,595 - INFO - ✅ Using cached weather data for Cincinnati,US
+2025-05-03 20:00:33,595 - INFO - 🌡️ Great American Ball Park: 12.15°C, Wind: 7.2m/s at 60°
+2025-05-03 20:00:33,595 - INFO - ⚾ Applied park factor 1.1 for Great American Ball Park
+2025-05-03 20:00:33,595 - INFO - ✅ Using cached weather data for Chicago,US
+2025-05-03 20:00:33,595 - INFO - 🌡️ Rate Field: 9.36°C, Wind: 1.34m/s at 39°
+2025-05-03 20:00:33,596 - INFO - ⚾ Applied park factor 1.0 for Rate Field
+2025-05-03 20:00:33,596 - INFO - ✅ Using cached weather data for St. Petersburg,US
+2025-05-03 20:00:33,596 - INFO - 🌡️ Yankee Stadium: 25.38°C, Wind: 4.12m/s at 240°
+2025-05-03 20:00:33,596 - INFO - ⚾ Applied park factor 0.97 for Yankee Stadium
+2025-05-03 20:00:33,596 - INFO - ✅ Using cached weather data for St. Louis,US
+2025-05-03 20:00:33,596 - INFO - 🌡️ Busch Stadium: 10.96°C, Wind: 5.66m/s at 330°
+2025-05-03 20:00:33,597 - INFO - ⚾ Applied park factor 0.99 for Busch Stadium
+2025-05-03 20:00:33,597 - INFO - ✅ Using cached weather data for St. Petersburg,US
+2025-05-03 20:00:33,597 - INFO - 🌡️ Yankee Stadium: 25.38°C, Wind: 4.12m/s at 240°
+2025-05-03 20:00:33,597 - INFO - ⚾ Applied park factor 0.97 for Yankee Stadium
+2025-05-03 20:00:33,597 - INFO - ⚾ Applied park factor 1.0 for Citizens Bank Park
+2025-05-03 20:00:33,597 - INFO - ✅ Using cached weather data for San Diego,US
+2025-05-03 20:00:33,598 - INFO - 🌡️ PNC Park: 17.59°C, Wind: 4.12m/s at 210°
+2025-05-03 20:00:33,598 - INFO - ⚾ Applied park factor 0.92 for PNC Park
+2025-05-03 20:00:33,598 - INFO - ⚾ Applied park factor 1.0 for loanDepot park
+2025-05-03 20:00:33,598 - INFO - ✅ Using cached weather data for Arlington,US
+2025-05-03 20:00:33,598 - INFO - 🌡️ Globe Life Field: 22.59°C, Wind: 4.12m/s at 360°
+2025-05-03 20:00:33,599 - INFO - ⚾ Applied park factor 0.97 for Globe Life Field
+2025-05-03 20:00:33,599 - INFO - ✅ Using cached weather data for Pittsburgh,US
+2025-05-03 20:00:33,599 - INFO - 🌡️ PNC Park: 16.24°C, Wind: 1.54m/s at 310°
+2025-05-03 20:00:33,599 - INFO - ⚾ Applied park factor 0.97 for PNC Park
+2025-05-03 20:00:33,600 - INFO - ✅ Using cached weather data for Kansas City,US
+2025-05-03 20:00:33,600 - INFO - 🌡️ Oriole Park at Camden Yards: 16.96°C, Wind: 5.14m/s at 30°
+2025-05-03 20:00:33,601 - INFO - ⚾ Applied park factor 0.97 for Oriole Park at Camden Yards
+2025-05-03 20:00:33,601 - INFO - ✅ Using cached weather data for Houston,US
+2025-05-03 20:00:33,601 - INFO - 🌡️ Rate Field: 25.59°C, Wind: 4.12m/s at 330°
+2025-05-03 20:00:33,602 - INFO - ⚾ Applied park factor 0.98 for Rate Field
+2025-05-03 20:00:33,602 - INFO - ✅ Using cached weather data for Chicago,US
+2025-05-03 20:00:33,602 - INFO - 🌡️ American Family Field: 9.36°C, Wind: 1.34m/s at 39°
+2025-05-03 20:00:33,602 - INFO - ⚾ Applied park factor 1.02 for American Family Field
+2025-05-03 20:00:33,603 - INFO - ✅ Using cached weather data for Atlanta,US
+2025-05-03 20:00:33,603 - INFO - 🌡️ Truist Park: 20.19°C, Wind: 5.66m/s at 230°
+2025-05-03 20:00:33,603 - INFO - ⚾ Applied park factor 1.0 for Truist Park
+2025-05-03 20:00:33,604 - INFO - ⚾ Applied park factor 1.0 for loanDepot park
+2025-05-03 20:00:33,604 - INFO - ✅ Using cached weather data for Detroit,US
+2025-05-03 20:00:33,604 - INFO - 🌡️ Angel Stadium: 9.59°C, Wind: 5.66m/s at 40°
+2025-05-03 20:00:33,604 - INFO - ⚾ Applied park factor 1.0 for Angel Stadium
+2025-05-03 20:00:33,605 - INFO - ✅ Using cached weather data for Toronto,CA
+2025-05-03 20:00:33,605 - INFO - 🌡️ Rogers Centre: 9.52°C, Wind: 4.47m/s at 100°
+2025-05-03 20:00:33,605 - INFO - ⚾ Applied park factor 1.01 for Rogers Centre
+2025-05-03 20:00:33,606 - INFO - ✅ Using cached weather data for Los Angeles,US
+2025-05-03 20:00:33,606 - INFO - 🌡️ Truist Park: 15.71°C, Wind: 4.12m/s at 270°
+2025-05-03 20:00:33,606 - INFO - ⚾ Applied park factor 0.99 for Truist Park
+2025-05-03 20:00:33,606 - INFO - ✅ Using cached weather data for Cincinnati,US
+2025-05-03 20:00:33,606 - INFO - 🌡️ Great American Ball Park: 12.15°C, Wind: 7.2m/s at 60°
+2025-05-03 20:00:33,607 - INFO - ⚾ Applied park factor 1.1 for Great American Ball Park
+2025-05-03 20:00:33,607 - INFO - ✅ Using cached weather data for Pittsburgh,US
+2025-05-03 20:00:33,607 - INFO - 🌡️ PNC Park: 16.24°C, Wind: 1.54m/s at 310°
+2025-05-03 20:00:33,607 - INFO - ⚾ Applied park factor 0.97 for PNC Park
+2025-05-03 20:00:33,607 - INFO - ✅ Using cached weather data for Houston,US
+2025-05-03 20:00:33,608 - INFO - 🌡️ Rate Field: 25.59°C, Wind: 4.12m/s at 330°
+2025-05-03 20:00:33,608 - INFO - ⚾ Applied park factor 0.98 for Rate Field
+2025-05-03 20:00:33,608 - INFO - ✅ Using cached weather data for Chicago,US
+2025-05-03 20:00:33,608 - INFO - 🌡️ Rate Field: 9.36°C, Wind: 1.34m/s at 39°
+2025-05-03 20:00:33,608 - INFO - ⚾ Applied park factor 1.0 for Rate Field
+2025-05-03 20:00:33,608 - INFO - ✅ Using cached weather data for Denver,US
+2025-05-03 20:00:33,609 - INFO - 🌡️ Oracle Park: 24.58°C, Wind: 2.24m/s at 118°
+2025-05-03 20:00:33,609 - INFO - ⚾ Applied park factor 1.15 for Oracle Park
+2025-05-03 20:00:33,609 - INFO - ✅ Using cached weather data for Anaheim,US
+2025-05-03 20:00:33,609 - INFO - 🌡️ Angel Stadium: 16.87°C, Wind: 3.09m/s at 180°
+2025-05-03 20:00:33,609 - INFO - ⚾ Applied park factor 1.02 for Angel Stadium
+2025-05-03 20:00:33,609 - INFO - ✅ Using cached weather data for Arlington,US
+2025-05-03 20:00:33,610 - INFO - 🌡️ Globe Life Field: 22.59°C, Wind: 4.12m/s at 360°
+2025-05-03 20:00:33,610 - INFO - ⚾ Applied park factor 0.97 for Globe Life Field
+2025-05-03 20:00:33,610 - INFO - ✅ Using cached weather data for Houston,US
+2025-05-03 20:00:33,610 - INFO - 🌡️ Rate Field: 25.59°C, Wind: 4.12m/s at 330°
+2025-05-03 20:00:33,610 - INFO - ⚾ Applied park factor 0.98 for Rate Field
+2025-05-03 20:00:33,611 - INFO - ✅ Using cached weather data for Milwaukee,US
+2025-05-03 20:00:33,612 - INFO - 🌡️ American Family Field: 8.63°C, Wind: 2.24m/s at 69°
+2025-05-03 20:00:33,612 - INFO - ⚾ Applied park factor 1.06 for American Family Field
+2025-05-03 20:00:33,613 - INFO - ✅ Using cached weather data for Atlanta,US
+2025-05-03 20:00:33,613 - INFO - 🌡️ Truist Park: 20.19°C, Wind: 5.66m/s at 230°
+2025-05-03 20:00:33,613 - INFO - ⚾ Applied park factor 1.0 for Truist Park
+2025-05-03 20:00:33,614 - INFO - ✅ Using cached weather data for Cincinnati,US
+2025-05-03 20:00:33,616 - INFO - 🌡️ Great American Ball Park: 12.15°C, Wind: 7.2m/s at 60°
+2025-05-03 20:00:33,617 - INFO - ⚾ Applied park factor 1.1 for Great American Ball Park
+2025-05-03 20:00:33,617 - INFO - ✅ Using cached weather data for Atlanta,US
+2025-05-03 20:00:33,618 - INFO - 🌡️ Truist Park: 20.19°C, Wind: 5.66m/s at 230°
+2025-05-03 20:00:33,618 - INFO - ⚾ Applied park factor 1.0 for Truist Park
+2025-05-03 20:00:33,619 - INFO - ✅ Using cached weather data for Philadelphia,US
+2025-05-03 20:00:33,620 - INFO - 🌡️ Citizens Bank Park: 24.56°C, Wind: 2.06m/s at 180°
+2025-05-03 20:00:33,620 - INFO - ⚾ Applied park factor 1.05 for Citizens Bank Park
+2025-05-03 20:00:33,621 - INFO - ✅ Using cached weather data for Houston,US
+2025-05-03 20:00:33,622 - INFO - 🌡️ Rate Field: 25.59°C, Wind: 4.12m/s at 330°
+2025-05-03 20:00:33,622 - INFO - ⚾ Applied park factor 0.98 for Rate Field
+2025-05-03 20:00:33,623 - INFO - ✅ Using cached weather data for Bronx,US
+2025-05-03 20:00:33,623 - INFO - 🌡️ Yankee Stadium: 22.33°C, Wind: 4.12m/s at 60°
+2025-05-03 20:00:33,624 - INFO - ⚾ Applied park factor 1.08 for Yankee Stadium
+2025-05-03 20:00:33,624 - INFO - ✅ Using cached weather data for Chicago,US
+2025-05-03 20:00:33,624 - INFO - 🌡️ American Family Field: 9.36°C, Wind: 1.34m/s at 39°
+2025-05-03 20:00:33,624 - INFO - ⚾ Applied park factor 1.02 for American Family Field
+2025-05-03 20:00:33,625 - INFO - ✅ Using cached weather data for Boston,US
+2025-05-03 20:00:33,625 - INFO - 🌡️ Fenway Park: 19.55°C, Wind: 0.89m/s at 285°
+2025-05-03 20:00:33,625 - INFO - ⚾ Applied park factor 1.07 for Fenway Park
+2025-05-03 20:00:33,626 - INFO - ✅ Using cached weather data for Bronx,US
+2025-05-03 20:00:33,628 - INFO - 🌡️ Yankee Stadium: 22.33°C, Wind: 4.12m/s at 60°
+2025-05-03 20:00:33,630 - INFO - ⚾ Applied park factor 1.08 for Yankee Stadium
+2025-05-03 20:00:33,631 - INFO - ✅ Using cached weather data for Baltimore,US
+2025-05-03 20:00:33,631 - INFO - 🌡️ Oriole Park at Camden Yards: 23.45°C, Wind: 2.06m/s at 130°
+2025-05-03 20:00:33,632 - INFO - ⚾ Applied park factor 1.04 for Oriole Park at Camden Yards
+2025-05-03 20:00:33,632 - INFO - ✅ Using cached weather data for Detroit,US
+2025-05-03 20:00:33,633 - INFO - 🌡️ Angel Stadium: 9.59°C, Wind: 5.66m/s at 40°
+2025-05-03 20:00:33,633 - INFO - ⚾ Applied park factor 1.0 for Angel Stadium
+2025-05-03 20:00:33,634 - INFO - ✅ Using cached weather data for Bronx,US
+2025-05-03 20:00:33,636 - INFO - 🌡️ Yankee Stadium: 22.33°C, Wind: 4.12m/s at 60°
+2025-05-03 20:00:33,637 - INFO - ⚾ Applied park factor 1.08 for Yankee Stadium
+2025-05-03 20:00:33,637 - INFO - ✅ Using cached weather data for Milwaukee,US
+2025-05-03 20:00:33,637 - INFO - 🌡️ American Family Field: 8.63°C, Wind: 2.24m/s at 69°
+2025-05-03 20:00:33,638 - INFO - ⚾ Applied park factor 1.06 for American Family Field
+2025-05-03 20:00:33,638 - INFO - ✅ Using cached weather data for Detroit,US
+2025-05-03 20:00:33,638 - INFO - 🌡️ Angel Stadium: 9.59°C, Wind: 5.66m/s at 40°
+2025-05-03 20:00:33,639 - INFO - ⚾ Applied park factor 1.0 for Angel Stadium
+2025-05-03 20:00:33,639 - INFO - ✅ Using cached weather data for Arlington,US
+2025-05-03 20:00:33,639 - INFO - 🌡️ Globe Life Field: 22.59°C, Wind: 4.12m/s at 360°
+2025-05-03 20:00:33,639 - INFO - ⚾ Applied park factor 0.97 for Globe Life Field
+2025-05-03 20:00:33,640 - INFO - ✅ Using cached weather data for St. Louis,US
+2025-05-03 20:00:33,640 - INFO - 🌡️ Busch Stadium: 10.96°C, Wind: 5.66m/s at 330°
+2025-05-03 20:00:33,640 - INFO - ⚾ Applied park factor 0.99 for Busch Stadium
+2025-05-03 20:00:33,641 - INFO - [2025-05-03 20:00:33] 📊 Calculating final matchup scores...
+2025-05-03 20:00:33,673 - INFO - [2025-05-03 20:00:33] 🔮 Prediction sample:
+2025-05-03 20:00:33,830 - INFO - [2025-05-03 20:00:33] ✅ Saved predictions to results/hr_predictions_2025-05-03.csv
+2025-05-03 20:00:33,831 - INFO - [2025-05-03 20:00:33] 📊 Updating local CSV...
+2025-05-03 20:00:34,846 - INFO - [2025-05-03 20:00:34] 🏷️ Assigning prediction tiers...
+2025-05-03 20:00:34,848 - INFO - [2025-05-03 20:00:34] 📱 Sending Telegram alerts...
+2025-05-03 20:00:35,797 - INFO - ✅ Processing completed in 0.00 seconds
+2025-05-03 20:00:35,797 - INFO - [2025-05-03 20:00:35] ✅ Process completed successfully
+2025-05-03 20:00:35,826 - INFO - [2025-05-03 20:00:35] ✅ Program completed successfully
+2025-05-04 10:08:24,487 - INFO - [2025-05-04 10:08:24] 🛠️ Gpt_mlb_hr ENHANCED: Starting home run prediction...
+2025-05-04 10:08:24,492 - INFO - [2025-05-04 10:08:24] 🧪 Test mode: ENABLED
+2025-05-04 10:08:24,493 - INFO - [2025-05-04 10:08:24] 🐞 Debug mode: DISABLED
+2025-05-04 10:08:24,493 - INFO - [2025-05-04 10:08:24] 📅 Target date: 2025-05-04
+2025-05-04 10:08:24,493 - INFO - [2025-05-04 10:08:24] 🔮 Prediction mode: standard
+2025-05-04 10:08:24,493 - INFO - [2025-05-04 10:08:24] 🎯 Outcome types: hr
+2025-05-04 10:08:24,493 - INFO - 🧪 Test mode enabled: using fallback lineups
+2025-05-04 10:08:24,495 - INFO - [2025-05-04 10:08:24] 📋 Confirmed lineups sample:
+2025-05-04 10:09:18,746 - INFO - [2025-05-04 10:09:18] 🔄 Merging batter and pitcher data...
+2025-05-04 10:09:18,759 - INFO - [2025-05-04 10:09:18] 🔍 Preserving ballpark data before merge
+2025-05-04 10:09:18,828 - INFO - [2025-05-04 10:09:18] 🧩 Sample merged matchups:
+2025-05-04 10:09:18,829 - INFO - ✅ Columns in merged: ['batter_name', 'batter_id', 'opposing_pitcher', 'game_date_x', 'game_id', 'ISO', 'barrel_rate_50', 'ballpark', 'home_team', 'pitcher_name_db', 'pitcher_id', 'game_date_y', 'hr_per_9', 'pitcher_display_name']
+2025-05-04 10:09:18,855 - INFO - 🧮 Adding enhanced batting metrics...
+2025-05-04 10:09:18,863 - INFO - ✅ Enhanced 10 batter records
+2025-05-04 10:09:18,863 - INFO - [2025-05-04 10:09:18] 🗃️ Loading cache data...
+2025-05-04 10:09:18,865 - INFO - [2025-05-04 10:09:18] ⚙️ Enriching features...
+2025-05-04 10:09:25,753 - INFO - [2025-05-04 10:09:25] 💾 Saving cache data...
+2025-05-04 10:09:25,766 - INFO - [2025-05-04 10:09:25] 🔮 Generating predictions...
+2025-05-04 10:09:25,790 - INFO - [2025-05-04 10:09:25] 🔍 Enhancing predictions with additional metrics...
+2025-05-04 10:09:25,790 - INFO - Integrating enhanced metrics into prediction system
+2025-05-04 10:09:25,794 - INFO - Fetching enhanced metrics for batter 592450
+2025-05-04 10:09:36,404 - INFO - Fetching enhanced metrics for pitcher 669203.0
+2025-05-04 10:09:39,299 - INFO - Fetching enhanced metrics for batter 660271
+2025-05-04 10:09:47,326 - INFO - Fetching enhanced metrics for pitcher nan
+2025-05-04 10:09:48,370 - WARNING - No data found for pitcher nan
+2025-05-04 10:09:48,371 - WARNING - Using fallback data for pitcher nan
+2025-05-04 10:09:48,372 - INFO - Fetching enhanced metrics for batter 624413
+2025-05-04 10:10:01,772 - INFO - Fetching enhanced metrics for pitcher 571945.0
+2025-05-04 10:10:06,799 - INFO - Fetching enhanced metrics for batter 665487
+2025-05-04 10:10:10,243 - INFO - Fetching enhanced metrics for pitcher 607192.0
+2025-05-04 10:10:11,792 - INFO - Fetching enhanced metrics for batter 665742
+2025-05-04 10:10:14,734 - INFO - Fetching enhanced metrics for pitcher 453286.0
+2025-05-04 10:10:15,704 - WARNING - No data found for pitcher 453286.0
+2025-05-04 10:10:15,704 - WARNING - Using fallback data for pitcher 453286.0
+2025-05-04 10:10:15,705 - INFO - Fetching enhanced metrics for batter 605141
+2025-05-04 10:10:18,240 - INFO - Fetching enhanced metrics for pitcher 506433.0
+2025-05-04 10:10:19,597 - WARNING - No data found for pitcher 506433.0
+2025-05-04 10:10:19,598 - WARNING - Using fallback data for pitcher 506433.0
+2025-05-04 10:10:19,599 - INFO - Fetching enhanced metrics for batter 665489
+2025-05-04 10:10:25,019 - INFO - Fetching enhanced metrics for pitcher 621107.0
+2025-05-04 10:10:26,396 - INFO - Fetching enhanced metrics for batter 571448
+2025-05-04 10:10:29,791 - INFO - Fetching enhanced metrics for pitcher 622663.0
+2025-05-04 10:10:38,796 - INFO - Fetching enhanced metrics for batter 621566
+2025-05-04 10:10:42,285 - INFO - Fetching enhanced metrics for pitcher 554430.0
+2025-05-04 10:10:45,979 - INFO - Fetching enhanced metrics for batter 646240
+2025-05-04 10:10:49,577 - INFO - Fetching enhanced metrics for pitcher 543037.0
+2025-05-04 10:10:51,134 - WARNING - No data found for pitcher 543037.0
+2025-05-04 10:10:51,134 - WARNING - Using fallback data for pitcher 543037.0
+2025-05-04 10:10:51,141 - INFO - Updating prediction formula with enhanced metrics
+2025-05-04 10:10:51,188 - INFO - Successfully added enhanced HR score
+2025-05-04 10:10:51,190 - INFO - [2025-05-04 10:10:51] ✅ Successfully applied enhanced metrics
+2025-05-04 10:10:51,190 - INFO - [2025-05-04 10:10:51] 🌤️ Applying weather boosts...
+2025-05-04 10:10:51,195 - INFO - 🌤️ Applying enhanced weather and park effects...
+2025-05-04 10:10:51,201 - INFO - ✅ Loaded 0 weather cache entries
+2025-05-04 10:10:51,202 - INFO - 🌤️ Fetching weather for Baltimore,US (attempt 1/3)
+2025-05-04 10:10:51,377 - INFO - ✅ Saved 1 weather cache entries
+2025-05-04 10:10:51,378 - INFO - ✅ Weather data fetched for Baltimore,US
+2025-05-04 10:10:51,379 - INFO - 🌡️ Oriole Park at Camden Yards: 19.46°C, Wind: 3.09m/s at 140°
+2025-05-04 10:10:51,381 - INFO - ⚾ Applied park factor 1.04 for Oriole Park at Camden Yards
+2025-05-04 10:10:51,381 - INFO - 🌤️ Fetching weather for Denver,US (attempt 1/3)
+2025-05-04 10:10:51,432 - INFO - ✅ Saved 2 weather cache entries
+2025-05-04 10:10:51,433 - INFO - ✅ Weather data fetched for Denver,US
+2025-05-04 10:10:51,434 - INFO - 🌡️ Coors Field: 13.34°C, Wind: 1.34m/s at 356°
+2025-05-04 10:10:51,434 - INFO - ⚾ Applied park factor 1.15 for Coors Field
+2025-05-04 10:10:51,434 - INFO - 🌤️ Fetching weather for Queens,US (attempt 1/3)
+2025-05-04 10:10:51,520 - INFO - ✅ Saved 3 weather cache entries
+2025-05-04 10:10:51,521 - INFO - ✅ Weather data fetched for Queens,US
+2025-05-04 10:10:51,521 - INFO - 🌡️ Citi Field: 18.41°C, Wind: 4.63m/s at 180°
+2025-05-04 10:10:51,521 - INFO - ⚾ Applied park factor 0.97 for Citi Field
+2025-05-04 10:10:51,522 - INFO - 🌤️ Fetching weather for San Diego,US (attempt 1/3)
+2025-05-04 10:10:51,577 - INFO - ✅ Saved 4 weather cache entries
+2025-05-04 10:10:51,578 - INFO - ✅ Weather data fetched for San Diego,US
+2025-05-04 10:10:51,578 - INFO - 🌡️ Petco Park: 12.15°C, Wind: 4.63m/s at 240°
+2025-05-04 10:10:51,578 - INFO - ⚾ Applied park factor 0.92 for Petco Park
+2025-05-04 10:10:51,578 - INFO - 🌤️ Fetching weather for Arlington,US (attempt 1/3)
+2025-05-04 10:10:51,631 - INFO - ✅ Saved 5 weather cache entries
+2025-05-04 10:10:51,631 - INFO - ✅ Weather data fetched for Arlington,US
+2025-05-04 10:10:51,632 - INFO - 🌡️ Globe Life Field: 17.72°C, Wind: 2.06m/s at 130°
+2025-05-04 10:10:51,632 - INFO - ⚾ Applied park factor 0.97 for Globe Life Field
+2025-05-04 10:10:51,633 - INFO - 🌤️ Fetching weather for Los Angeles,US (attempt 1/3)
+2025-05-04 10:10:51,691 - INFO - ✅ Saved 6 weather cache entries
+2025-05-04 10:10:51,691 - INFO - ✅ Weather data fetched for Los Angeles,US
+2025-05-04 10:10:51,692 - INFO - 🌡️ Dodger Stadium: 13.04°C, Wind: 2.57m/s at 260°
+2025-05-04 10:10:51,692 - INFO - ⚾ Applied park factor 0.99 for Dodger Stadium
+2025-05-04 10:10:51,692 - INFO - 🌤️ Fetching weather for Toronto,CA (attempt 1/3)
+2025-05-04 10:10:51,740 - INFO - ✅ Saved 7 weather cache entries
+2025-05-04 10:10:51,741 - INFO - ✅ Weather data fetched for Toronto,CA
+2025-05-04 10:10:51,741 - INFO - 🌡️ Rogers Centre: 11.68°C, Wind: 5.36m/s at 50°
+2025-05-04 10:10:51,742 - INFO - ⚾ Applied park factor 1.01 for Rogers Centre
+2025-05-04 10:10:51,742 - INFO - 🌤️ Fetching weather for St. Louis,US (attempt 1/3)
+2025-05-04 10:10:51,799 - INFO - ✅ Saved 8 weather cache entries
+2025-05-04 10:10:51,799 - INFO - ✅ Weather data fetched for St. Louis,US
+2025-05-04 10:10:51,799 - INFO - 🌡️ Busch Stadium: 11.61°C, Wind: 5.14m/s at 340°
+2025-05-04 10:10:51,800 - INFO - ⚾ Applied park factor 0.99 for Busch Stadium
+2025-05-04 10:10:51,800 - INFO - 🌤️ Fetching weather for Atlanta,US (attempt 1/3)
+2025-05-04 10:10:51,849 - INFO - ✅ Saved 9 weather cache entries
+2025-05-04 10:10:51,850 - INFO - ✅ Weather data fetched for Atlanta,US
+2025-05-04 10:10:51,851 - INFO - 🌡️ Truist Park: 14.07°C, Wind: 5.14m/s at 290°
+2025-05-04 10:10:51,851 - INFO - ⚾ Applied park factor 1.0 for Truist Park
+2025-05-04 10:10:51,851 - INFO - 🌤️ Fetching weather for Boston,US (attempt 1/3)
+2025-05-04 10:10:51,909 - INFO - ✅ Saved 10 weather cache entries
+2025-05-04 10:10:51,909 - INFO - ✅ Weather data fetched for Boston,US
+2025-05-04 10:10:51,910 - INFO - 🌡️ Fenway Park: 21.05°C, Wind: 7.72m/s at 220°
+2025-05-04 10:10:51,910 - INFO - ⚾ Applied park factor 0.99 for Fenway Park
+2025-05-04 10:10:51,910 - INFO - [2025-05-04 10:10:51] 📊 Calculating final matchup scores...
+2025-05-04 10:10:51,913 - INFO - [2025-05-04 10:10:51] 🔮 Prediction sample:
+2025-05-04 10:10:52,030 - INFO - [2025-05-04 10:10:52] ✅ Saved predictions to results/hr_predictions_2025-05-04.csv
+2025-05-04 10:10:52,030 - INFO - [2025-05-04 10:10:52] 🧪 Skipping update_local_csv in test mode
+2025-05-04 10:10:52,031 - INFO - [2025-05-04 10:10:52] 🏷️ Assigning prediction tiers...
+2025-05-04 10:10:52,031 - INFO - [2025-05-04 10:10:52] 🧪 Skipping Telegram alerts in test mode
+2025-05-04 10:10:52,032 - INFO - ✅ Processing completed in 0.00 seconds
+2025-05-04 10:10:52,032 - INFO - [2025-05-04 10:10:52] ✅ Process completed successfully
+2025-05-04 10:10:52,036 - INFO - [2025-05-04 10:10:52] ✅ Program completed successfully

@@ -57,23 +57,23 @@ def get_enhanced_batter_metrics(batter_id, start_date, end_date):
             barrel_pct = len(barrels) / max(1, len(batted_balls))
             metrics['barrel_rate'] = round(barrel_pct, 3)
         
-        # Average Exit Velocity (NEW)
+        # Average Exit Velocity
         if 'launch_speed' in batted_balls.columns:
             avg_ev = batted_balls['launch_speed'].mean()
             metrics['avg_exit_velo'] = round(avg_ev, 1) if not pd.isna(avg_ev) else None
         
-        # Average Launch Angle (NEW)
+        # Average Launch Angle
         if 'launch_angle' in batted_balls.columns:
             avg_la = batted_balls['launch_angle'].mean()
             metrics['avg_launch_angle'] = round(avg_la, 1) if not pd.isna(avg_la) else None
         
-        # Fly Ball % (NEW)
+        # Fly Ball %
         if 'bb_type' in batted_balls.columns:
             fly_balls = batted_balls[batted_balls['bb_type'] == 'fly_ball']
             fb_pct = len(fly_balls) / max(1, len(batted_balls))
             metrics['fly_ball_pct'] = round(fb_pct, 3)
         
-        # Pull % (NEW)
+        # Pull %
         if 'hit_location' in batted_balls.columns and 'stand' in batted_balls.columns:
             # For RHB: Pull = 7,8,9 (left field) | For LHB: Pull = 3,4,5 (right field)
             righty_pull = batted_balls[
@@ -90,20 +90,20 @@ def get_enhanced_batter_metrics(batter_id, start_date, end_date):
             pull_pct = pull_count / max(1, len(batted_balls))
             metrics['pull_pct'] = round(pull_pct, 3)
         
-        # xSLG (NEW) - Estimated from EV and LA, if available
+        # xSLG
         if 'estimated_ba_using_speedangle' in batted_balls.columns and 'estimated_slg_using_speedangle' in batted_balls.columns:
             # Use Statcast's expected stats
             xslg_values = batted_balls['estimated_slg_using_speedangle'].dropna()
             if not xslg_values.empty:
                 metrics['xSLG'] = round(xslg_values.mean(), 3)
         
-        # xwOBA (NEW) - If available in the data
+        # xwOBA
         if 'estimated_woba_using_speedangle' in batted_balls.columns:
             xwoba_values = batted_balls['estimated_woba_using_speedangle'].dropna()
             if not xwoba_values.empty:
                 metrics['xwOBA'] = round(xwoba_values.mean(), 3)
         
-        # HRs in last 10 games (NEW)
+        # HRs in last 10 games
         if 'game_date' in df.columns:
             df['game_date'] = pd.to_datetime(df['game_date'])
             # Sort by date
@@ -119,12 +119,77 @@ def get_enhanced_batter_metrics(batter_id, start_date, end_date):
             ].shape[0]
             metrics['hrs_last_10_games'] = recent_hrs
         
-        # Handedness (NEW)
+        # Handedness
         if 'stand' in df.columns:
             # Get the most common stance
             stands = df['stand'].value_counts()
             if not stands.empty:
                 metrics['batter_handedness'] = stands.index[0]
+                
+        # NEW: Expected Home Runs (xHR)
+        # Calculate based on exit velocity, launch angle, and barrel rate
+        if 'launch_speed' in batted_balls.columns and 'launch_angle' in batted_balls.columns:
+            # Identify optimal launch conditions for HRs (95+ mph, 25-35 degrees)
+            optimal_hits = batted_balls[
+                (batted_balls['launch_speed'] >= 95) &
+                (batted_balls['launch_angle'].between(25, 35))
+            ]
+            
+            # Calculate expected HR per batted ball based on optimal conditions
+            batted_ball_count = len(batted_balls)
+            optimal_count = len(optimal_hits)
+            
+            if batted_ball_count > 0:
+                # HR probability increases with higher percentages of optimal hits
+                optimal_pct = optimal_count / batted_ball_count
+                
+                # Calculate expected HR rate (normalized)
+                xHR_rate = optimal_pct * 0.5  # Scale factor
+                
+                # Scale by overall batted ball quality
+                if 'avg_exit_velo' in metrics and metrics['avg_exit_velo'] is not None:
+                    ev_factor = min(1.5, max(0.5, metrics['avg_exit_velo'] / 90))
+                    xHR_rate *= ev_factor
+                
+                # Calculate expected HRs per 100 at bats
+                metrics['xHR_per_100'] = round(xHR_rate * 100, 1)
+        
+        # NEW: Plate Discipline Metrics
+        if 'description' in df.columns:
+            # Total pitches
+            total_pitches = len(df)
+            
+            # Swings (all types of swings)
+            swings = df['description'].str.contains('swing').sum() + df['description'].eq('hit_into_play').sum() + df['description'].eq('home_run').sum()
+            
+            # Contacts (all types of contact)
+            contacts = df['description'].isin(['foul', 'hit_into_play', 'home_run', 'foul_tip']).sum()
+            
+            # Pitches in zone (approximation)
+            zone_pitches = df['zone'].between(1, 9).sum() if 'zone' in df.columns else 0
+            
+            # Calculate plate discipline metrics
+            if total_pitches > 0:
+                metrics['swing_pct'] = round(swings / total_pitches, 3)
+                
+                if swings > 0:
+                    metrics['contact_pct'] = round(contacts / swings, 3)
+                
+                if 'zone' in df.columns:
+                    metrics['zone_pct'] = round(zone_pitches / total_pitches, 3)
+                    
+                    # Calculate swing rates for pitches in/out of zone
+                    zone_df = df[df['zone'].between(1, 9)]
+                    outside_df = df[~df['zone'].between(1, 9)]
+                    
+                    zone_swings = zone_df['description'].str.contains('swing').sum() + zone_df['description'].eq('hit_into_play').sum()
+                    outside_swings = outside_df['description'].str.contains('swing').sum() + outside_df['description'].eq('hit_into_play').sum()
+                    
+                    if len(zone_df) > 0:
+                        metrics['z_swing_pct'] = round(zone_swings / len(zone_df), 3)
+                    
+                    if len(outside_df) > 0:
+                        metrics['o_swing_pct'] = round(outside_swings / len(outside_df), 3)
         
         return metrics
         
@@ -163,7 +228,7 @@ def get_enhanced_pitcher_metrics(pitcher_id, start_date, end_date):
         hr_per_9 = (hr / ip) * 9 if ip > 0 else 0.0
         metrics['hr_per_9'] = round(hr_per_9, 3)
         
-        # Calculate Barrel % allowed (NEW)
+        # Calculate Barrel % allowed
         batted_balls = df[df['type'] == 'X']  # Balls in play
         if 'launch_speed' in batted_balls.columns and 'launch_angle' in batted_balls.columns:
             barrels = batted_balls[
@@ -173,19 +238,19 @@ def get_enhanced_pitcher_metrics(pitcher_id, start_date, end_date):
             barrel_pct = len(barrels) / max(1, len(batted_balls))
             metrics['barrel_pct_allowed'] = round(barrel_pct, 3)
         
-        # Hard Hit % allowed (NEW)
+        # Hard Hit % allowed
         if 'launch_speed' in batted_balls.columns:
             hard_hits = batted_balls[batted_balls['launch_speed'] >= 95]
             hard_hit_pct = len(hard_hits) / max(1, len(batted_balls))
             metrics['hard_hit_pct_allowed'] = round(hard_hit_pct, 3)
         
-        # FB% allowed (NEW)
+        # FB% allowed
         if 'bb_type' in batted_balls.columns:
             fly_balls = batted_balls[batted_balls['bb_type'] == 'fly_ball']
             fb_pct = len(fly_balls) / max(1, len(batted_balls))
             metrics['fb_pct_allowed'] = round(fb_pct, 3)
         
-        # ISO Allowed (NEW)
+        # ISO Allowed
         hits = df[df['events'].notna()]
         singles = hits['events'].eq('single').sum()
         doubles = hits['events'].eq('double').sum()
@@ -196,15 +261,59 @@ def get_enhanced_pitcher_metrics(pitcher_id, start_date, end_date):
         iso_allowed = (doubles + 2*triples + 3*homers) / max(1, at_bats)
         metrics['iso_allowed'] = round(iso_allowed, 3)
         
-        # Pitch Mix (already implemented in original codebase)
+        # Pitch Mix
         pitch_counts = df['pitch_type'].value_counts(normalize=True).to_dict()
         metrics['pitch_mix'] = {k: round(v, 3) for k, v in pitch_counts.items()}
         
-        # Pitcher Handedness (NEW)
+        # Pitcher Handedness
         if 'p_throws' in df.columns:
             handedness = df['p_throws'].iloc[0] if not df.empty else None
             if handedness:
                 metrics['pitcher_handedness'] = handedness
+                
+        # NEW: xHR_allowed (Expected HRs allowed)
+        if 'launch_speed' in batted_balls.columns and 'launch_angle' in batted_balls.columns:
+            # Identify batted balls with HR potential
+            hr_potential = batted_balls[
+                (batted_balls['launch_speed'] >= 95) &
+                (batted_balls['launch_angle'].between(25, 35))
+            ]
+            
+            # Calculate expected HR rate per batted ball
+            if len(batted_balls) > 0:
+                xHR_allowed_rate = len(hr_potential) / len(batted_balls)
+                # Calculate expected HRs allowed per 9 innings
+                if ip > 0:
+                    metrics['xHR_allowed_per_9'] = round((xHR_allowed_rate * (batted_balls.shape[0] / ip) * 9), 3)
+        
+        # NEW: Plate Discipline Metrics
+        if 'description' in df.columns:
+            # Total pitches
+            total_pitches = len(df)
+            
+            # Swings
+            swings = df['description'].str.contains('swing').sum() + df['description'].eq('hit_into_play').sum()
+            
+            # Contacts
+            contacts = df['description'].isin(['foul', 'hit_into_play', 'home_run', 'foul_tip']).sum()
+            
+            # Pitches in zone
+            zone_pitches = df['zone'].between(1, 9).sum() if 'zone' in df.columns else 0
+            
+            # Calculate metrics
+            if total_pitches > 0:
+                metrics['swing_pct_against'] = round(swings / total_pitches, 3)
+                
+                if 'zone' in df.columns:
+                    metrics['zone_pct'] = round(zone_pitches / total_pitches, 3)
+                
+                if swings > 0:
+                    metrics['contact_pct_against'] = round(contacts / swings, 3)
+                    
+                # Calculate whiff rate (swings and misses / total swings)
+                whiffs = df['description'].eq('swinging_strike').sum()
+                if swings > 0:
+                    metrics['whiff_rate'] = round(whiffs / swings, 3)
         
         return metrics
         
@@ -255,7 +364,11 @@ def enhance_matchup_data(df):
         'avg_exit_velo', 'avg_launch_angle', 'fly_ball_pct', 'pull_pct',
         'xSLG', 'xwOBA', 'hrs_last_10_games', 'batter_handedness',
         'barrel_pct_allowed', 'hard_hit_pct_allowed', 'fb_pct_allowed',
-        'iso_allowed', 'pitcher_handedness', 'platoon_advantage'
+        'iso_allowed', 'pitcher_handedness', 'platoon_advantage',
+        # New columns
+        'xHR_per_100', 'swing_pct', 'contact_pct', 'zone_pct',
+        'z_swing_pct', 'o_swing_pct', 'xHR_allowed_per_9',
+        'swing_pct_against', 'contact_pct_against', 'whiff_rate'
     ]
     
     for col in new_columns:
@@ -282,7 +395,10 @@ def enhance_matchup_data(df):
                         'barrel_rate': 0.08,
                         'avg_exit_velo': 88.5,
                         'avg_launch_angle': 12.5,
-                        'batter_handedness': 'R'
+                        'batter_handedness': 'R',
+                        'xHR_per_100': 3.5,  # New fallback
+                        'swing_pct': 0.46,    # New fallback
+                        'contact_pct': 0.78   # New fallback
                     }
                 
                 if not pitcher_metrics:
@@ -291,7 +407,9 @@ def enhance_matchup_data(df):
                         'hr_per_9': 1.1,
                         'barrel_pct_allowed': 0.07,
                         'hard_hit_pct_allowed': 0.35,
-                        'pitcher_handedness': 'R'
+                        'pitcher_handedness': 'R',
+                        'xHR_allowed_per_9': 1.0,  # New fallback
+                        'whiff_rate': 0.23         # New fallback
                     }
                 
                 # Update the DataFrame with new metrics

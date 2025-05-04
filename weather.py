@@ -3,11 +3,23 @@ import os
 import pandas as pd
 import time
 import json
+import logging
 from datetime import datetime
 from dotenv import load_dotenv
 
 load_dotenv()
 OPENWEATHER_API = os.getenv("OPENWEATHER_API")
+
+# Set up logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.StreamHandler(),
+        logging.FileHandler("mlb_api.log")
+    ]
+)
+logger = logging.getLogger("weather")
 
 # Cache for weather data to reduce API calls
 WEATHER_CACHE = {}
@@ -27,10 +39,10 @@ def load_weather_cache():
                 if data.get("date") == today:
                     valid_cache[location] = data
                     
-            print(f"✅ Loaded {len(valid_cache)} weather cache entries")
+            logger.info(f"✅ Loaded {len(valid_cache)} weather cache entries")
             return valid_cache
         except Exception as e:
-            print(f"⚠️ Error loading weather cache: {e}")
+            logger.error(f"⚠️ Error loading weather cache: {e}")
     
     return {}
 
@@ -40,9 +52,9 @@ def save_weather_cache(cache):
         os.makedirs(os.path.dirname(WEATHER_CACHE_FILE), exist_ok=True)
         with open(WEATHER_CACHE_FILE, 'w') as f:
             json.dump(cache, f)
-        print(f"✅ Saved {len(cache)} weather cache entries")
+        logger.info(f"✅ Saved {len(cache)} weather cache entries")
     except Exception as e:
-        print(f"⚠️ Error saving weather cache: {e}")
+        logger.error(f"⚠️ Error saving weather cache: {e}")
 
 def fetch_weather_data(location):
     """Fetch weather data from OpenWeather API with improved error handling"""
@@ -54,12 +66,12 @@ def fetch_weather_data(location):
     
     # Check cache first
     if location in WEATHER_CACHE:
-        print(f"✅ Using cached weather data for {location}")
+        logger.info(f"✅ Using cached weather data for {location}")
         return WEATHER_CACHE[location]
     
     # If no API key, use default values
     if not OPENWEATHER_API:
-        print(f"⚠️ OpenWeather API key not found, using default weather for {location}")
+        logger.warning(f"⚠️ OpenWeather API key not found, using default weather for {location}")
         default_data = {
             "main": {"temp": 22},  # 22°C is a mild day
             "wind": {"speed": 2.5, "deg": 180},  # Light breeze blowing out
@@ -72,7 +84,7 @@ def fetch_weather_data(location):
     max_retries = 3
     for attempt in range(max_retries):
         try:
-            print(f"🌤️ Fetching weather for {location} (attempt {attempt+1}/{max_retries})")
+            logger.info(f"🌤️ Fetching weather for {location} (attempt {attempt+1}/{max_retries})")
             url = f"https://api.openweathermap.org/data/2.5/weather?q={location}&appid={OPENWEATHER_API}&units=metric"
             response = requests.get(url, timeout=10)  # Add timeout
             response.raise_for_status()
@@ -88,17 +100,16 @@ def fetch_weather_data(location):
             # Save updated cache
             save_weather_cache(WEATHER_CACHE)
             
-            print(f"✅ Weather for {location}: {data['main']['temp']}°C, "
-                  f"wind: {data['wind'].get('speed', 0)} m/s at {data['wind'].get('deg', 0)}°")
+            logger.info(f"✅ Weather data fetched for {location}")
             return data
         except requests.exceptions.RequestException as e:
             if attempt < max_retries - 1:
                 wait_time = 2 ** attempt  # Exponential backoff
-                print(f"⚠️ Weather API attempt {attempt+1} failed for {location}, "
+                logger.warning(f"⚠️ Weather API attempt {attempt+1} failed for {location}, "
                       f"retrying in {wait_time}s: {e}")
                 time.sleep(wait_time)
             else:
-                print(f"❌ All weather API attempts failed for {location}: {e}")
+                logger.error(f"❌ All weather API attempts failed for {location}: {e}")
                 # Provide reasonable default weather rather than failing
                 default_data = {
                     "main": {"temp": 22},  # 22°C is a mild day
@@ -151,7 +162,7 @@ def get_ballpark_names():
     return {
         "ARI": "Chase Field",
         "ATL": "Truist Park",
-        "BAL": "Camden Yards",
+        "BAL": "Oriole Park at Camden Yards",
         "BOS": "Fenway Park",
         "CHC": "Wrigley Field",
         "CWS": "Guaranteed Rate Field",
@@ -284,87 +295,117 @@ def get_enhanced_park_factor(team_code, weather_conditions=None):
     
     # Apply special adjustment if applicable
     if team_code in special_adjustments and weather_conditions:
-        park_factor += special_adjustments[team_code](weather_conditions)
+        try:
+            adjustment = special_adjustments[team_code](weather_conditions)
+            park_factor += adjustment
+        except Exception as e:
+            logger.error(f"Error applying special adjustment for {team_code}: {e}")
         
     return round(park_factor, 3)
 
 def apply_enhanced_weather_boosts(df):
-    print("🌤️ Applying enhanced weather and park effects...")
+    """
+    Apply enhanced weather and ballpark factors to the predictions.
+    Now with better error handling and debugging output.
+    """
+    logger.info("🌤️ Applying enhanced weather and park effects...")
     ballpark_locations = get_ballpark_locations()
     ballpark_names = get_ballpark_names()
     
-    # Add columns for weather data
-    df['wind_boost'] = 0.0
-    df['park_factor'] = 1.0
-    df['temperature'] = 20.0  # Default temperature in Celsius
-    df['wind_speed'] = 0.0
-    df['wind_direction'] = None
+    # Add columns for weather data if they don't exist
+    for col in ['wind_boost', 'park_factor', 'temperature', 'wind_speed', 'wind_direction']:
+        if col not in df.columns:
+            df[col] = 0.0 if col != 'wind_direction' else None
     
     # Apply team-specific park factors
     for idx, row in df.iterrows():
-        # Get home team for ballpark data
-        home_team = row.get('home_team')
-        
-        # Get ballpark info if available
-        if not home_team or home_team == "Unknown":
-            # Try to infer from ballpark name
-            ballpark = row.get('ballpark', "Unknown Ballpark")
-            home_team = next((team for team, name in ballpark_names.items() 
-                             if name.lower() == ballpark.lower()), None)
-        
-        # Apply park factor if we have team info
-        if home_team and home_team != "Unknown":
-            # Ensure it's uppercase to match our dictionaries
-            home_team = home_team.upper()
+        try:
+            # Get home team and ballpark info
+            home_team = row.get('home_team')
+            ballpark = row.get('ballpark')
             
-            # Set ballpark name if not already set
-            if 'ballpark' not in df.columns or pd.isna(row.get('ballpark')) or row.get('ballpark') == "Unknown Ballpark":
-                df.at[idx, 'ballpark'] = ballpark_names.get(home_team, f"{home_team} Ballpark")
+            # If we don't have either, we can't proceed
+            if not home_team and not ballpark:
+                logger.warning(f"⚠️ Row {idx} missing both home_team and ballpark data")
+                continue
             
-            # Apply park factor
-            weather_conditions = {
-                'batter_stands': row.get('batter_stands', 'R'),
-                'temperature': 20,
-                'wind_direction': None,
-                'wind_speed': 0
-            }
+            # Derive missing values from each other
+            if not home_team or home_team == "Unknown":
+                # Try to infer from ballpark name
+                if ballpark:
+                    home_team = next((team for team, name in ballpark_names.items() 
+                                    if name.lower() == ballpark.lower()), None)
+                    if home_team:
+                        df.at[idx, 'home_team'] = home_team
+                        logger.info(f"✅ Inferred home team {home_team} from ballpark {ballpark}")
             
-            # Get location for weather
-            location = ballpark_locations.get(home_team)
-            if location and OPENWEATHER_API:
-                # Weather API call
-                weather_data = fetch_weather_data(location)
-                if weather_data:
-                    wind_speed = weather_data.get('wind', {}).get('speed', 0)
-                    wind_direction = weather_data.get('wind', {}).get('deg', 0)
-                    temp = weather_data.get('main', {}).get('temp', 20)
-                    
-                    # Store weather data
-                    df.at[idx, 'temperature'] = temp
-                    df.at[idx, 'wind_speed'] = wind_speed
-                    df.at[idx, 'wind_direction'] = wind_direction
-                    
-                    # Update weather conditions for park factor
-                    weather_conditions.update({
-                        'temperature': temp,
-                        'wind_direction': wind_direction,
-                        'wind_speed': wind_speed
-                    })
-                    
-                    # Calculate enhanced wind boost
-                    df.at[idx, 'wind_boost'] = calculate_enhanced_wind_boost(
-                        wind_speed, wind_direction, temp
-                    )
-                    
-                    print(f"🌡️ {df.at[idx, 'ballpark']}: {temp}°C, Wind: {wind_speed}m/s at {wind_direction}°")
+            if not ballpark or ballpark == "Unknown Ballpark":
+                # Set ballpark name if we have home team
+                if home_team:
+                    df.at[idx, 'ballpark'] = ballpark_names.get(home_team.upper(), f"{home_team} Ballpark")
+                    logger.info(f"✅ Set ballpark to {df.at[idx, 'ballpark']} from team {home_team}")
             
-            # Apply park factor (use enhanced version)
-            df.at[idx, 'park_factor'] = get_enhanced_park_factor(home_team, weather_conditions)
-            print(f"⚾ Applied park factor {df.at[idx, 'park_factor']} for {df.at[idx, 'ballpark']}")
-        else:
-            print(f"⚠️ Unknown home team or ballpark for {row.get('batter_name')} vs {row.get('opposing_pitcher')}")
-            # Set default reasonable values
+            # Apply park factor if we have team info
+            if home_team and home_team != "Unknown":
+                # Ensure it's uppercase to match our dictionaries
+                home_team = home_team.upper()
+                
+                # Define weather conditions object for park factors
+                weather_conditions = {
+                    'batter_stands': row.get('batter_stands', 'R'),
+                    'temperature': 20,
+                    'wind_direction': None,
+                    'wind_speed': 0
+                }
+                
+                # Get location for weather
+                location = ballpark_locations.get(home_team)
+                if location and OPENWEATHER_API:
+                    # Weather API call
+                    try:
+                        weather_data = fetch_weather_data(location)
+                        if weather_data:
+                            wind_speed = weather_data.get('wind', {}).get('speed', 0)
+                            wind_direction = weather_data.get('wind', {}).get('deg', 0)
+                            temp = weather_data.get('main', {}).get('temp', 20)
+                            
+                            # Store weather data
+                            df.at[idx, 'temperature'] = temp
+                            df.at[idx, 'wind_speed'] = wind_speed
+                            df.at[idx, 'wind_direction'] = wind_direction
+                            
+                            # Update weather conditions for park factor
+                            weather_conditions.update({
+                                'temperature': temp,
+                                'wind_direction': wind_direction,
+                                'wind_speed': wind_speed
+                            })
+                            
+                            # Calculate enhanced wind boost
+                            df.at[idx, 'wind_boost'] = calculate_enhanced_wind_boost(
+                                wind_speed, wind_direction, temp
+                            )
+                            
+                            logger.info(f"🌡️ {df.at[idx, 'ballpark']}: {temp}°C, Wind: {wind_speed}m/s at {wind_direction}°")
+                    except Exception as e:
+                        logger.error(f"Error fetching or processing weather data: {e}")
+                
+                # Apply park factor (use enhanced version)
+                try:
+                    df.at[idx, 'park_factor'] = get_enhanced_park_factor(home_team, weather_conditions)
+                    logger.info(f"⚾ Applied park factor {df.at[idx, 'park_factor']} for {df.at[idx, 'ballpark']}")
+                except Exception as e:
+                    logger.error(f"Error applying park factor: {e}")
+                    df.at[idx, 'park_factor'] = 1.0
+            else:
+                logger.warning(f"⚠️ Unknown home team or ballpark for {row.get('batter_name')} vs {row.get('opposing_pitcher')}")
+                # Set default reasonable values
+                df.at[idx, 'park_factor'] = 1.0
+        except Exception as e:
+            logger.error(f"❌ Error processing weather for row {idx}: {e}")
+            # Set safe default values
             df.at[idx, 'park_factor'] = 1.0
+            df.at[idx, 'wind_boost'] = 0.0
     
     return df
 

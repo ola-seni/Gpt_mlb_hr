@@ -22,9 +22,23 @@ from projected_lineups import get_projected_lineups
 import numpy as np 
 import time
 import argparse
+import logging
+import traceback
+
+# Set up logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.StreamHandler(),
+        logging.FileHandler("mlb_hr_predictions.log")
+    ]
+)
+logger = logging.getLogger("main")
 
 load_dotenv()
 FORCE_TEST_MODE = "--test" in sys.argv
+DEBUG_MODE = "--debug" in sys.argv
 # Maximum number of API retries
 MAX_RETRIES = 3
 
@@ -34,8 +48,10 @@ def parse_args():
     
     # Prediction modes
     parser.add_argument("--test", action="store_true", help="Run in test mode")
+    parser.add_argument("--debug", action="store_true", help="Run with detailed logging")
     parser.add_argument("--in-game", action="store_true", help="Use in-game prediction mode")
     parser.add_argument("--realtime", action="store_true", help="Enable real-time updates")
+    parser.add_argument("--date", type=str, help="Specific date to use (YYYY-MM-DD)")
     
     # Real-time update settings
     parser.add_argument("--update-interval", type=int, default=15, help="Minutes between updates")
@@ -61,14 +77,14 @@ def parse_args():
     
     # Parse args
     if "--test" in sys.argv:
-        return parser.parse_args(["--test"])  # Keep backward compatibility
+        return parser.parse_args(["--test", "--debug"])  # Always enable debug with test mode
     
     return parser.parse_args()
 
 def log_step(message):
     """Log a step with timestamp for better workflow debugging"""
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    print(f"[{timestamp}] {message}")
+    logger.info(f"[{timestamp}] {message}")
 
 def is_test_mode():
     """Check if we're running in test mode"""
@@ -79,12 +95,13 @@ def safe_execution(func, default_return=None, error_msg="Function failed"):
     try:
         return func()
     except Exception as e:
-        print(f"❌ {error_msg}: {e}")
+        stack_trace = traceback.format_exc() if DEBUG_MODE else ""
+        logger.error(f"❌ {error_msg}: {e}\n{stack_trace}")
         return default_return
 
 def enhance_batter_data(batters_df):
     """Add enhanced batting metrics to the DataFrame"""
-    print("🧮 Adding enhanced batting metrics...")
+    logger.info("🧮 Adding enhanced batting metrics...")
     
     try:
         # Add recent form indicators (dummy data for demo - in production, 
@@ -101,9 +118,9 @@ def enhance_batter_data(batters_df):
             # Roughly 65% of batters are right-handed
             batters_df['batter_stands'] = np.random.choice(['R', 'L'], size=len(batters_df), p=[0.65, 0.35])
             
-        print(f"✅ Enhanced {len(batters_df)} batter records")
+        logger.info(f"✅ Enhanced {len(batters_df)} batter records")
     except Exception as e:
-        print(f"❌ Error enhancing batter data: {e}")
+        logger.error(f"❌ Error enhancing batter data: {e}")
     
     return batters_df
 
@@ -182,7 +199,11 @@ def main():
     # Print environment configuration
     test_mode = is_test_mode()
     log_step(f"🧪 Test mode: {'ENABLED' if test_mode else 'DISABLED'}")
-    log_step(f"📅 Current date: {date.today().isoformat()}")
+    log_step(f"🐞 Debug mode: {'ENABLED' if DEBUG_MODE else 'DISABLED'}")
+    
+    # Use specific date if provided, otherwise use today
+    target_date = args.date if args.date else date.today().isoformat()
+    log_step(f"📅 Target date: {target_date}")
     log_step(f"🔮 Prediction mode: {prediction_mode}")
     log_step(f"🎯 Outcome types: {', '.join(outcome_types)}")
     
@@ -190,6 +211,7 @@ def main():
     os.makedirs("results", exist_ok=True)
     os.makedirs("cache", exist_ok=True)
 
+    # Get lineups - try confirmed first, then fallback to projected if needed
     lineups = get_confirmed_lineups(force_test=test_mode)
     if lineups.empty:
         log_step("📋 Confirmed lineups not available — using projected lineups instead.")
@@ -199,7 +221,7 @@ def main():
         log_step("❌ No lineups available. Exiting.")
         return
         
-    print("📋 Confirmed lineups sample:")
+    log_step("📋 Confirmed lineups sample:")
     print(lineups.head(3))
 
     lineups = lineups.dropna(subset=["batter_id", "pitcher_id"])
@@ -211,12 +233,43 @@ def main():
 
     try:
         log_step("🔄 Merging batter and pitcher data...")
+        
+        # Make a copy of critical columns before merging
+        if "ballpark" in batters.columns:
+            log_step("🔍 Preserving ballpark data before merge")
+            ballpark_mapping = dict(zip(batters["game_id"], batters["ballpark"]))
+            home_team_mapping = dict(zip(batters["game_id"], batters["home_team"]))
+        else:
+            log_step("⚠️ No ballpark data found in source DataFrame")
+            ballpark_mapping = {}
+            home_team_mapping = {}
+        
         # Rename columns before merging to avoid conflicts
         if "pitcher_name" in pitchers.columns:
             pitchers.rename(columns={"pitcher_name": "pitcher_name_db"}, inplace=True)
     
-        merged = pd.merge(batters, pitchers, on="game_id", how="inner")
-    
+        # Perform the merge on game_id
+        merged = pd.merge(batters, pitchers, on="game_id", how="left")
+        
+        # Check if the merge dropped ballpark data
+        if "ballpark" not in merged.columns or merged["ballpark"].isnull().any():
+            log_step("🔍 Checking merged data ballpark column:")
+            if "ballpark" not in merged.columns:
+                log_step("  ❌ Ballpark column missing after merge - restoring from lineups")
+                # Restore ballpark from our saved mapping
+                merged["ballpark"] = merged["game_id"].map(ballpark_mapping)
+                log_step(f"  ✅ Restored ballpark data for {merged['ballpark'].notna().sum()} rows")
+            elif merged["ballpark"].isnull().any():
+                log_step(f"  ⚠️ {merged['ballpark'].isnull().sum()} rows missing ballpark data - filling from mapping")
+                # Only fill missing values
+                for idx, row in merged[merged["ballpark"].isnull()].iterrows():
+                    if row["game_id"] in ballpark_mapping:
+                        merged.at[idx, "ballpark"] = ballpark_mapping[row["game_id"]]
+        
+        # Do the same for home_team if needed
+        if "home_team" not in merged.columns or merged["home_team"].isnull().any():
+            merged["home_team"] = merged["game_id"].map(home_team_mapping)
+        
         # Ensure opposing_pitcher is preserved
         if "opposing_pitcher" in batters.columns and "opposing_pitcher" not in merged.columns:
             merged["opposing_pitcher"] = batters["opposing_pitcher"]
@@ -229,13 +282,14 @@ def main():
     
         log_step("🧩 Sample merged matchups:")
         if not merged.empty:
-            print("✅ Columns in merged:", merged.columns.tolist())
-            print(merged.head(3))
+            logger.info(f"✅ Columns in merged: {merged.columns.tolist()}")
+            print(merged[["batter_name", "batter_id", "opposing_pitcher", "game_date_x", "game_id", "ISO", "barrel_rate_50", "hr_per_9", "ballpark"]].head(3))
         else:
             log_step("❌ No matchups merged — check game_id alignment.")
             return
     except Exception as e:
-        log_step(f"❌ Error merging data: {str(e)}")
+        stack_trace = traceback.format_exc() if DEBUG_MODE else ""
+        log_step(f"❌ Error merging data: {str(e)}\n{stack_trace}")
         return
 
     # Add enhanced batter metrics 
@@ -255,6 +309,7 @@ def main():
     merged["suppression_tag"] = False
 
     try:
+        errors_found = 0
         for idx, row in merged.iterrows():
             try:
                 batter_id = str(row.get("batter_id"))
@@ -262,7 +317,7 @@ def main():
                 game_date = row.get("game_date_x", row.get("game_date"))
 
                 if not all([batter_id, pitcher_id, game_date]):
-                    log_step(f"⚠️ Missing required data for row {idx}")
+                    logger.warning(f"⚠️ Missing required data for row {idx}: batter_id={batter_id}, pitcher_id={pitcher_id}, game_date={game_date}")
                     continue
 
                 start_date = end_date = game_date
@@ -291,9 +346,13 @@ def main():
                 suppression_score = calculate_pitcher_suppression_score(row)
                 merged.at[idx, "pitcher_hr_suppression"] = suppression_score
             except Exception as e:
-                log_step(f"⚠️ Error processing row {idx}: {str(e)}")
+                logger.warning(f"⚠️ Error processing row {idx}: {str(e)}")
+                errors_found += 1
                 # Continue with next row instead of breaking completely
                 continue
+        
+        if errors_found > 0:
+            logger.warning(f"⚠️ Encountered {errors_found} errors while processing rows")
 
         log_step("💾 Saving cache data...")
         save_json_cache(batter_cache, batter_cache_path)
@@ -304,7 +363,8 @@ def main():
             cutoff = merged["pitcher_hr_suppression"].quantile(0.90)
             merged["suppression_tag"] = merged["pitcher_hr_suppression"] >= cutoff
     except Exception as e:
-        log_step(f"❌ Error enriching features: {str(e)}")
+        stack_trace = traceback.format_exc() if DEBUG_MODE else ""
+        log_step(f"❌ Error enriching features: {str(e)}\n{stack_trace}")
         # Continue with what we have
 
     filtered = merged.copy()
@@ -362,7 +422,8 @@ def main():
         log_step("🔮 Prediction sample:")
         print(predictions[["batter_name", "HR_Score", "matchup_score", "pitch_matchup_score", "bullpen_boost", "park_factor", "wind_boost"]].head(5))
     except Exception as e:
-        log_step(f"⚠️ Error calculating matchup scores: {str(e)}")
+        stack_trace = traceback.format_exc() if DEBUG_MODE else ""
+        log_step(f"⚠️ Error calculating matchup scores: {str(e)}\n{stack_trace}")
         # Continue with basic HR_Score if matchup_score calculation fails
         predictions["matchup_score"] = predictions["HR_Score"]
 
@@ -383,7 +444,8 @@ def main():
             predictions.to_csv(out_path, index=False)
             log_step(f"✅ Saved predictions to {out_path}")
     except Exception as e:
-        log_step(f"❌ Error saving predictions: {str(e)}")
+        stack_trace = traceback.format_exc() if DEBUG_MODE else ""
+        log_step(f"❌ Error saving predictions: {str(e)}\n{stack_trace}")
         
     # Only update results in non-test mode
     if not is_test_mode():
@@ -422,17 +484,25 @@ def main():
             log_step("🧪 Skipping Telegram alerts in test mode")
             
     except Exception as e:
-        log_step(f"❌ Error in final processing steps: {str(e)}")
-        
+        stack_trace = traceback.format_exc() if DEBUG_MODE else ""
+        log_step(f"❌ Error in final processing steps: {str(e)}\n{stack_trace}")
+    
+    # Calculate processing time
+    end_time = time.time()
+    processing_time = time.time() - start_time if 'start_time' in locals() else 0
+    logger.info(f"✅ Processing completed in {processing_time:.2f} seconds")
+    
     log_step("✅ Process completed successfully")
     return predictions
 
 if __name__ == "__main__":
     try:
+        start_time = time.time()
         main()
         log_step("✅ Program completed successfully")
     except Exception as e:
-        log_step(f"❌ Program error: {e}")
+        stack_trace = traceback.format_exc() if DEBUG_MODE else ""
+        log_step(f"❌ Program error: {e}\n{stack_trace}")
         # Optional: send error notification
         if "BOT_TOKEN" in os.environ and "CHAT_ID" in os.environ:
             from telegram_alerts import send_telegram_alerts

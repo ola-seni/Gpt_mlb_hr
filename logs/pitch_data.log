@@ -1,0 +1,68 @@
+2025-05-04 09:57:24,719 - INFO - Collecting pitch data for 2024-05-01
+2025-05-04 09:57:25,095 - INFO - Found 15 games for 2024-05-01
+2025-05-04 09:57:25,095 - INFO - Collecting pitch data for game 746478: St. Louis Cardinals @ Detroit Tigers
+2025-05-04 09:57:25,426 - ERROR - Error extracting pitch metrics: 'calendarEventTime'
+2025-05-04 09:57:25,426 - INFO - Extracted 0 pitch metrics from game 746478
+2025-05-04 09:57:26,431 - INFO - Collecting pitch data for game 745996: Tampa Bay Rays @ Milwaukee Brewers
+2025-05-04 09:57:26,776 - ERROR - Error extracting pitch metrics: 'calendarEventTime'
+2025-05-04 09:57:26,777 - INFO - Extracted 0 pitch metrics from game 745996
+2025-05-04 09:57:27,778 - INFO - Collecting pitch data for game 746800: Minnesota Twins @ Chicago White Sox
+2025-05-04 09:57:28,183 - ERROR - Error extracting pitch metrics: 'calendarEventTime'
+2025-05-04 09:57:28,183 - INFO - Extracted 0 pitch metrics from game 746800
+2025-05-04 09:57:29,186 - INFO - Collecting pitch data for game 744939: Kansas City Royals @ Toronto Blue Jays
+2025-05-04 09:57:29,517 - ERROR - Error extracting pitch metrics: 'calendarEventTime'
+2025-05-04 09:57:29,517 - INFO - Extracted 0 pitch metrics from game 744939
+2025-05-04 09:57:30,520 - INFO - Collecting pitch data for game 745670: Pittsburgh Pirates @ Oakland Athletics
+2025-05-04 09:57:30,846 - ERROR - Error extracting pitch metrics: 'calendarEventTime'
+2025-05-04 09:57:30,846 - INFO - Extracted 0 pitch metrics from game 745670
+2025-05-04 09:57:31,846 - INFO - Collecting pitch data for game 745261: Atlanta Braves @ Seattle Mariners
+2025-05-04 09:57:32,193 - ERROR - Error extracting pitch metrics: 'calendarEventTime'
+2025-05-04 09:57:32,195 - INFO - Extracted 0 pitch metrics from game 745261
+2025-05-04 09:57:33,197 - INFO - Collecting pitch data for game 746238: Philadelphia Phillies @ Los Angeles Angels
+2025-05-04 09:57:33,547 - ERROR - Error extracting pitch metrics: 'calendarEventTime'
+2025-05-04 09:57:33,548 - INFO - Extracted 0 pitch metrics from game 746238
+2025-05-04 09:57:34,551 - INFO - Collecting pitch data for game 745423: Cincinnati Reds @ San Diego Padres
+2025-05-04 09:57:34,898 - ERROR - Error extracting pitch metrics: 'calendarEventTime'
+2025-05-04 09:57:34,898 - INFO - Extracted 0 pitch metrics from game 745423
+2025-05-04 09:57:35,901 - INFO - Collecting pitch data for game 747048: New York Yankees @ Baltimore Orioles
+2025-05-04 09:57:36,241 - ERROR - Error extracting pitch metrics: 'calendarEventTime'
+2025-05-04 09:57:36,242 - INFO - Extracted 0 pitch metrics from game 747048
+2025-05-04 09:57:37,245 - INFO - Collecting pitch data for game 746072: Colorado Rockies @ Miami Marlins
+2025-05-04 09:57:37,557 - ERROR - Error extracting pitch metrics: 'calendarEventTime'
+2025-05-04 09:57:37,558 - INFO - Extracted 0 pitch metrics from game 746072
+2025-05-04 09:57:38,561 - INFO - Collecting pitch data for game 745829: Chicago Cubs @ New York Mets
+2025-05-04 09:57:38,884 - ERROR - Error extracting pitch metrics: 'calendarEventTime'
+2025-05-04 09:57:38,884 - INFO - Extracted 0 pitch metrics from game 745829
+2025-05-04 09:57:39,885 - INFO - Collecting pitch data for game 746966: San Francisco Giants @ Boston Red Sox
+2025-05-04 09:57:40,186 - ERROR - Error extracting pitch metrics: 'calendarEventTime'
+2025-05-04 09:57:40,187 - INFO - Extracted 0 pitch metrics from game 746966
+2025-05-04 09:57:41,187 - INFO - Collecting pitch data for game 745023: Washington Nationals @ Texas Rangers
+2025-05-04 09:57:41,516 - ERROR - Error extracting pitch metrics: 'calendarEventTime'
+2025-05-04 09:57:41,516 - INFO - Extracted 0 pitch metrics from game 745023
+2025-05-04 09:57:42,518 - INFO - Collecting pitch data for game 746399: Cleveland Guardians @ Houston Astros
+2025-05-04 09:57:42,909 - ERROR - Error extracting pitch metrics: 'calendarEventTime'
+2025-05-04 09:57:42,909 - INFO - Extracted 0 pitch metrics from game 746399
+2025-05-04 09:57:43,910 - INFO - Collecting pitch data for game 747207: Los Angeles Dodgers @ Arizona Diamondbacks
+2025-05-04 09:57:44,341 - ERROR - Error extracting pitch metrics: 'calendarEventTime'
+2025-05-04 09:57:44,341 - INFO - Extracted 0 pitch metrics from game 747207
+2025-05-04 09:57:45,350 - INFO - Collecting pitch data for 2024-05-02
+2025-05-04 09:57:45,498 - INFO - Found 6 games for 2024-05-02
+2025-05-04 09:57:45,498 - INFO - Collecting pitch data for game 746070: Colorado Rockies @ Miami Marlins
+2025-05-04 09:57:45,850 - ERROR - Error extracting pitch metrics: 'calendarEventTime'
+2025-05-04 09:57:45,850 - INFO - Extracted 0 pitch metrics from game 746070
+2025-05-04 09:57:46,853 - INFO - Collecting pitch data for game 747044: New York Yankees @ Baltimore Orioles
+2025-05-04 09:57:47,222 - ERROR - Error extracting pitch metrics: 'calendarEventTime'
+2025-05-04 09:57:47,222 - INFO - Extracted 0 pitch metrics from game 747044
+2025-05-04 09:57:48,223 - INFO - Collecting pitch data for game 745830: Chicago Cubs @ New York Mets
+2025-05-04 09:57:48,665 - ERROR - Error extracting pitch metrics: 'calendarEventTime'
+2025-05-04 09:57:48,665 - INFO - Extracted 0 pitch metrics from game 745830
+2025-05-04 09:57:49,670 - INFO - Collecting pitch data for game 746969: San Francisco Giants @ Boston Red Sox
+2025-05-04 09:57:49,988 - ERROR - Error extracting pitch metrics: 'calendarEventTime'
+2025-05-04 09:57:49,989 - INFO - Extracted 0 pitch metrics from game 746969
+2025-05-04 09:57:50,993 - INFO - Collecting pitch data for game 745021: Washington Nationals @ Texas Rangers
+2025-05-04 09:57:51,317 - ERROR - Error extracting pitch metrics: 'calendarEventTime'
+2025-05-04 09:57:51,317 - INFO - Extracted 0 pitch metrics from game 745021
+2025-05-04 09:57:52,318 - INFO - Collecting pitch data for game 746403: Cleveland Guardians @ Houston Astros
+2025-05-04 09:57:52,649 - ERROR - Error extracting pitch metrics: 'calendarEventTime'
+2025-05-04 09:57:52,649 - INFO - Extracted 0 pitch metrics from game 746403
+2025-05-04 09:57:53,685 - INFO - Saved 0 pitch metrics to data/pitch_data_2024-05-01_to_2024-05-02.csv
