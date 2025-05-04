@@ -95,6 +95,24 @@ def send_telegram_alerts(predictions):
                 continue
                 
             sorted_df = group_df.sort_values(sort_column, ascending=False)
+
+        # Add right after you define the groups dictionary
+        for group_name, group_df in groups.items():
+            if group_df.empty:
+                print(f"⚠️ No predictions in {group_name} category")
+                # If a category is empty, get the top predictions that would normally
+                # be just below the threshold and add them to this category
+                if group_name == "Sleepers 🌙":
+                    # Get predictions just below Lock threshold
+                    almost_sleepers = predictions.sort_values(sort_column, ascending=False)
+                    almost_sleepers = almost_sleepers[~almost_sleepers.index.isin(groups["Locks 🔒"].index)]
+                    groups[group_name] = almost_sleepers.head(3)
+                elif group_name == "Risky ⚠️":
+                    # Get predictions just below Sleeper threshold
+                    almost_risky = predictions.sort_values(sort_column, ascending=False)
+                    almost_risky = almost_risky[~almost_risky.index.isin(groups["Locks 🔒"].index) & 
+                                                ~almost_risky.index.isin(groups["Sleepers 🌙"].index)]
+                    groups[group_name] = almost_risky.head(3)
             
             # Limit to top 5 players per group
             if len(sorted_df) > 5:
