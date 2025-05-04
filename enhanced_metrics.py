@@ -378,6 +378,15 @@ def enhance_matchup_data(df):
     for idx, row in df.iterrows():
         batter_id = row.get('batter_id')
         pitcher_id = row.get('pitcher_id')
+
+        # Skip processing if pitcher_id is missing or nan
+        if pitcher_id is None or pd.isna(pitcher_id):
+            logger.warning(f"Missing pitcher ID for batter {batter_id}, using fallback data")
+            # Apply fallback pitcher data directly
+            for metric, value in fallback_pitcher_metrics.items():
+                if metric in df.columns:
+                    df.at[idx, metric] = value
+            continue
         
         if batter_id and pitcher_id:
             try:

@@ -88,13 +88,43 @@ def send_telegram_alerts(predictions):
             "Sleepers 🌙": predictions[predictions["tag"] == "Sleeper 🌙"],
             "Risky ⚠️": predictions[predictions["tag"] == "Risky ⚠️"]
         }
-        
+
+        # For empty categories, take some from other categories
+        if groups["Sleepers 🌙"].empty and not groups["Locks 🔒"].empty:
+            print("Finding alternative Sleeper picks...")
+            # Take bottom half of Locks as Sleepers
+            locks = groups["Locks 🔒"].sort_values(sort_column, ascending=False)
+            half_idx = max(1, len(locks) // 2)
+            groups["Sleepers 🌙"] = locks.iloc[half_idx:].copy()
+            groups["Sleepers 🌙"]["tag"] = "Sleeper 🌙"
+            # Keep only top half as Locks
+            groups["Locks 🔒"] = locks.iloc[:half_idx]
+
+        if groups["Risky ⚠️"].empty and not groups["Sleepers 🌙"].empty:
+            print("Finding alternative Risky picks...")
+            # Take bottom half of Sleepers as Risky
+            sleepers = groups["Sleepers 🌙"].sort_values(sort_column, ascending=False)
+            half_idx = max(1, len(sleepers) // 2)
+            groups["Risky ⚠️"] = sleepers.iloc[half_idx:].copy()
+            groups["Risky ⚠️"]["tag"] = "Risky ⚠️"
+            # Keep only top half as Sleepers
+            groups["Sleepers 🌙"] = sleepers.iloc[:half_idx]
+
+        # Ensure exclusivity between categories
+        processed_players = set()
+
         for group_name, group_df in groups.items():
-            if group_df.empty:
-                print(f"⚠️ No predictions in {group_name} category")
-                continue
+            if not group_df.empty:
+                # Remove players already processed in previous categories
+                group_df = group_df[~group_df["batter_name"].isin(processed_players)]
+                groups[group_name] = group_df
                 
-            sorted_df = group_df.sort_values(sort_column, ascending=False)
+                # Add these players to processed set so they don't appear again
+                processed_players.update(group_df["batter_name"].tolist())
+                
+                # Sort each group by the appropriate score column
+                sorted_df = group_df.sort_values(sort_column, ascending=False)
+                groups[group_name] = sorted_df
 
         # Add right after you define the groups dictionary
         for group_name, group_df in groups.items():
@@ -124,7 +154,9 @@ def send_telegram_alerts(predictions):
             
             for _, row in sorted_df.iterrows():
                 name = row.get("batter_name", "Unknown")
-                pitcher = row.get("pitcher_display_name", row.get("opposing_pitcher", "Unknown"))
+                pitcher = row.get("pitcher_display_name", row.get("opposing_pitcher", "Unknown Pitcher"))
+                if pd.isna(pitcher):
+                    pitcher = "Unknown Pitcher"
                 
                 # Get score values
                 hr_score = row.get("HR_Score", 0)
