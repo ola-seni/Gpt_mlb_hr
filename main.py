@@ -462,9 +462,11 @@ def main():
         # ✅ Assign HR prediction tiers for Telegram alerts
         log_step("🏷️ Assigning prediction tiers...")
         def assign_tag(score):
-            if score >= 0.50:
+            if score >= 0.60:
                 return "Lock 🔒"
-            elif score >= 0.35:
+            elif score >= 0.40:
+                return "Hot ✅"
+            elif score >= 0.25:
                 return "Sleeper 🌙"
             else:
                 return "Risky ⚠️"

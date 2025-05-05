@@ -85,20 +85,31 @@ def send_telegram_alerts(predictions):
         # Process each prediction category
         groups = {
             "Locks 🔒": predictions[predictions["tag"] == "Lock 🔒"],
+            "Hot ✅": predictions[predictions["tag"] == "Hot ✅"],
             "Sleepers 🌙": predictions[predictions["tag"] == "Sleeper 🌙"],
             "Risky ⚠️": predictions[predictions["tag"] == "Risky ⚠️"]
         }
 
         # For empty categories, take some from other categories
-        if groups["Sleepers 🌙"].empty and not groups["Locks 🔒"].empty:
-            print("Finding alternative Sleeper picks...")
-            # Take bottom half of Locks as Sleepers
+        if groups["Hot ✅"].empty and not groups["Locks 🔒"].empty:
+            print("Finding alternative Hot picks...")
+            # Take bottom half of Locks as Hot
             locks = groups["Locks 🔒"].sort_values(sort_column, ascending=False)
             half_idx = max(1, len(locks) // 2)
-            groups["Sleepers 🌙"] = locks.iloc[half_idx:].copy()
-            groups["Sleepers 🌙"]["tag"] = "Sleeper 🌙"
+            groups["Hot ✅"] = locks.iloc[half_idx:].copy()
+            groups["Hot ✅"]["tag"] = "Hot ✅"
             # Keep only top half as Locks
             groups["Locks 🔒"] = locks.iloc[:half_idx]
+
+        if groups["Sleepers 🌙"].empty and not groups["Hot ✅"].empty:
+            print("Finding alternative Sleeper picks...")
+            # Take bottom half of Hot picks as Sleepers
+            hots = groups["Hot ✅"].sort_values(sort_column, ascending=False)
+            half_idx = max(1, len(hots) // 2)
+            groups["Sleepers 🌙"] = hots.iloc[half_idx:].copy()
+            groups["Sleepers 🌙"]["tag"] = "Sleeper 🌙"
+            # Keep only top half as Hot
+            groups["Hot ✅"] = hots.iloc[:half_idx]
 
         if groups["Risky ⚠️"].empty and not groups["Sleepers 🌙"].empty:
             print("Finding alternative Risky picks...")
